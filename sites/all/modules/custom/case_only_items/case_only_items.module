@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Case Only Items feature.
+ */
+
+include_once 'case_only_items.features.inc';
