@@ -28,9 +28,9 @@ function versailles_project_metadata_field_group_info() {
       2 => 'field_ver_print_mss_title',
       3 => 'field_ver_translated_print_title',
       4 => 'field_ver_book_author',
-      5 => 'field_ver_series_book_title',
-      6 => 'field_ver_publisher',
-      7 => 'field_ver_date',
+      5 => 'field_ver_publisher',
+      6 => 'field_ver_date',
+      7 => 'field_ver_series_book_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

@@ -298,7 +298,7 @@ function versailles_project_metadata_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'full' => array(
         'label' => 'above',
@@ -325,9 +325,9 @@ function versailles_project_metadata_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
+      'type' => 'text_textarea',
       'weight' => 9,
     ),
   );

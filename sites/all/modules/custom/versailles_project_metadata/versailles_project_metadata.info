@@ -3,6 +3,7 @@ core = 7.x
 package = Features
 version = 7.x-1.0-dev
 project = versailles_project_metadata
+dependencies[] = field_group
 dependencies[] = text
 features[ctools][] = field_group:field_group:1
 features[features_api][] = api:2
