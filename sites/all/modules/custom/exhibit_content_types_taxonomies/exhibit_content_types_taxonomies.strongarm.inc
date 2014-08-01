@@ -21,7 +21,7 @@ function exhibit_content_types_taxonomies_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_node_exhibit_rbsc_item';
-  $strongarm->value = '';
+  $strongarm->value = '2';
   $export['auto_entitylabel_node_exhibit_rbsc_item'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -42,7 +42,7 @@ function exhibit_content_types_taxonomies_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_exhibit_rbsc_item';
-  $strongarm->value = '';
+  $strongarm->value = '[untitled]';
   $export['auto_entitylabel_pattern_node_exhibit_rbsc_item'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -63,7 +63,7 @@ function exhibit_content_types_taxonomies_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_php_node_exhibit_rbsc_item';
-  $strongarm->value = '';
+  $strongarm->value = 0;
   $export['auto_entitylabel_php_node_exhibit_rbsc_item'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -378,7 +378,7 @@ function exhibit_content_types_taxonomies_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
       ),
       'display' => array(),

@@ -21,11 +21,11 @@ function exhibit_content_types_taxonomies_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Basic Information',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'field_exhibit_item_type',
-      2 => 'field_exhibit_item_source',
+      1 => 'field_exhibit_item_source',
+      2 => 'field_exhibit_item_type',
       3 => 'title',
     ),
     'format_type' => 'fieldset',
@@ -51,10 +51,10 @@ function exhibit_content_types_taxonomies_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Exhibit Placement',
-    'weight' => '7',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_exhibit_case_group_label',
-      1 => 'field_exhibit_case',
+      0 => 'field_exhibit_case',
+      1 => 'field_exhibit_case_group_label',
       2 => 'field_exhibit_sort_order',
       3 => 'field_exhibit_sub_case_grouping',
     ),
