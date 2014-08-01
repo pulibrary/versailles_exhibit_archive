@@ -1,0 +1,10 @@
+name = Versailles Metadata Importer
+core = 7.x
+package = Versailles
+version = 7.x-1.0-dev
+project = versailles_metadata_importer
+dependencies[] = ctools
+dependencies[] = feeds
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = versailles_metadata_importer
