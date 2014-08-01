@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Versaille Project Metadata feature.
+ */
+
+include_once 'versailles_project_metadata.features.inc';

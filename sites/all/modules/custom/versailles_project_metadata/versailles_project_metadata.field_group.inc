@@ -1,0 +1,48 @@
+<?php
+/**
+ * @file
+ * versailles_project_metadata.field_group.inc
+ */
+
+/**
+ * Implements hook_field_group_info().
+ */
+function versailles_project_metadata_field_group_info() {
+  $export = array();
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ver_metadata|node|exhibit_rbsc_item|form';
+  $field_group->group_name = 'group_ver_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'exhibit_rbsc_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Versailles Metadata',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_ver_engraver',
+      1 => 'field_ver_artist',
+      2 => 'field_ver_print_mss_title',
+      3 => 'field_ver_translated_print_title',
+      4 => 'field_ver_book_author',
+      5 => 'field_ver_series_book_title',
+      6 => 'field_ver_publisher',
+      7 => 'field_ver_date',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-ver-metadata field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_ver_metadata|node|exhibit_rbsc_item|form'] = $field_group;
+
+  return $export;
+}
