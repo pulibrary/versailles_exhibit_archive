@@ -325,220 +325,6 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_image_one'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_image_one'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'deleted' => 0,
-    'description' => 'Use for observe coin images or any other primary representations of the resource. ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'file',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 7,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'file',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_image_one',
-    'label' => 'Image One',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'exhibit/items/images',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_image_one_caption'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_image_one_caption'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_image_one_caption',
-    'label' => 'Image One Caption',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_image_two'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_image_two'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'deleted' => 0,
-    'description' => 'Usually the reverse image of a coin object. ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'file',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 9,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'file',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_image_two',
-    'label' => 'Image Two',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => 'exhibit/items/images',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 15,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_image_two_caption'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_image_two_caption'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_image_two_caption',
-    'label' => 'Image Two Caption',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 16,
-    ),
-  );
-
   // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_item_source'
   $field_instances['node-exhibit_rbsc_item-field_exhibit_item_source'] = array(
     'bundle' => 'exhibit_rbsc_item',
@@ -630,67 +416,6 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_item_url'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_item_url'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'URL a representation of the item lives at on the web. Typically used for maps in the GIS server or items in the PUDL. ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 11,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_item_url',
-    'label' => 'Item URL',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 6,
     ),
   );
 
@@ -796,62 +521,6 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 22,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_map_thumbnail'
-  $field_instances['node-exhibit_rbsc_item-field_map_thumbnail'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'deleted' => 0,
-    'description' => 'This is where you add a thumbnail when an image will be viewed on the GIS server.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 12,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_map_thumbnail',
-    'label' => 'Map Thumbnail',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 5,
     ),
   );
 
@@ -1123,15 +792,9 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
   t('Exhibit Sort order');
   t('Exhibit Sub Title');
   t('Identifier that denotes where the item source came from. ');
-  t('Image One');
-  t('Image One Caption');
-  t('Image Two');
-  t('Image Two Caption');
   t('Item Type');
   t('Item Type of Resource');
-  t('Item URL');
   t('Label of the Case Grouping. For use in sorting and grouping resources. ');
-  t('Map Thumbnail');
   t('Master case item is part of.');
   t('Numeric order the item appears in the overall exhibit manifest.');
   t('Source');
@@ -1142,11 +805,7 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
   t('The case label number. Usually numeric but can be a letter. ');
   t('The sub-title of the exhibit if needed.');
   t('The title of the case. Will be used as the display title wherever the case is reference. ');
-  t('This is where you add a thumbnail when an image will be viewed on the GIS server.');
   t('Title of the Subcase');
-  t('URL a representation of the item lives at on the web. Typically used for maps in the GIS server or items in the PUDL. ');
-  t('Use for observe coin images or any other primary representations of the resource. ');
-  t('Usually the reverse image of a coin object. ');
 
   return $field_instances;
 }
