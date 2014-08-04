@@ -43,35 +43,122 @@ function versailles_metadata_importer_feeds_importer_default() {
         'authorize' => 1,
         'mappings' => array(
           0 => array(
-            'source' => 'Print/Mss Title',
-            'target' => 'title',
-            'unique' => FALSE,
-          ),
-          1 => array(
             'source' => 'Engraver',
             'target' => 'field_ver_engraver',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          2 => array(
+          1 => array(
             'source' => 'Artist [after]',
             'target' => 'field_ver_artist',
             'term_search' => '0',
             'autocreate' => 1,
           ),
+          2 => array(
+            'source' => 'Print/Mss Title',
+            'target' => 'title',
+            'unique' => FALSE,
+          ),
           3 => array(
+            'source' => 'Translated Print Title',
+            'target' => 'field_ver_translated_print_title',
+            'unique' => FALSE,
+          ),
+          4 => array(
             'source' => 'Book Author',
             'target' => 'field_ver_book_author',
             'unique' => FALSE,
           ),
-          4 => array(
+          5 => array(
             'source' => 'Series/Book Title',
             'target' => 'field_ver_series_book_title',
             'unique' => FALSE,
           ),
-          5 => array(
+          6 => array(
             'source' => 'Publisher',
             'target' => 'field_ver_publisher',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'Dates(s)',
+            'target' => 'field_ver_date',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'Pages',
+            'target' => 'field_ver_pages',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'Type',
+            'target' => 'field_exhibit_item_type',
+            'unique' => FALSE,
+          ),
+          10 => array(
+            'source' => 'Source',
+            'target' => 'field_exhibit_item_source',
+            'unique' => FALSE,
+          ),
+          11 => array(
+            'source' => 'Held By',
+            'target' => 'field_ver_held_by',
+            'unique' => FALSE,
+          ),
+          12 => array(
+            'source' => 'Accession Number/Call Number',
+            'target' => 'field_ver_accession_callnum',
+            'unique' => FALSE,
+          ),
+          13 => array(
+            'source' => 'Case Group Label',
+            'target' => 'field_exhibit_case_group_label',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          14 => array(
+            'source' => 'Resource Link',
+            'target' => 'field_ver_resource_link:url',
+            'unique' => FALSE,
+          ),
+          15 => array(
+            'source' => 'Display Date?',
+            'target' => 'field_ver_display_date',
+            'unique' => FALSE,
+          ),
+          16 => array(
+            'source' => 'On View?',
+            'target' => 'field_ver_on_view',
+            'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'Map Coordinates',
+            'target' => 'field_ver_map_geo',
+            'unique' => FALSE,
+          ),
+          18 => array(
+            'source' => 'Image Link',
+            'target' => 'field_ver_image_link:url',
+            'unique' => FALSE,
+          ),
+          19 => array(
+            'source' => 'Tags',
+            'target' => 'field_ver_tags',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          20 => array(
+            'source' => 'Case',
+            'target' => 'field_exhibit_case:label',
+            'unique' => FALSE,
+          ),
+          21 => array(
+            'source' => 'Sub Case',
+            'target' => 'field_exhibit_sub_case_grouping:label',
+            'unique' => FALSE,
+          ),
+          22 => array(
+            'source' => 'Exhibit Order',
+            'target' => 'field_exhibit_sort_order',
             'unique' => FALSE,
           ),
         ),
