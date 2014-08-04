@@ -92,7 +92,8 @@ function versailles_metadata_importer_feeds_importer_default() {
           9 => array(
             'source' => 'Type',
             'target' => 'field_exhibit_item_type',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           10 => array(
             'source' => 'Source',
