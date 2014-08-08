@@ -118,6 +118,7 @@ features[variable][] = pathauto_node_exhibit_subcase_pattern
 features[variable][] = pathauto_node_exhibition_landing_page_pattern
 features[variable][] = pathauto_taxonomy_term_exhibit_case_group_labels_pattern
 features[variable][] = pathauto_taxonomy_term_rbsc_exhibit_item_types_pattern
+features_exclude[dependencies][versailles_project_metadata] = versailles_project_metadata
 features_exclude[field_base][field_exhibit_image_one] = field_exhibit_image_one
 features_exclude[field_base][field_exhibit_image_one_caption] = field_exhibit_image_one_caption
 features_exclude[field_base][field_exhibit_image_two] = field_exhibit_image_two
@@ -134,5 +135,4 @@ features_exclude[field_instance][node-exhibit_rbsc_item-field_exhibit_image_two_
 features_exclude[field_instance][node-exhibit_rbsc_item-field_exhibit_item_url] = node-exhibit_rbsc_item-field_exhibit_item_url
 features_exclude[field_instance][node-exhibit_rbsc_item-field_map_thumbnail] = node-exhibit_rbsc_item-field_map_thumbnail
 features_exclude[field_instance][node-exhibit_rbsc_item-field_ver_medium] = node-exhibit_rbsc_item-field_ver_medium
-features_exclude[dependencies][versailles_project_metadata] = versailles_project_metadata
 project path = sites/all/modules/custom
