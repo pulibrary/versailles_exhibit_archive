@@ -90,77 +90,76 @@ function versailles_metadata_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           9 => array(
-            'source' => 'Type',
-            'target' => 'field_exhibit_item_type',
-            'term_search' => '0',
-            'autocreate' => 1,
-          ),
-          10 => array(
-            'source' => 'Source',
-            'target' => 'field_exhibit_item_source',
-            'unique' => FALSE,
-          ),
-          11 => array(
             'source' => 'Held By',
             'target' => 'field_ver_held_by',
             'unique' => FALSE,
           ),
-          12 => array(
+          10 => array(
             'source' => 'Accession Number/Call Number',
             'target' => 'field_ver_accession_callnum',
             'unique' => FALSE,
           ),
-          13 => array(
-            'source' => 'Case Group Label',
-            'target' => 'field_exhibit_case_group_label',
-            'term_search' => '0',
-            'autocreate' => 1,
-          ),
-          14 => array(
+          11 => array(
             'source' => 'Resource Link',
             'target' => 'field_ver_resource_link:url',
             'unique' => FALSE,
           ),
-          15 => array(
+          12 => array(
             'source' => 'Display Date?',
             'target' => 'field_ver_display_date',
             'unique' => FALSE,
           ),
-          16 => array(
+          13 => array(
             'source' => 'On View?',
             'target' => 'field_ver_on_view',
             'unique' => FALSE,
           ),
-          17 => array(
+          14 => array(
             'source' => 'Map Coordinates',
             'target' => 'field_ver_map_geo',
             'unique' => FALSE,
           ),
-          18 => array(
+          15 => array(
             'source' => 'Image Link',
             'target' => 'field_ver_image_link:url',
             'unique' => FALSE,
           ),
-          19 => array(
+          16 => array(
             'source' => 'Tags',
             'target' => 'field_ver_tags',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          20 => array(
+          17 => array(
             'source' => 'Case',
             'target' => 'field_exhibit_case:label',
             'unique' => FALSE,
           ),
-          21 => array(
+          18 => array(
             'source' => 'Sub Case',
             'target' => 'field_exhibit_sub_case_grouping:label',
             'unique' => FALSE,
           ),
-          22 => array(
+          19 => array(
             'source' => 'Exhibit Order',
             'target' => 'field_exhibit_sort_order',
             'unique' => FALSE,
+          ),
+          20 => array(
+            'source' => 'Medium',
+            'target' => 'field_ver_medium',
+            'unique' => FALSE,
+          ),
+          21 => array(
+            'source' => 'Source',
+            'target' => 'field_ver_source',
+            'unique' => FALSE,
+          ),
+          22 => array(
+            'source' => 'Exhibition Location',
+            'target' => 'field_exhibit_case_group_label',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'update_existing' => '1',
