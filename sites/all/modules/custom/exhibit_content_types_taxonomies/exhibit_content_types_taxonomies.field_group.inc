@@ -28,12 +28,12 @@ function exhibit_content_types_taxonomies_field_group_info() {
       2 => 'field_exhibit_item_type',
       3 => 'title',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-exhibit-item-info field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -58,12 +58,12 @@ function exhibit_content_types_taxonomies_field_group_info() {
       2 => 'field_exhibit_sort_order',
       3 => 'field_exhibit_sub_case_grouping',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-exhibit-item-placement field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),

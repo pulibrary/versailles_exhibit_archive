@@ -183,7 +183,7 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
     'bundle' => 'exhibit_rbsc_item',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Use if necessary. ',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -222,7 +222,7 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 6,
+        'rows' => 4,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -322,100 +322,6 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 23,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_item_source'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_item_source'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Identifier that denotes where the item source came from. ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_item_source',
-    'label' => 'Source',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_exhibit_item_type'
-  $field_instances['node-exhibit_rbsc_item-field_exhibit_item_type'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Item Type of Resource',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_exhibit_item_type',
-    'label' => 'Item Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 1,
     ),
   );
 
@@ -791,13 +697,9 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
   t('Exhibit Case List');
   t('Exhibit Sort order');
   t('Exhibit Sub Title');
-  t('Identifier that denotes where the item source came from. ');
-  t('Item Type');
-  t('Item Type of Resource');
   t('Label of the Case Grouping. For use in sorting and grouping resources. ');
   t('Master case item is part of.');
   t('Numeric order the item appears in the overall exhibit manifest.');
-  t('Source');
   t('Sub Case Grouping');
   t('Sub Cases');
   t('Subcase Number. Usually takes the form of Number of Parent Case - Letter Referencing order of Subcase. Example 1A for the first subcase containing in case 1. ');
@@ -806,6 +708,7 @@ function exhibit_content_types_taxonomies_field_default_field_instances() {
   t('The sub-title of the exhibit if needed.');
   t('The title of the case. Will be used as the display title wherever the case is reference. ');
   t('Title of the Subcase');
+  t('Use if necessary. ');
 
   return $field_instances;
 }

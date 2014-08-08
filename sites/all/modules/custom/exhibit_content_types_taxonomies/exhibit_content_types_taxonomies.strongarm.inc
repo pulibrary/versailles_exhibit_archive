@@ -35,7 +35,7 @@ function exhibit_content_types_taxonomies_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_exhibit_case';
-  $strongarm->value = '[node:field_exhibit_case_number]';
+  $strongarm->value = 'Case-[node:field_exhibit_case_number]';
   $export['auto_entitylabel_pattern_node_exhibit_case'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -49,7 +49,7 @@ function exhibit_content_types_taxonomies_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_exhibit_subcase';
-  $strongarm->value = '[node:field_exhibit_case_number]';
+  $strongarm->value = '[node:title]-[node:field_exhibit_case_number]';
   $export['auto_entitylabel_pattern_node_exhibit_subcase'] = $strongarm;
 
   $strongarm = new stdClass();

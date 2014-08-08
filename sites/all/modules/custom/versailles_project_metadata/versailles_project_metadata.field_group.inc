@@ -41,13 +41,14 @@ function versailles_project_metadata_field_group_info() {
       15 => 'field_ver_map_geo',
       16 => 'field_ver_image_link',
       17 => 'field_ver_tags',
+      18 => 'field_ver_medium',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-ver-metadata field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
