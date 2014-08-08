@@ -594,53 +594,6 @@ function versailles_project_metadata_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-exhibit_rbsc_item-field_ver_print_mss_title'
-  $field_instances['node-exhibit_rbsc_item-field_ver_print_mss_title'] = array(
-    'bundle' => 'exhibit_rbsc_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ver_print_mss_title',
-    'label' => 'Print/Mss Title',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-exhibit_rbsc_item-field_ver_publisher'
   $field_instances['node-exhibit_rbsc_item-field_ver_publisher'] = array(
     'bundle' => 'exhibit_rbsc_item',
@@ -951,7 +904,6 @@ function versailles_project_metadata_field_default_field_instances() {
   t('Medium');
   t('On View');
   t('Pages');
-  t('Print/Mss Title');
   t('Publisher');
   t('Resource Link');
   t('Series/Book Title');

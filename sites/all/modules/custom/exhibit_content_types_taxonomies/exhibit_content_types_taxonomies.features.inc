@@ -34,7 +34,7 @@ function exhibit_content_types_taxonomies_node_info() {
       'base' => 'node_content',
       'description' => t('An individual item in an RBSC exhibit.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Print/Mss Title'),
       'help' => '',
     ),
     'exhibit_subcase' => array(
