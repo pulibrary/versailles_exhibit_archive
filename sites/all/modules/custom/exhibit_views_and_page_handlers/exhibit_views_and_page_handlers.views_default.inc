@@ -132,7 +132,7 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['field_exhibit_sort_order']['id'] = 'field_exhibit_sort_order';
   $handler->display->display_options['fields']['field_exhibit_sort_order']['table'] = 'field_data_field_exhibit_sort_order';
   $handler->display->display_options['fields']['field_exhibit_sort_order']['field'] = 'field_exhibit_sort_order';
-  $handler->display->display_options['fields']['field_exhibit_sort_order']['label'] = 'Order';
+  $handler->display->display_options['fields']['field_exhibit_sort_order']['label'] = 'Exhibit Order';
   $handler->display->display_options['fields']['field_exhibit_sort_order']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,
@@ -141,13 +141,14 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Print/Mss Title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Case  */
   $handler->display->display_options['fields']['field_exhibit_case']['id'] = 'field_exhibit_case';
   $handler->display->display_options['fields']['field_exhibit_case']['table'] = 'field_data_field_exhibit_case';
   $handler->display->display_options['fields']['field_exhibit_case']['field'] = 'field_exhibit_case';
+  $handler->display->display_options['fields']['field_exhibit_case']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_exhibit_case']['settings'] = array(
     'link' => 1,
   );
@@ -156,17 +157,22 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['field_exhibit_sub_case_grouping']['table'] = 'field_data_field_exhibit_sub_case_grouping';
   $handler->display->display_options['fields']['field_exhibit_sub_case_grouping']['field'] = 'field_exhibit_sub_case_grouping';
   $handler->display->display_options['fields']['field_exhibit_sub_case_grouping']['label'] = 'Sub Case';
+  $handler->display->display_options['fields']['field_exhibit_sub_case_grouping']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_exhibit_sub_case_grouping']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Content: Source */
-  $handler->display->display_options['fields']['field_exhibit_item_source']['id'] = 'field_exhibit_item_source';
-  $handler->display->display_options['fields']['field_exhibit_item_source']['table'] = 'field_data_field_exhibit_item_source';
-  $handler->display->display_options['fields']['field_exhibit_item_source']['field'] = 'field_exhibit_item_source';
+  /* Field: Content: Case Group Label */
+  $handler->display->display_options['fields']['field_exhibit_case_group_label']['id'] = 'field_exhibit_case_group_label';
+  $handler->display->display_options['fields']['field_exhibit_case_group_label']['table'] = 'field_data_field_exhibit_case_group_label';
+  $handler->display->display_options['fields']['field_exhibit_case_group_label']['field'] = 'field_exhibit_case_group_label';
+  $handler->display->display_options['fields']['field_exhibit_case_group_label']['label'] = 'Case';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
   $handler->display->display_options['path'] = 'items';
 
   /* Display: Items by Sub-Case */
@@ -321,7 +327,7 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'p';
-  /* Field: Content: Source */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_exhibit_item_source']['id'] = 'field_exhibit_item_source';
   $handler->display->display_options['fields']['field_exhibit_item_source']['table'] = 'field_data_field_exhibit_item_source';
   $handler->display->display_options['fields']['field_exhibit_item_source']['field'] = 'field_exhibit_item_source';
@@ -330,7 +336,6 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['field_exhibit_item_source']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_exhibit_item_source']['alter']['text'] = '([field_exhibit_item_source])';
   $handler->display->display_options['fields']['field_exhibit_item_source']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_exhibit_item_source']['type'] = 'text_plain';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
