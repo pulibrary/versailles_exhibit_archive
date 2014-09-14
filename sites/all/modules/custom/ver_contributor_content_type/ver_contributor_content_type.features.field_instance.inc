@@ -50,7 +50,7 @@ function ver_contributor_content_type_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -90,7 +90,7 @@ function ver_contributor_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 3,
     ),
   );
 
@@ -130,7 +130,7 @@ function ver_contributor_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 1,
     ),
   );
 
@@ -170,7 +170,7 @@ function ver_contributor_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 2,
     ),
   );
 
