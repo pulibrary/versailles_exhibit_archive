@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Contributor Content Type feature.
+ */
+
+include_once 'ver_contributor_content_type.features.inc';
