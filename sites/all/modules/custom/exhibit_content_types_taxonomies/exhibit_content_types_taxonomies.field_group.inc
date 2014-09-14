@@ -24,9 +24,7 @@ function exhibit_content_types_taxonomies_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'field_exhibit_item_source',
-      2 => 'field_exhibit_item_type',
-      3 => 'title',
+      1 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

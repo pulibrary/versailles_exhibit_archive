@@ -71,6 +71,18 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['relationships']['field_exhibit_sub_case_grouping_target_id']['id'] = 'field_exhibit_sub_case_grouping_target_id';
   $handler->display->display_options['relationships']['field_exhibit_sub_case_grouping_target_id']['table'] = 'field_data_field_exhibit_sub_case_grouping';
   $handler->display->display_options['relationships']['field_exhibit_sub_case_grouping_target_id']['field'] = 'field_exhibit_sub_case_grouping_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_ver_ent_engraver_target_id']['id'] = 'field_ver_ent_engraver_target_id';
+  $handler->display->display_options['relationships']['field_ver_ent_engraver_target_id']['table'] = 'field_data_field_ver_ent_engraver';
+  $handler->display->display_options['relationships']['field_ver_ent_engraver_target_id']['field'] = 'field_ver_ent_engraver_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_ver_ent_book_author_target_id']['id'] = 'field_ver_ent_book_author_target_id';
+  $handler->display->display_options['relationships']['field_ver_ent_book_author_target_id']['table'] = 'field_data_field_ver_ent_book_author';
+  $handler->display->display_options['relationships']['field_ver_ent_book_author_target_id']['field'] = 'field_ver_ent_book_author_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_ver_ent_artist_target_id']['id'] = 'field_ver_ent_artist_target_id';
+  $handler->display->display_options['relationships']['field_ver_ent_artist_target_id']['table'] = 'field_data_field_ver_ent_artist';
+  $handler->display->display_options['relationships']['field_ver_ent_artist_target_id']['field'] = 'field_ver_ent_artist_target_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -144,6 +156,31 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Print/Mss Title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Engraver */
+  $handler->display->display_options['fields']['field_ver_ent_engraver']['id'] = 'field_ver_ent_engraver';
+  $handler->display->display_options['fields']['field_ver_ent_engraver']['table'] = 'field_data_field_ver_ent_engraver';
+  $handler->display->display_options['fields']['field_ver_ent_engraver']['field'] = 'field_ver_ent_engraver';
+  $handler->display->display_options['fields']['field_ver_ent_engraver']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_ver_ent_engraver']['delta_offset'] = '0';
+  /* Field: Content: Artist */
+  $handler->display->display_options['fields']['field_ver_ent_artist']['id'] = 'field_ver_ent_artist';
+  $handler->display->display_options['fields']['field_ver_ent_artist']['table'] = 'field_data_field_ver_ent_artist';
+  $handler->display->display_options['fields']['field_ver_ent_artist']['field'] = 'field_ver_ent_artist';
+  $handler->display->display_options['fields']['field_ver_ent_artist']['label'] = 'Artist [After]';
+  $handler->display->display_options['fields']['field_ver_ent_artist']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_ver_ent_artist']['delta_offset'] = '0';
+  /* Field: Content: Book Author */
+  $handler->display->display_options['fields']['field_ver_ent_book_author']['id'] = 'field_ver_ent_book_author';
+  $handler->display->display_options['fields']['field_ver_ent_book_author']['table'] = 'field_data_field_ver_ent_book_author';
+  $handler->display->display_options['fields']['field_ver_ent_book_author']['field'] = 'field_ver_ent_book_author';
+  $handler->display->display_options['fields']['field_ver_ent_book_author']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_ver_ent_book_author']['delta_offset'] = '0';
   /* Field: Content: Case  */
   $handler->display->display_options['fields']['field_exhibit_case']['id'] = 'field_exhibit_case';
   $handler->display->display_options['fields']['field_exhibit_case']['table'] = 'field_data_field_exhibit_case';
@@ -319,7 +356,7 @@ function exhibit_views_and_page_handlers_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
