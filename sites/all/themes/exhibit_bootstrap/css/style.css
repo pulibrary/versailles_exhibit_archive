@@ -125,6 +125,7 @@
     background-color: #DDD;
 }
 
+
 .rbsc-historic-map {
     font-size: smaller;
 }
@@ -153,6 +154,9 @@
 
 }
 
+.views-field-field-ver-image-link > a > img {
+    margin:0px;
+}
 
 .views-field-field-exhibit-image-two {
   display: none;
