@@ -1,170 +1,116 @@
-@charset "UTF-8";
-/* No files to import found in abstractions/**\/* */
-/* line 1, ../sass/base/_media.scss */
-img, media {
-  max-width: 100%; }
+/*
+Error: Invalid CSS after "    color": expected ";", was ": $versailles-r..."
+        on line 7 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/components/_typography.scss
+        from line 4 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/components/**\/*
+        from line 22 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/pul-versailles.styles.scss
+        from line 5 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/pul-versailles.no-query.scss
 
-/* line 1, ../sass/components/_navigation.scss */
-.three_six_three_stacked-region--first h1, h2, h3, h4, h5, h6 {
-  color: #1f36a2; }
+2:         
+3: hr {
+4:     padding: 0;
+5:     border: none;
+6:     border-top: medium double $versailles-red /* #E8E6DF; *\/
+7:     color: $versailles-red; /* #E8E6DF; *\/
+8:     text-align: center;
+9: }
+10: hr:after {
+11:     content: "§";
+12:     display: inline-block;
 
-/* line 1, ../sass/components/_search.scss */
-#edit-search-block-form--2 {
-  width: 100%; }
-
-/* line 1, ../sass/components/_spotlight.scss */
-.front .wrapper--highlighted {
-  background: rgba(213, 130, 105, 0.75);
-  padding: 0;
-  background-size: 1600px auto; }
-  /* line 16, ../sass/components/_spotlight.scss */
-  .front .wrapper--highlighted .l-region--highlighted {
-    padding: 1em 0;
-    position: relative; }
-  /* line 25, ../sass/components/_spotlight.scss */
-  .front .wrapper--highlighted .l-region--highlighted h2 {
-    display: none; }
-  /* line 29, ../sass/components/_spotlight.scss */
-  .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
-    font-size: 2em;
-    color: white;
-    text-shadow: 2px 2px #333;
-    line-height: 1em; }
-  /* line 36, ../sass/components/_spotlight.scss */
-  .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
-    display: block;
-    font-size: .6em; }
-
-/* line 42, ../sass/components/_spotlight.scss */
-#block-views-spotlight-dispalsys-block {
-  width: 100%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: none;
-  clear: both;
-  display: none; }
-
-/* line 54, ../sass/components/_spotlight.scss */
-#block-views-spotlight-dispalsys-block {
-  background: rgba(137, 61, 38, 0.65);
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  height: 159px;
-  padding: 0;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px; }
-  /* line 62, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block h2 {
-    display: none; }
-  /* line 65, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block a {
-    font-size: 0.875rem;
-    font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 0;
-    color: white; }
-  /* line 72, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block img {
-    width: 260px;
-    height: 159px; }
-  /* line 77, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px; }
-
-/* line 82, ../sass/components/_spotlight.scss */
-.block--pudl-highlight {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-top: 1em;
-  text-align: center;
-  display: none;
-  width: 100%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: none;
-  background: rgba(137, 61, 38, 0.35);
-  padding: 0.5em; }
-  /* line 106, ../sass/components/_spotlight.scss */
-  .block--pudl-highlight a {
-    font-size: 0.75rem;
-    font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 0;
-    color: white;
-    text-align: center; }
-    /* line 113, ../sass/components/_spotlight.scss */
-    .block--pudl-highlight a .icon-newtab {
-      margin-right: 0.5em; }
-
-/* line 119, ../sass/components/_spotlight.scss */
-#block-views-spotlight-dispalsys-block {
-  margin-bottom: 24px;
-  cursor: pointer; }
-  /* line 124, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block .view-content .views-row {
-    height: 159px;
-    overflow: hidden;
-    position: relative; }
-  /* line 130, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block .views-field {
-    -moz-transition: all, ease-in-out 0.2s;
-    -o-transition: all, ease-in-out 0.2s;
-    -webkit-transition: all, ease-in-out 0.2s;
-    transition: all, ease-in-out 0.2s;
-    background: inherit;
-    color: white;
-    height: inherit;
-    padding: 0.5em 0.7em; }
-  /* line 138, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.125rem;
-    font-weight: 200;
-    padding: 0;
-    text-align: center;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px; }
-    /* line 146, ../sass/components/_spotlight.scss */
-    #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
-      -moz-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      border-radius: 4px; }
-  /* line 151, ../sass/components/_spotlight.scss */
-  #block-views-spotlight-dispalsys-block .views-field-title {
-    position: absolute;
-    top: 0;
-    height: 60px;
-    width: 100%;
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -webkit-border-top-left-radius: 4px;
-    border-top-left-radius: 4px;
-    background: rgba(137, 61, 38, 0.85); }
-
-/* Glyph, by Harry Roberts */
-/* line 3, ../sass/components/_typography.scss */
-hr {
-  padding: 0;
-  border: none;
-  border-top: medium double #333;
-  color: #333;
-  text-align: center; }
-
-/* line 10, ../sass/components/_typography.scss */
-hr:after {
-  content: "§";
-  display: inline-block;
-  position: relative;
-  top: -0.7em;
-  font-size: 1.5em;
-  padding: 0 0.25em;
-  background: white; }
-
-/*# sourceMappingURL=pul-versailles.no-query.css.map */
+Backtrace:
+/Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/components/_typography.scss:7
+/Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/components/**\/*:4
+/Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/pul-versailles.styles.scss:22
+/Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/pul-versailles.no-query.scss:5
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:1163:in `expected'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:1099:in `expected'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:1094:in `tok!'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:761:in `block in try_declaration'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:1139:in `call'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:1139:in `rethrow'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:766:in `try_declaration'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:642:in `block'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:635:in `ruleset'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:660:in `block_child'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:650:in `block_contents'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/scss/parser.rb:42:in `parse'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/engine.rb:393:in `_to_tree'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/engine.rb:299:in `to_tree'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:313:in `block in visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:88:in `block in with_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:88:in `with_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:79:in `block in with_base'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:79:in `with_base'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:88:in `block in with_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:88:in `with_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:79:in `block in with_base'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:79:in `with_base'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:88:in `block in with_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:88:in `with_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:79:in `block in with_base'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/stack.rb:79:in `with_base'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:489:in `update_stylesheet'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/lib/compass/sass_compiler.rb:40:in `compile!'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/lib/compass/commands/update_project.rb:49:in `perform'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/bin/compass:30:in `block in <top (required)>'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/bin/compass:44:in `call'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/gems/compass-1.0.1/bin/compass:44:in `<top (required)>'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/bin/compass:23:in `load'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/bin/compass:23:in `<main>'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/bin/ruby_executable_hooks:15:in `eval'
+/Users/shaune/.rvm/gems/ruby-2.1.3@omega.pul_versailles/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"    color\": expected \";\", was \": $versailles-r...\"\A         on line 7 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/components/_typography.scss\A         from line 4 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/components/**/*\A         from line 22 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/pul-versailles.styles.scss\A         from line 5 of /Users/shaune/Development/rbsc_drupal_versailles/sites/all/themes/pul_versailles/sass/pul-versailles.no-query.scss\A \A 2:         \A 3: hr {\A 4:     padding: 0;\A 5:     border: none;\A 6:     border-top: medium double $versailles-red /* #E8E6DF; */\A 7:     color: $versailles-red; /* #E8E6DF; */\A 8:     text-align: center;\A 9: }\A 10: hr:after {\A 11:     content: \"§\";\A 12:     display: inline-block;"; }
