@@ -27,7 +27,15 @@
     }
     
     .l-region--highlighted .hero-copy h1 a{
+        font-size:2em;
         color:white;
+        text-shadow: 2px 2px #333;
+        line-height: 1em;
+    } 
+
+    .l-region--highlighted .hero-copy h1 a .subtitle{
+        display:block;
+        font-size:.6em;
     } 
 }
 
