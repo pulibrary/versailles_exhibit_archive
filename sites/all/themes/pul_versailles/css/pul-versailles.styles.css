@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* No files to import found in abstractions/**\/* */
 /* line 1, ../sass/base/_media.scss */
 img, media {
@@ -186,25 +187,23 @@ img, media {
     border-top-left-radius: 4px;
     background: rgba(137, 61, 38, 0.85); }
 
-/* Flaired edges, by Tomas Theunissen */
+/* Glyph, by Harry Roberts */
 /* line 3, ../sass/components/_typography.scss */
 hr {
-  height: 30px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px 0 0 0;
-  border-radius: 20px; }
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center; }
 
 /* line 10, ../sass/components/_typography.scss */
-hr:before {
-  /* Not really supposed to work, but does */
-  display: block;
-  content: "";
-  height: 30px;
-  margin-top: -31px;
-  border-style: solid;
-  border-color: black;
-  border-width: 0 0 1px 0;
-  border-radius: 20px; }
+hr:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white; }
 
 /*# sourceMappingURL=pul-versailles.styles.css.map */
