@@ -21,6 +21,14 @@
             padding: 4em 0;
         }
     }
+
+    .l-region--highlighted h2 {
+        display:none;
+    }
+    
+    .l-region--highlighted .hero-copy h1 a{
+        color:white;
+    } 
 }
 
 #block-views-spotlight-dispalsys-block {
