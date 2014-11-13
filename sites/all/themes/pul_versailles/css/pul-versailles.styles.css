@@ -44,6 +44,37 @@ img, media {
     font-size: .6em; }
 
 /* line 42, ../sass/components/_spotlight.scss */
+.wrapper--highlighted {
+  background: rgba(213, 130, 105, 0.75);
+  padding: 0;
+  background-size: 1600px auto; }
+  @media (min-width: 44em) {
+    /* line 42, ../sass/components/_spotlight.scss */
+    .wrapper--highlighted {
+      background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(../images/hero.jpg) center no-repeat; } }
+  /* line 57, ../sass/components/_spotlight.scss */
+  .wrapper--highlighted .l-region--highlighted {
+    padding: 1em 0;
+    position: relative; }
+    @media (min-width: 44em) {
+      /* line 57, ../sass/components/_spotlight.scss */
+      .wrapper--highlighted .l-region--highlighted {
+        padding: 4em 0; } }
+  /* line 66, ../sass/components/_spotlight.scss */
+  .wrapper--highlighted .l-region--highlighted h2 {
+    display: none; }
+  /* line 70, ../sass/components/_spotlight.scss */
+  .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px #333;
+    line-height: 1em; }
+  /* line 77, ../sass/components/_spotlight.scss */
+  .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
+    display: block;
+    font-size: .6em; }
+
+/* line 84, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -53,7 +84,7 @@ img, media {
   clear: both;
   display: none; }
   @media (min-width: 70em) {
-    /* line 42, ../sass/components/_spotlight.scss */
+    /* line 84, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block {
       width: 22.41379%;
       float: right;
@@ -64,7 +95,7 @@ img, media {
       margin-right: 0;
       display: block; } }
 
-/* line 54, ../sass/components/_spotlight.scss */
+/* line 96, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -74,26 +105,26 @@ img, media {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 62, ../sass/components/_spotlight.scss */
+  /* line 104, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 65, ../sass/components/_spotlight.scss */
+  /* line 107, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 72, ../sass/components/_spotlight.scss */
+  /* line 114, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 77, ../sass/components/_spotlight.scss */
+  /* line 119, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 82, ../sass/components/_spotlight.scss */
+/* line 124, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -109,7 +140,7 @@ img, media {
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
   @media (min-width: 44em) {
-    /* line 82, ../sass/components/_spotlight.scss */
+    /* line 124, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 22.41379%;
@@ -119,7 +150,7 @@ img, media {
       clear: none;
       margin-right: 0; } }
   @media (min-width: 70em) {
-    /* line 82, ../sass/components/_spotlight.scss */
+    /* line 124, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 13.7931%;
@@ -128,27 +159,27 @@ img, media {
       margin-right: 0;
       clear: none;
       margin-right: 0; } }
-  /* line 106, ../sass/components/_spotlight.scss */
+  /* line 148, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 113, ../sass/components/_spotlight.scss */
+    /* line 155, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 119, ../sass/components/_spotlight.scss */
+/* line 161, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 124, ../sass/components/_spotlight.scss */
+  /* line 166, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 130, ../sass/components/_spotlight.scss */
+  /* line 172, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -158,7 +189,7 @@ img, media {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 138, ../sass/components/_spotlight.scss */
+  /* line 180, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -168,12 +199,12 @@ img, media {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 146, ../sass/components/_spotlight.scss */
+    /* line 188, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 151, ../sass/components/_spotlight.scss */
+  /* line 193, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;

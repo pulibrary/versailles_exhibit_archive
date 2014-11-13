@@ -39,6 +39,48 @@
     } 
 }
 
+.wrapper--highlighted {
+    background: rgba(lighten($versailles-red, 28), 0.75);
+    padding: 0;
+    background-size: 1600px auto;
+
+    @include breakpoint($tab) {
+        background: 
+    linear-gradient(
+      rgba(lighten($versailles-red, 28), 0.75), 
+      rgba(lighten($versailles-red, 28), 0.75)
+    ),  /* On top,    like z-index: 4; */
+    url(../images/hero.jpg) center no-repeat   /* like z-index: 3; */
+   ;             
+    }
+
+    .l-region--highlighted {
+        padding: 1em 0;
+        position: relative;
+
+        @include breakpoint($tab) {
+            padding: 4em 0;
+        }
+    }
+
+    .l-region--highlighted h2 {
+        display:none;
+    }
+    
+    .l-region--highlighted .hero-copy h1 a{
+        font-size:2em;
+        color:white;
+        text-shadow: 2px 2px #333;
+        line-height: 1em;
+    } 
+
+    .l-region--highlighted .hero-copy h1 a .subtitle{
+        display:block;
+        font-size:.6em;
+    } 
+}
+
+
 #block-views-spotlight-dispalsys-block {
     @include grid-span(12); 
     clear: both;
