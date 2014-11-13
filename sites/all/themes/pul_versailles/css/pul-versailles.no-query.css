@@ -3,13 +3,17 @@
 img, media {
   max-width: 100%; }
 
+/* line 1, ../sass/components/_navigation.scss */
+.three_six_three_stacked-region--first h1, h2, h3, h4, h5, h6 {
+  color: #1f36a2; }
+
 /* line 1, ../sass/components/_search.scss */
 #edit-search-block-form--2 {
   width: 100%; }
 
 /* line 1, ../sass/components/_spotlight.scss */
 .front .wrapper--highlighted {
-  background: rgba(142, 150, 160, 0.75);
+  background: rgba(213, 130, 105, 0.75);
   padding: 0;
   background-size: 1600px auto; }
   /* line 16, ../sass/components/_spotlight.scss */
@@ -42,7 +46,7 @@ img, media {
 
 /* line 54, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
-  background: rgba(73, 79, 87, 0.65);
+  background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   height: 159px;
@@ -82,7 +86,7 @@ img, media {
   margin-left: 0;
   margin-right: 0;
   clear: none;
-  background: rgba(73, 79, 87, 0.35);
+  background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
   /* line 106, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
@@ -141,6 +145,6 @@ img, media {
     -moz-border-radius-topleft: 4px;
     -webkit-border-top-left-radius: 4px;
     border-top-left-radius: 4px;
-    background: rgba(73, 79, 87, 0.85); }
+    background: rgba(137, 61, 38, 0.85); }
 
 /*# sourceMappingURL=pul-versailles.no-query.css.map */
