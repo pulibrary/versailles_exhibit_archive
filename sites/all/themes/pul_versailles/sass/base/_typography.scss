@@ -1,0 +1,21 @@
+
+body {
+  font-family: $font-serif;
+  font-size: em(16);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-serif;
+	font-weight: normal;
+	font-variant: small-caps;
+	letter-spacing: .02em;
+}
+
+h1.splash-title {
+	font-family: $font-script;
+	color: $versailles-red;
+	font-variant: normal;
+	font-size: 60px;
+	letter-spacing: 0px;
+} 

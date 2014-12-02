@@ -1,12 +1,70 @@
 @charset "UTF-8";
 /* No files to import found in abstractions/**\/* */
+/* line 3, ../sass/base/_grids.scss */
+body {
+  background: #EBF5EF; }
+
+/* line 7, ../sass/base/_grids.scss */
+.l-page {
+  background: #EBF5EF; }
+
 /* line 1, ../sass/base/_media.scss */
 img, media {
   max-width: 100%; }
 
-/* line 1, ../sass/components/_navigation.scss */
-.three_six_three_stacked-region--first h1, h2, h3, h4, h5, h6 {
-  color: #1f36a2; }
+/* line 2, ../sass/base/_typography.scss */
+body {
+  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-size: 1em; }
+
+/* line 8, ../sass/base/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: .02em; }
+
+/* line 15, ../sass/base/_typography.scss */
+h1.splash-title {
+  font-family: "Pinyon Script";
+  color: #893d26;
+  font-variant: normal;
+  font-size: 60px;
+  letter-spacing: 0px; }
+
+/* line 1, ../sass/components/_buttons.scss */
+a.enter-site-button {
+  border: 1px solid #6b2a16;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #c36c52;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #9d462c;
+  background-image: -webkit-linear-gradient(#9d462c, #782f19);
+  background-image: linear-gradient(#9d462c, #782f19);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #5d220f;
+  background-clip: padding-box;
+  color: white;
+  margin-bottom: 0.5em; }
+  /* line 131, ../sass/vendor/bourbon/addons/_button.scss */
+  a.enter-site-button:hover:not(:disabled) {
+    box-shadow: inset 0 1px 0 0 #a95339;
+    cursor: pointer;
+    background-color: #853f2a;
+    background-image: -webkit-linear-gradient(#853f2a, #6a2a17);
+    background-image: linear-gradient(#853f2a, #6a2a17); }
+  /* line 147, ../sass/vendor/bourbon/addons/_button.scss */
+  a.enter-site-button:active:not(:disabled), a.enter-site-button:focus:not(:disabled) {
+    border: 1px solid #6b2a16;
+    box-shadow: inset 0 0 8px 4px #5d2615, inset 0 0 8px 4px #5d2615; }
+  /* line 51, ../sass/vendor/bourbon/addons/_button.scss */
+  a.enter-site-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
 
 /* line 1, ../sass/components/_search.scss */
 #edit-search-block-form--2 {
@@ -17,48 +75,48 @@ img, media {
   background: rgba(213, 130, 105, 0.75);
   padding: 0;
   background-size: 1600px auto; }
-  /* line 16, ../sass/components/_spotlight.scss */
+  /* line 11, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
-  /* line 25, ../sass/components/_spotlight.scss */
+  /* line 20, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
-  /* line 29, ../sass/components/_spotlight.scss */
+  /* line 24, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 2em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
-  /* line 36, ../sass/components/_spotlight.scss */
+  /* line 31, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
 
-/* line 42, ../sass/components/_spotlight.scss */
+/* line 37, ../sass/components/_spotlight.scss */
 .wrapper--highlighted {
   background: rgba(213, 130, 105, 0.75);
   padding: 0;
   background-size: 1600px auto; }
-  /* line 57, ../sass/components/_spotlight.scss */
+  /* line 52, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
-  /* line 66, ../sass/components/_spotlight.scss */
+  /* line 61, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
-  /* line 70, ../sass/components/_spotlight.scss */
+  /* line 65, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 2em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
-  /* line 77, ../sass/components/_spotlight.scss */
+  /* line 72, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
 
-/* line 84, ../sass/components/_spotlight.scss */
+/* line 79, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -68,7 +126,7 @@ img, media {
   clear: both;
   display: none; }
 
-/* line 96, ../sass/components/_spotlight.scss */
+/* line 91, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -78,26 +136,26 @@ img, media {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 104, ../sass/components/_spotlight.scss */
+  /* line 99, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 107, ../sass/components/_spotlight.scss */
+  /* line 102, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 114, ../sass/components/_spotlight.scss */
+  /* line 109, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 119, ../sass/components/_spotlight.scss */
+  /* line 114, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 124, ../sass/components/_spotlight.scss */
+/* line 119, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -112,27 +170,27 @@ img, media {
   clear: none;
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
-  /* line 148, ../sass/components/_spotlight.scss */
+  /* line 143, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 155, ../sass/components/_spotlight.scss */
+    /* line 150, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 161, ../sass/components/_spotlight.scss */
+/* line 156, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 166, ../sass/components/_spotlight.scss */
+  /* line 161, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 172, ../sass/components/_spotlight.scss */
+  /* line 167, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -142,7 +200,7 @@ img, media {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 180, ../sass/components/_spotlight.scss */
+  /* line 175, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -152,12 +210,12 @@ img, media {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 188, ../sass/components/_spotlight.scss */
+    /* line 183, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 193, ../sass/components/_spotlight.scss */
+  /* line 188, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;
@@ -191,5 +249,23 @@ hr:after {
 }
 
 */
+/* line 25, ../sass/pul-versailles.styles.scss */
+.front .wrapper--navigation {
+  display: none; }
+
+/* line 29, ../sass/pul-versailles.styles.scss */
+.front p {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 37, ../sass/pul-versailles.styles.scss */
+.front h1, .front h2, .front h3, .front h4, .front h5, .front h6 {
+  text-align: center; }
+
+/* line 42, ../sass/pul-versailles.styles.scss */
+.front .hero-copy {
+  opacity: 0; }
 
 /*# sourceMappingURL=pul-versailles.no-query.css.map */

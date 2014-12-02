@@ -14,6 +14,13 @@ stylesheets[all][] = css/pul-versailles.styles.css
 stylesheets[all][] = css/pul-versailles.no-query.css
 
 ; ========================================
+; Fonts
+; ========================================
+fonts[google_fonts_api][] = "Fanwood Text&subset=latin#italic"
+fonts[google_fonts_api][] = "Fanwood Text&subset=latin#regular"
+fonts[google_fonts_api][] = "Pinyon Script&subset=latin#regular"
+
+; ========================================
 ; Scripts
 ; ========================================
 scripts[] = js/pul-versailles.behaviors.js

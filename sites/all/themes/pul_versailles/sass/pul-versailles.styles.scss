@@ -3,6 +3,7 @@
 @import "breakpoint";
 @import "singularitygs";
 @import "toolkit";
+@import "vendor/bourbon/bourbon";
 
 // Import variables, abstractions, base styles and components using globbing.
 //
@@ -20,3 +21,24 @@
 @import "abstractions/**/*";
 @import "base/**/*";
 @import "components/**/*";
+
+.front .wrapper--navigation {
+  display: none;
+}
+
+.front p{
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.front {
+	h1, h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
+}
+
+.front .hero-copy {
+	opacity:0;
+}

@@ -1,0 +1,5 @@
+a.enter-site-button {
+    @include button(simple, lighten($versailles-red,5));
+    color: white; 
+    margin-bottom: 0.5em;
+}

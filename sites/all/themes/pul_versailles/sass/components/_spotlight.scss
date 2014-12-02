@@ -4,12 +4,7 @@
     background-size: 1600px auto;
 
     @include breakpoint($tab) {
-        background: 
-    linear-gradient(
-      rgba(lighten($versailles-red, 28), 0.75), 
-      rgba(lighten($versailles-red, 28), 0.75)
-    ),  /* On top,    like z-index: 4; */
-    url(../images/hero.jpg) center no-repeat   /* like z-index: 3; */
+        background: url(../images/hero.jpg) bottom no-repeat   /* like z-index: 3; */
    ;             
     }
 
