@@ -1,0 +1,61 @@
+// branding
+.wrapper--branding {
+    background-color: #494f57;
+    min-height: 35px;
+    border-top: 2px solid $orange;
+
+    h1.site-name {
+      display: none;
+    }
+}
+
+.l-branding {
+  .homepage-tab-form-message {
+    display: none;
+  }
+}
+
+
+// non-SVG logo
+.site-logo {
+    line-height: 21px;
+    margin-left: -0.7em;
+
+    @include grid-span(12);
+    clear: both;
+
+    @include breakpoint($tab) {
+        @include grid-span(6,1);
+    }
+
+    img {
+        padding: 0 1em;
+        display: block;
+        margin: 0 auto;
+        height: 25px;
+
+        @include breakpoint($desk) {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+// SVG logo 
+.svg {
+ .site-logo img {
+   display: none;
+ }
+ .site-logo {
+   background: url("../logo.svg") center center no-repeat;
+   background-size: contain;
+   display: block;
+   height: 25px;
+   width: 20%;
+   margin-top: 5px; 
+
+   @include breakpoint($tab) {
+    margin-left: 0.5em;
+   }
+ }
+}

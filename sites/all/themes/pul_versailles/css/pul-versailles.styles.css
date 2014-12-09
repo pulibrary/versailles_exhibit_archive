@@ -32,6 +32,65 @@ h1.splash-title {
   font-size: 60px;
   letter-spacing: 0px; }
 
+/* line 2, ../sass/components/_branding.scss */
+.wrapper--branding {
+  background-color: #494f57;
+  min-height: 35px;
+  border-top: 2px solid #e87511; }
+  /* line 7, ../sass/components/_branding.scss */
+  .wrapper--branding h1.site-name {
+    display: none; }
+
+/* line 13, ../sass/components/_branding.scss */
+.l-branding .homepage-tab-form-message {
+  display: none; }
+
+/* line 20, ../sass/components/_branding.scss */
+.site-logo {
+  line-height: 21px;
+  margin-left: -0.7em;
+  width: 100%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  clear: both; }
+  @media (min-width: 44em) {
+    /* line 20, ../sass/components/_branding.scss */
+    .site-logo {
+      width: 48.27586%;
+      float: left;
+      margin-right: -100%;
+      margin-left: 0;
+      clear: none; } }
+  /* line 31, ../sass/components/_branding.scss */
+  .site-logo img {
+    padding: 0 1em;
+    display: block;
+    margin: 0 auto;
+    height: 25px; }
+    @media (min-width: 70em) {
+      /* line 31, ../sass/components/_branding.scss */
+      .site-logo img {
+        padding: 0;
+        margin: 0; } }
+
+/* line 46, ../sass/components/_branding.scss */
+.svg .site-logo img {
+  display: none; }
+/* line 49, ../sass/components/_branding.scss */
+.svg .site-logo {
+  background: url("../logo.svg") center center no-repeat;
+  background-size: contain;
+  display: block;
+  height: 25px;
+  width: 20%;
+  margin-top: 5px; }
+  @media (min-width: 44em) {
+    /* line 49, ../sass/components/_branding.scss */
+    .svg .site-logo {
+      margin-left: 0.5em; } }
+
 /* line 1, ../sass/components/_buttons.scss */
 a.enter-site-button {
   border: 1px solid #6b2a16;
