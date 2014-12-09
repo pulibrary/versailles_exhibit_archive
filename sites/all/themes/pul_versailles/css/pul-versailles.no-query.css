@@ -139,26 +139,27 @@ a.enter-site-button {
 .wrapper--highlighted {
   background: rgba(213, 130, 105, 0.75);
   padding: 0;
-  background-size: 1600px auto; }
-  /* line 52, ../sass/components/_spotlight.scss */
+  background-size: 1600px auto;
+  max-height: 150px; }
+  /* line 53, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
-  /* line 61, ../sass/components/_spotlight.scss */
+  /* line 62, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
-  /* line 65, ../sass/components/_spotlight.scss */
+  /* line 66, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
-    font-size: 2em;
+    font-size: 1.5em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
-  /* line 72, ../sass/components/_spotlight.scss */
+  /* line 73, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
 
-/* line 79, ../sass/components/_spotlight.scss */
+/* line 80, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -168,7 +169,7 @@ a.enter-site-button {
   clear: both;
   display: none; }
 
-/* line 91, ../sass/components/_spotlight.scss */
+/* line 92, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -178,26 +179,26 @@ a.enter-site-button {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 99, ../sass/components/_spotlight.scss */
+  /* line 100, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 102, ../sass/components/_spotlight.scss */
+  /* line 103, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 109, ../sass/components/_spotlight.scss */
+  /* line 110, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 114, ../sass/components/_spotlight.scss */
+  /* line 115, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 119, ../sass/components/_spotlight.scss */
+/* line 120, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -212,27 +213,27 @@ a.enter-site-button {
   clear: none;
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
-  /* line 143, ../sass/components/_spotlight.scss */
+  /* line 144, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 150, ../sass/components/_spotlight.scss */
+    /* line 151, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 156, ../sass/components/_spotlight.scss */
+/* line 157, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 161, ../sass/components/_spotlight.scss */
+  /* line 162, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 167, ../sass/components/_spotlight.scss */
+  /* line 168, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -242,7 +243,7 @@ a.enter-site-button {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 175, ../sass/components/_spotlight.scss */
+  /* line 176, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -252,12 +253,12 @@ a.enter-site-button {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 183, ../sass/components/_spotlight.scss */
+    /* line 184, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 188, ../sass/components/_spotlight.scss */
+  /* line 189, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;

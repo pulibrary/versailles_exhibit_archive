@@ -38,6 +38,7 @@
     background: rgba(lighten($versailles-red, 28), 0.75);
     padding: 0;
     background-size: 1600px auto;
+    max-height: 150px;
 
     @include breakpoint($tab) {
         background: 
@@ -54,7 +55,7 @@
         position: relative;
 
         @include breakpoint($tab) {
-            padding: 4em 0;
+            padding: 1em 0;
         }
     }
 
@@ -63,7 +64,7 @@
     }
     
     .l-region--highlighted .hero-copy h1 a{
-        font-size:2em;
+        font-size:1.5em;
         color:white;
         text-shadow: 2px 2px #333;
         line-height: 1em;
