@@ -2,6 +2,7 @@
     background: rgba(lighten($versailles-red, 28), 0.75);
     padding: 0;
     background-size: 1600px auto;
+    max-height: 350px;
 
     @include breakpoint($tab) {
         background: url(../images/hero.jpg) bottom no-repeat   /* like z-index: 3; */
