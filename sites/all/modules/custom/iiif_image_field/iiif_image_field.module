@@ -1,0 +1,329 @@
+<?php 
+
+/**
+ *  Provides a simple field for easily embedding images from IIIF Image Servers (currently supports Image API 2.0 only, with plans to support previous versions)
+ *
+ *  This module is not intended to replace media - it does not allow for any local storage of images, custom players or anything else
+ *  It simply allows users to embed images from IIIF Image Servers - and provides a hook to allow other modules to provide more providers.
+ *
+ *  @author shaune
+ */
+/**
+ *  Implementation of hook_menu
+ *  create out admin page
+ */
+ function iiif_image_field_menu(){
+   return array(
+     'admin/config/media/iiif_image_field' => array(
+       'title' => 'Configure IIIF Image Field',
+       'description' => 'Configuration form for the IIIF Image Field, allows one to set viewer options.',
+       'page callback' => 'drupal_get_form',
+       'page arguments' => array('iiif_image_field_get_form'),
+       'access arguments' => array('administer site configuration'),
+     )
+   );
+ }
+
+/**
+ *  Implementation of hook_field_info
+ *  Define the fields we're creating
+ */
+function iiif_image_field_field_info(){
+  return array(
+    'iiif_image_field' => array(
+      'label' => 'IIIF Image Embed',
+      'description' => 'Embed images from IIIF Image Server',
+      'settings' => array(
+        //no settings currently - not sure what we need
+      ),
+      'instance_settings' => array(
+        'allowed_types' => array('libimages')
+      ),
+      'default_widget' => 'iiif_image_field_widget',
+      'default_formatter' => 'iiif_image_field_formatter',
+    )
+  );
+}
+$abilities = (!empty($field['settings']['abilities'])) ? explode("\n", $field['settings']['abilities']) : array();
+/**
+ *  Implementation of hook_field_widget_info
+ *  Define the widget for inputting 
+ */
+function iiif_image_field_field_widget_info(){
+ return array(
+   'iiif_image_field_widget' => array(
+     'label' => 'IIIF Image Embed',
+     'description' => 'Provides a IIIF Image embed field',
+     'field types' => array('iiif_image_field'),
+     'settings' => array(),
+     'behaviors' => array(
+       'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+       'default value' => FIELD_BEHAVIOR_DEFAULT
+     )
+   )
+ );
+}
+/**
+*  implementation of hook_field_widget_form
+*/
+function iiif_image_field_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element){
+ //don't need to check the type right now because we're only defining one
+ $element += array(
+   '#type' => 'iiif_image_field_widget'
+ );
+
+ $element['image_url'] = array(
+   '#type' => 'textfield',
+   '#title' => 'Image ID',
+   '#attached' => array(
+     'css' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.css'),
+     'js' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.js'),
+    ),
+    '#default_value' => isset($items[$delta]['image_url'])?$items[$delta]['image_url']:''
+ );
+
+ return $element;
+}
+
+function iiif_image_fields_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
+ foreach ($items as $delta => $item) {
+   //check that its a valid url     
+ }
+}
+
+function iiif_image_field_field_is_empty($item, $field){
+ return empty($item);
+}
+
+function iiif_image_field_field_formatter_info() {
+ return array(
+   'iiif_image_field_formatter' => array(
+     'label' => t('IIIF Image Embed Formatter'),
+     'field types' => array('iiif_image_field'),
+   )
+ );
+}  
+/**
+*  Implementation of hook_field_formatter_prepare_view
+*  Prepare the view of the video embed - if the embed code doesn't exist, create it using the url
+*/
+function iiif_image_field_field_formatter_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items, $displays){
+ $handlers = iiif_image_get_handlers();
+ foreach($items as $delta=>$item_wrapper){
+   foreach($item_wrapper as $key=>$item){
+     if(!$item['embed_code']){
+       $parts = parse_url($item['image_url']);
+       $host = $parts['host'];
+       if(stripos($host, 'www.') > -1){
+         $host = substr($host, 4);
+       }
+
+       if(isset($handlers[$host]['function']) && function_exists($handlers[$host]['function'])){
+         $items[$delta][$key]['embed_code'] = call_user_func($handlers[$host]['function'], $item['image_url']);
+       } else {
+         $items[$delta][$key]['embed_code'] = l($item['image_url'], $item['image_url']);
+       }
+     }
+   }
+   
+ }
+}
+
+/**
+*  implementation of hook_field_widget_form
+*/
+function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
+  $elements = array();
+
+  foreach ($items as $delta => $item) {
+    $element[$delta] = array('#markup' => $item['embed_code']);
+  }
+
+  return $element;
+}
+/**
+ *  Creates a hook that other modules can implement to get handlers - hook_iiif_image_handler_info
+ *  Can be used to add more handlers if needed - from other modules and such
+ *  Handler should be an array of the form
+ *  array(
+ *    'function' => 'function_name_to_call' //should be of the signature function_name($url) and should return the embed code
+ *    'domain' => 'libimages.princeton.edu' //the domain that this handler will create embed code for
+ *  );
+ */
+function iiif_image_get_handlers(){
+  $handlers = cache_get('iiif_image_field_handlers');
+  
+  if($handlers === FALSE){
+    $available = module_invoke_all('iiif_image_handler_info');
+    foreach($available as $handler){
+      $handlers[$handler['domain']] = $handler;
+    }
+    drupal_alter('iiif_image_field_handlers', $handlers);
+    cache_set('iiif_image_field_handlers', $handlers);
+  } else {
+    $handlers = $handlers->data;
+  }
+  return $handlers;
+}
+
+/**
+ *  Implementation of hook_iiif_image_handler_info
+ */
+function iiif_image_field_iiif_image_handler_info(){
+ return array(
+   'libimages' => array(
+     'domain' => 'libimages.princeton.edu',
+     'function' => 'iiif_image_field_handle_libimages',
+     'form' => 'iiif_image_field_handler_libimages_form',
+     'title' => 'LibImages'
+   )
+ );
+}
+
+/**
+ *  Create a form from the Image API configuration options
+ *
+ */
+function iiif_image_field_get_form(){
+  $handlers = iiif_image_get_handlers();
+  $form = array();
+  foreach($handlers as $domain=>$handler){
+    if(isset($handler['form']) && function_exists($handler['form'])){
+      $form[$handler['title']] = call_user_func($handler['form']);
+      
+      $form[$handler['title']] += array(
+        '#type' => 'fieldset',
+        '#title' => t($handler['title']),
+      );       
+    }
+  }
+  return system_settings_form($form);
+}
+
+/**
+ *  handler for iiif 2.0 images
+ */
+function iiif_image_field_handle_iiif2($url){
+  //get settings
+  $zoom = variable_get('iiif_image_field_iiif2_zoom', 1);
+  $region_x = variable_get('iiif_image_field_iiif2_region_x', 0);
+  $region_y = variable_get('iiif_image_field_iiif2_region_y', 0);
+  $region_w = variable_get('iiif_image_field_iiif2_region_w', 200);
+  $region_h = variable_get('iiif_image_field_iiif2_region_h', 200);
+  $size_w = variable_get('iiif_image_field_iiif2_size_w', 200);
+  $size_h = variable_get('iiif_image_field_iiif2_size_h', 200);
+  $rotation = variable_get('iiif_image_field_iiif2_rotation', 0);
+  $quality = variable_get('iiif_image_field_iiif2_quality', 'default');
+  $format = variable_get('iiif_image_field_iiif2_format', 'jpg');
+  
+  $zoom_class = "";
+  if($zoom) { $zoom_class = "zoom";}
+  
+  $template_start = '<img class="thumbnail '.$zoom .'" src="';
+  $template_end = '/'.$region_x.','.$region_y.','.$region_w.','.$region_h.'/'.$size_w.','.$size_h.'/'.$rotation.'/'.$quality.'.'.$format.'"><';
+
+  $url_temp = 'http://libimages.princeton.edu/loris/';
+
+
+  return $template_start . $url_temp . $url . $template_end;
+  
+}  
+/**
+ *  Defines the form elements for the youtube configuration form
+ *  Eventually it might be nice to have these forms be available per instance instead of just global config
+ */
+function iiif_image_field_handler_libimages_form(){
+  $form = array();
+  $form['iiif_image_field_iiif2_region_x'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Region X-Coordinate'),
+    '#description' => t('The number of pixels from the left border of the IIIF Image.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_region_x', 200)
+  );
+  $form['iiif_image_field_iiif2_region_y'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Region Y-Coordinate'),
+    '#description' => t('The number of pixels from the top border of the IIIF Image.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_region_x', 200)
+  );
+  $form['iiif_image_field_iiif2_region_w'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Region Width'),
+    '#description' => t('The width in pixels of the cropped region.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_region_w', 200)
+  );
+  $form['iiif_image_field_iiif2_region_h'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Region Height'),
+    '#description' => t('The height in pixels of the cropped region.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_region_h', 200)
+  );
+
+  $form['iiif_image_field_iiif2_size_w'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Image Width'),
+    '#description' => t('The width of the IIIF Image Region.  You may enter a number in pixels (200), a percentage (pct:50) or return the full size (full). If any value is full in this group, the image will be full size.'),
+    '#default_value' => variable_get('iiif_image_field_iiif2_size_w', 200)
+  );
+  $form['iiif_image_field_iiif2_size_h'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Image Height'),
+    '#description' => t('The height of the IIIF Image Region.  You may enter a number in pixels (200), a percentage (pct:50) or return the full size (full). If any value is full in this group, the image will be full size. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_size_h', 200)
+  );
+
+  $form['iiif_image_field_iiif2_rotate'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Rotation'),
+    '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_size_rotate', 200)
+  );
+
+  $form['quality_options'] = array(
+    '#type' => 'value',
+    '#value' => array('default' => t('default'),
+                      'color' => t('color'),
+                      'gray' => t('gray'),
+                      'bitonal' => t('bitonal'))
+  );
+
+  $form['iiif_image_field_iiif2_quality'] = array(
+    '#type' => 'select',
+    '#options' => $form['quality_options']['#value'],
+    '#title' => t('Quality'),
+    '#description' => t('The quality parameter determines the mode of the image - color, greyscale, or black and white. This should be a dropdown'),
+    '#default_value' => variable_get('iiif_image_field_iiif2_size_quality', 'default')
+  );
+
+  $form['format_options'] = array(
+    '#type' => 'value',
+    '#value' => array('jpg' => t('jpg'),
+                      'png' => t('png'),
+                      'gif' => t('gif'))
+  );
+
+  $form['iiif_image_field_iiif2_format'] = array(
+    '#type' => 'select',
+    '#options' => $form['format_options']['#value'],
+    '#title' => t('Format'),
+    '#description' => t('This is the compression type that you want the image to be.  If in doubt, go with jpg. '),
+    '#default_value' => variable_get('iiif_image_field_iiif2_size_format', 200)
+  );
+
+  $form['iiif_image_field_iiif2_zoom'] = array(
+    '#type' => 'checkbox',
+    '#return_value' => 1, 
+    '#title' => t('Zoom'),
+    '#description' => t('Allow deep-zoom for this image via OpenSeadragon'),
+    '#default_value' => variable_get('iiif_image_field_iiif2_zoom', 0)
+  );
+
+  return $form;
+}
