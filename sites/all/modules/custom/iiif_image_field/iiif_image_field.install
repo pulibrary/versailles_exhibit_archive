@@ -1,0 +1,93 @@
+<?php 
+
+/**
+ *  Install file for iiif_image_field module
+ *  @author shaune
+ */
+ 
+/**
+ *  Implementation of hook_field_schema
+ *  Define the schema for the field
+ */ 
+
+
+
+function iiif_image_field_field_schema($field){
+  switch($field['type']){
+    case 'iiif_image_field' :
+      $columns = array(
+        'iiif_image_id' => array(
+          'type' => 'varchar',
+          'length' => 512,
+          'default' => ''
+        ),
+        'embed_code' => array(
+          'type' => 'varchar',
+          'length' => 1024,
+          'default' => ''
+        )
+      );
+      $indexes = array();
+    break;
+  }
+  
+  return array(
+    'columns' => $columns,
+    'indexes' => $indexes
+  );
+}
+
+
+/**
+* Implements hook_install()
+*/
+/*
+function iiif_image_field_install(){
+  // Check to see if iiif image field exists
+  $field = field_info_field('iiif_image_field');
+
+  // if not, create it
+  if (empty($field)) {
+    $field = array(
+        'field_name' => 'iiif_image_field',
+        'type' => 'text',
+        'entity_types' => array('node'),
+        'translatable' => FALSE,
+      );
+    
+    $field = field_create_field($field);
+
+  }
+
+}
+*/
+/**
+* Implements hook_uninstall()
+*/
+/*
+function iiif_image_field_uninstall(){
+  watchdog("IIIF Image Field Module", "Uninstalling module and deleting fields");
+
+  $types = node_type_get_types();
+
+  foreach($types as $type) {
+    iiif_image_field_delete_iiif_image_field($type);
+  }
+
+  $field = field_info_field('iiif_image_field');
+
+  if ($field){
+    field_delete_field('iiif_image_field');
+  }
+
+}
+
+function iiif_image_field_delete_iiif_image_field($type) {
+
+  $instance = field_info_instance('node', 'iiif_image_field', $type->type);
+  if ($instance) {
+    field_delete_instance($instance);
+  }
+
+}
+*/

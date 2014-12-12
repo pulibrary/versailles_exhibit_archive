@@ -44,7 +44,7 @@ function iiif_image_field_field_info(){
     )
   );
 }
-$abilities = (!empty($field['settings']['abilities'])) ? explode("\n", $field['settings']['abilities']) : array();
+
 /**
  *  Implementation of hook_field_widget_info
  *  Define the widget for inputting 
@@ -69,17 +69,19 @@ function iiif_image_field_field_widget_info(){
 function iiif_image_field_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element){
  //don't need to check the type right now because we're only defining one
  $element += array(
-   '#type' => 'iiif_image_field_widget'
+   // '#type' => 'iiif_image_field_widget'
+    '#type' => $instance['widget']['type'],
+    '#default_value' => isset($items[$delta]) ? $items[$delta] : '',
  );
 
- $element['image_url'] = array(
+ $element['iiif_image_id'] = array(
    '#type' => 'textfield',
    '#title' => 'Image ID',
    '#attached' => array(
      'css' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.css'),
      'js' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.js'),
     ),
-    '#default_value' => isset($items[$delta]['image_url'])?$items[$delta]['image_url']:''
+    '#default_value' => isset($items[$delta]['iiif_image_id'])?$items[$delta]['iiif_image_id']:''
  );
 
  return $element;
@@ -98,47 +100,57 @@ function iiif_image_field_field_is_empty($item, $field){
 function iiif_image_field_field_formatter_info() {
  return array(
    'iiif_image_field_formatter' => array(
-     'label' => t('IIIF Image Embed Formatter'),
+     'label' => t('IIIF Image Formatter'),
      'field types' => array('iiif_image_field'),
    )
  );
 }  
+
 /**
 *  Implementation of hook_field_formatter_prepare_view
-*  Prepare the view of the video embed - if the embed code doesn't exist, create it using the url
+*  Prepare the view of the iiif image embed - if the embed code doesn't exist, create it using the url
 */
+/*
 function iiif_image_field_field_formatter_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items, $displays){
  $handlers = iiif_image_get_handlers();
  foreach($items as $delta=>$item_wrapper){
    foreach($item_wrapper as $key=>$item){
      if(!$item['embed_code']){
-       $parts = parse_url($item['image_url']);
+       $parts = parse_url($item['iiif_image_id']);
        $host = $parts['host'];
        if(stripos($host, 'www.') > -1){
          $host = substr($host, 4);
        }
 
        if(isset($handlers[$host]['function']) && function_exists($handlers[$host]['function'])){
-         $items[$delta][$key]['embed_code'] = call_user_func($handlers[$host]['function'], $item['image_url']);
+         $items[$delta][$key]['embed_code'] = call_user_func($handlers[$host]['function'], $item['iiif_image_id']);
        } else {
-         $items[$delta][$key]['embed_code'] = l($item['image_url'], $item['image_url']);
+         $items[$delta][$key]['embed_code'] = l($item['iiif_image_id'], $item['iiif_image_id']);
        }
      }
    }
    
  }
 }
+*/
 
 /**
-*  implementation of hook_field_widget_form
+*  implementation of hook_field_formatter_view
 */
 function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
-  $elements = array();
+  $element = array();
+  $settings = $display['settings'];
 
+  foreach ($items as $delta => $item) {
+        $element[$delta] = array('#markup' => $item['value']);
+        //$element[$delta] = array('#markup' => $settings['zoom'] . $item['value']);
+  }
+
+/*
   foreach ($items as $delta => $item) {
     $element[$delta] = array('#markup' => $item['embed_code']);
   }
-
+*/
   return $element;
 }
 /**
@@ -150,6 +162,7 @@ function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $i
  *    'domain' => 'libimages.princeton.edu' //the domain that this handler will create embed code for
  *  );
  */
+/*
 function iiif_image_get_handlers(){
   $handlers = cache_get('iiif_image_field_handlers');
   
@@ -165,10 +178,13 @@ function iiif_image_get_handlers(){
   }
   return $handlers;
 }
+*/
 
 /**
  *  Implementation of hook_iiif_image_handler_info
  */
+
+/*
 function iiif_image_field_iiif_image_handler_info(){
  return array(
    'libimages' => array(
@@ -179,11 +195,13 @@ function iiif_image_field_iiif_image_handler_info(){
    )
  );
 }
+*/
 
 /**
  *  Create a form from the Image API configuration options
  *
  */
+/*
 function iiif_image_field_get_form(){
   $handlers = iiif_image_get_handlers();
   $form = array();
@@ -199,6 +217,7 @@ function iiif_image_field_get_form(){
   }
   return system_settings_form($form);
 }
+*/
 
 /**
  *  handler for iiif 2.0 images
@@ -229,7 +248,7 @@ function iiif_image_field_handle_iiif2($url){
   
 }  
 /**
- *  Defines the form elements for the youtube configuration form
+ *  Defines the form elements for the IIIF configuration form
  *  Eventually it might be nice to have these forms be available per instance instead of just global config
  */
 function iiif_image_field_handler_libimages_form(){
@@ -327,3 +346,56 @@ function iiif_image_field_handler_libimages_form(){
 
   return $form;
 }
+
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+/*
+// for settings on the instance???
+function iiif_image_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  //This gets the view_mode where our settings are stored
+  $display = $instance['display'][$view_mode];
+  //This gets the actual settings
+  $settings = $display['settings'];
+  //Initialize the element variable
+  $element = array();
+  //Add our settings
+  $element['rotation'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Rotation'),
+    '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
+    '#default_value'  => $settings['rotation'],
+  );
+
+  $element['quality'] = array(
+    '#type'           => 'select',
+    '#options'        => array(
+        'default' => t('default'),
+        'color' => t('color'),
+        'gray' => t('gray'),
+        'bitonal' => t('bitonal')
+    ),
+    '#title'          => t('Quality'),
+    '#description'    => t('The quality parameter determines the mode of the image - color, greyscale, or black and white.'),
+    '#default_value'  => $settings['quality'],
+  );
+
+  $element['zoom'] = array(
+    '#type' => 'checkbox',
+    '#return_value' => 1, 
+    '#title' => t('Zoom'),
+    '#description' => t('Allow deep-zoom for this image via OpenSeadragon'),
+    '#default_value'  => $settings['zoom'],
+  );
+
+  $element['tooltip'] = array(
+    '#type'           => 'textfield',                        // Use a textbox
+    '#title'          => t('Tool Tip'),                      // Widget label
+    '#description'    => t('This text will appear when a user mouses over.'),  // helper text
+    '#default_value'  => $settings['tooltip'],               // Get the value if it's already been set
+  );
+  return $element;
+}
+*/
