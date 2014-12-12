@@ -84,32 +84,40 @@ function iiif_image_field_field_widget_form(&$form, &$form_state, $field, $insta
     '#default_value' => isset($items[$delta]['iiif_image_id'])?$items[$delta]['iiif_image_id']:''
  );
 
-  $element['iiif_image_rotate'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Rotation'),
-    '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
-    '#default_value' => isset($items[$delta]['iiif_image_rotate'])?$items[$delta]['iiif_image_rotate']:''
-  );
-
  return $element;
 }
 
 function iiif_image_fields_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
  foreach ($items as $delta => $item) {
-   //check that its a valid url     
+   //check that its a valid id     
  }
 }
 
 function iiif_image_field_field_is_empty($item, $field){
  return empty($item);
+ if ($field['type'] == 'iiif_image_field') {
+
+    if (empty($item['iiif_image_id']))
+    {
+      return TRUE;
+    }
+ }
+    return FALSE;
 }
+
+//  IIIF Formatter Stuff
 
 function iiif_image_field_field_formatter_info() {
  return array(
    'iiif_image_field_formatter' => array(
      'label' => t('IIIF Image Formatter'),
      'field types' => array('iiif_image_field'),
+     'settings' => array(
+          'zoom' => 0, 
+          'rotation' => '0',
+          'quality' => 'native',
+          'format' => 'jpg'
+        ),
      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
    )
  );
@@ -117,26 +125,118 @@ function iiif_image_field_field_formatter_info() {
 
 
 /**
-*  implementation of hook_field_formatter_view
+*  Implements hook_field_formatter_settings_summary
 */
-function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
-  $element = array();
+
+function iiif_image_field_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
   $settings = $display['settings'];
+  $summary = '';
+  if ($display['type'] == 'iiif_image_field_formatter') {
+    if ($settings['zoom']) {
+      $summary = t('Zoom: Yes');
+    }
+    else {
+      $summary = t('Zoom: No');
+    }
 
-  foreach ($items as $delta => $item) {
-     //$element[$delta] = array('#markup' => $item['value']);
-     $element[$delta] = array('#markup' => theme('iiif_image_field_formatter_' . $display['type'], array('element' => $item, 'field' => $instance)),);
-        //$element[$delta] = array('#markup' => $settings['zoom'] . $item['value']);
+    $summary .= '<br />' . t('Rotation: @rotation', array('@rotation' => $settings['rotation']));
+    $summary .= '<br />' . t('Quality: @quality', array('@quality' => $settings['quality']));
+    $summary .= '<br />' . t('Format: @format', array('@format' => $settings['format']));
   }
-
-/*
-  foreach ($items as $delta => $item) {
-    $element[$delta] = array('#markup' => $item['embed_code']);
-  }
-*/
-  return $element;
+  return $summary;
 }
 
+
+/**
+ * Implements hook_field_formatter_settings_form
+ */
+function iiif_image_field_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element = array();
+
+  if ($display['type'] == 'iiif_image_field_formatter') {
+    $element['zoom'] = array(
+      '#title' => t('Zoom'),
+      '#type' => 'select',
+      '#options' => array(
+        0 => t('No'),
+        1 => t('Yes')
+      ),
+      '#default_value' => $settings['zoom'],
+      '#required' => TRUE,
+    );
+    $element['rotation'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Rotation'),
+      '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
+      '#default_value' => $settings['rotation'],
+    );
+
+    $element['quality'] = array(
+      '#type'           => 'select',
+      '#options'        => array(
+          'native' => t('native'),
+          'color' => t('color'),
+          'grey' => t('grey'),
+          'bitonal' => t('bitonal')
+      ),
+      '#title'          => t('Quality'),
+      '#description'    => t('The quality parameter determines the mode of the image - color, greyscale, or black and white.'),
+      '#default_value'  => $settings['quality'],
+    );
+
+    $element['format'] = array(
+      '#type'           => 'select',
+      '#options'        => array(
+          'jpg' => t('jpg'),
+          'png' => t('png'),
+          'gif' => t('gif')
+      ),
+      '#title'          => t('Format'),
+      '#description'    => t('The quality parameter determines the mode of the image - color, greyscale, or black and white.'),
+      '#default_value'  => $settings['format'],
+    );
+
+
+  }
+
+  return $element;
+
+}
+
+
+
+// Paint the field to the display
+
+/**
+*  Implements hook_field_formatter_view
+*/
+
+
+function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
+
+  foreach ($items as $delta => $item) {
+
+     $element[$delta] = 
+      array(
+        '#markup' => theme($display['type'], 
+          array(
+            'element' => $item, 
+            'field' => $instance, 
+            'settings' => $display['settings']
+          )
+        )
+      );
+
+  }
+
+  return $element;
+
+}
 
 /**
  * Implements hook_theme().
@@ -145,11 +245,12 @@ function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $i
 function iiif_image_field_theme() {
   return array(
     // The theme function that our formatter uses:
-    'iiif_image_field_formatter_iiif_image_field_formatter' => array(
+    'iiif_image_field_formatter' => array(
       // Don't forget that all Drupal 7 theme functions have only one argument,
       // so you declare what variables get passed within that argument instead.
       // See http://drupal.org/node/224333#theme_changes
-      'variables' => array('element' => NULL),
+      //'template' => 'iiif_image_field_formatter_iiif_image_field_formatter', 
+      'variables' => array('element' => NULL, 'field' => NULL, 'settings' => NULL),
     ),
   );
 }
@@ -159,287 +260,14 @@ function iiif_image_field_theme() {
  * Theme function for 'iiif_image_field_formatter' link field formatter.
  */
 
-function theme_iiif_image_field_formatter_iiif_image_field_formatter($element) {
-  // This code is specific to the Link field. It is based on theme_link_formatter_plain().
-  //return empty($element['element']['iiif_image_id']) ? check_plain($element['element']['title']) : url($element['element']['url'], array('absolute' => TRUE, 'attributes' => $element['element']['attributes']));
-  return "<img src='http://libimages.princeton.edu/loris/" . $element['element']['iiif_image_id'] . "/full/200,/90/native.jpg'/>";
-}
+function theme_iiif_image_field_formatter($variables) {
+  dpm($variables);
 
-// BELOW FUNCTIONS ARE NOT USED BUT I WANT THEM AROUND!!! 
-
-/**
- *  handler for iiif 2.0 images
- */
-function iiif_image_field_handle_iiif2($url){
-  //get settings
-  $zoom = variable_get('iiif_image_field_iiif2_zoom', 1);
-  $region_x = variable_get('iiif_image_field_iiif2_region_x', 0);
-  $region_y = variable_get('iiif_image_field_iiif2_region_y', 0);
-  $region_w = variable_get('iiif_image_field_iiif2_region_w', 200);
-  $region_h = variable_get('iiif_image_field_iiif2_region_h', 200);
-  $size_w = variable_get('iiif_image_field_iiif2_size_w', 200);
-  $size_h = variable_get('iiif_image_field_iiif2_size_h', 200);
-  $rotation = variable_get('iiif_image_field_iiif2_rotation', 0);
-  $quality = variable_get('iiif_image_field_iiif2_quality', 'default');
-  $format = variable_get('iiif_image_field_iiif2_format', 'jpg');
-  
-  $zoom_class = "";
-  if($zoom) { $zoom_class = "zoom";}
-  
-  $template_start = '<img class="thumbnail '.$zoom .'" src="';
-  $template_end = '/'.$region_x.','.$region_y.','.$region_w.','.$region_h.'/'.$size_w.','.$size_h.'/'.$rotation.'/'.$quality.'.'.$format.'"><';
-
-  $url_temp = 'http://libimages.princeton.edu/loris/';
-
-
-  return $template_start . $url_temp . $url . $template_end;
-  
-}  
-/**
- *  Defines the form elements for the IIIF configuration form
- *  Eventually it might be nice to have these forms be available per instance instead of just global config
- */
-function iiif_image_field_handler_libimages_form(){
-  $form = array();
-  $form['iiif_image_field_iiif2_region_x'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Region X-Coordinate'),
-    '#description' => t('The number of pixels from the left border of the IIIF Image.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_region_x', 200)
-  );
-  $form['iiif_image_field_iiif2_region_y'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Region Y-Coordinate'),
-    '#description' => t('The number of pixels from the top border of the IIIF Image.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_region_x', 200)
-  );
-  $form['iiif_image_field_iiif2_region_w'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Region Width'),
-    '#description' => t('The width in pixels of the cropped region.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_region_w', 200)
-  );
-  $form['iiif_image_field_iiif2_region_h'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Region Height'),
-    '#description' => t('The height in pixels of the cropped region.  You may enter a number or return the full size (full). If any value is full in this group, the image will not be cropped. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_region_h', 200)
-  );
-
-  $form['iiif_image_field_iiif2_size_w'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Image Width'),
-    '#description' => t('The width of the IIIF Image Region.  You may enter a number in pixels (200), a percentage (pct:50) or return the full size (full). If any value is full in this group, the image will be full size.'),
-    '#default_value' => variable_get('iiif_image_field_iiif2_size_w', 200)
-  );
-  $form['iiif_image_field_iiif2_size_h'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Image Height'),
-    '#description' => t('The height of the IIIF Image Region.  You may enter a number in pixels (200), a percentage (pct:50) or return the full size (full). If any value is full in this group, the image will be full size. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_size_h', 200)
-  );
-
-  $form['iiif_image_field_iiif2_rotate'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Rotation'),
-    '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_size_rotate', 200)
-  );
-
-  $form['quality_options'] = array(
-    '#type' => 'value',
-    '#value' => array('default' => t('default'),
-                      'color' => t('color'),
-                      'gray' => t('gray'),
-                      'bitonal' => t('bitonal'))
-  );
-
-  $form['iiif_image_field_iiif2_quality'] = array(
-    '#type' => 'select',
-    '#options' => $form['quality_options']['#value'],
-    '#title' => t('Quality'),
-    '#description' => t('The quality parameter determines the mode of the image - color, greyscale, or black and white. This should be a dropdown'),
-    '#default_value' => variable_get('iiif_image_field_iiif2_size_quality', 'default')
-  );
-
-  $form['format_options'] = array(
-    '#type' => 'value',
-    '#value' => array('jpg' => t('jpg'),
-                      'png' => t('png'),
-                      'gif' => t('gif'))
-  );
-
-  $form['iiif_image_field_iiif2_format'] = array(
-    '#type' => 'select',
-    '#options' => $form['format_options']['#value'],
-    '#title' => t('Format'),
-    '#description' => t('This is the compression type that you want the image to be.  If in doubt, go with jpg. '),
-    '#default_value' => variable_get('iiif_image_field_iiif2_size_format', 200)
-  );
-
-  $form['iiif_image_field_iiif2_zoom'] = array(
-    '#type' => 'checkbox',
-    '#return_value' => 1, 
-    '#title' => t('Zoom'),
-    '#description' => t('Allow deep-zoom for this image via OpenSeadragon'),
-    '#default_value' => variable_get('iiif_image_field_iiif2_zoom', 0)
-  );
-
-  return $form;
-}
-
-
-/**
-*  Implementation of hook_field_formatter_prepare_view
-*  Prepare the view of the iiif image embed - if the embed code doesn't exist, create it using the url
-*/
-/*
-function iiif_image_field_field_formatter_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items, $displays){
- $handlers = iiif_image_get_handlers();
- foreach($items as $delta=>$item_wrapper){
-   foreach($item_wrapper as $key=>$item){
-     if(!$item['embed_code']){
-       $parts = parse_url($item['iiif_image_id']);
-       $host = $parts['host'];
-       if(stripos($host, 'www.') > -1){
-         $host = substr($host, 4);
-       }
-
-       if(isset($handlers[$host]['function']) && function_exists($handlers[$host]['function'])){
-         $items[$delta][$key]['embed_code'] = call_user_func($handlers[$host]['function'], $item['iiif_image_id']);
-       } else {
-         $items[$delta][$key]['embed_code'] = l($item['iiif_image_id'], $item['iiif_image_id']);
-       }
-     }
-   }
-   
- }
-}
-*/
-
-
-
-/**
- *  Creates a hook that other modules can implement to get handlers - hook_iiif_image_handler_info
- *  Can be used to add more handlers if needed - from other modules and such
- *  Handler should be an array of the form
- *  array(
- *    'function' => 'function_name_to_call' //should be of the signature function_name($url) and should return the embed code
- *    'domain' => 'libimages.princeton.edu' //the domain that this handler will create embed code for
- *  );
- */
-/*
-function iiif_image_get_handlers(){
-  $handlers = cache_get('iiif_image_field_handlers');
-  
-  if($handlers === FALSE){
-    $available = module_invoke_all('iiif_image_handler_info');
-    foreach($available as $handler){
-      $handlers[$handler['domain']] = $handler;
-    }
-    drupal_alter('iiif_image_field_handlers', $handlers);
-    cache_set('iiif_image_field_handlers', $handlers);
-  } else {
-    $handlers = $handlers->data;
+  $zoom = "";
+  if($variables['settings']['zoom']){
+    $zoom = "zoom";
   }
-  return $handlers;
+  return "<img class='". $zoom . "' src='http://libimages.princeton.edu/loris/" . $variables['element']['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $variables['settings']['quality'] . "." . $variables['settings']['format'] . "'/>";
 }
-*/
 
-/**
- *  Implementation of hook_iiif_image_handler_info
- */
 
-/*
-function iiif_image_field_iiif_image_handler_info(){
- return array(
-   'libimages' => array(
-     'domain' => 'libimages.princeton.edu',
-     'function' => 'iiif_image_field_handle_libimages',
-     'form' => 'iiif_image_field_handler_libimages_form',
-     'title' => 'LibImages'
-   )
- );
-}
-*/
-
-/**
- *  Create a form from the Image API configuration options
- *
- */
-/*
-function iiif_image_field_get_form(){
-  $handlers = iiif_image_get_handlers();
-  $form = array();
-  foreach($handlers as $domain=>$handler){
-    if(isset($handler['form']) && function_exists($handler['form'])){
-      $form[$handler['title']] = call_user_func($handler['form']);
-      
-      $form[$handler['title']] += array(
-        '#type' => 'fieldset',
-        '#title' => t($handler['title']),
-      );       
-    }
-  }
-  return system_settings_form($form);
-}
-*/
-
-/**
- * Implements hook_field_formatter_settings_form().
- */
-/*
-// for settings on the instance???
-function iiif_image_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
-  //This gets the view_mode where our settings are stored
-  $display = $instance['display'][$view_mode];
-  //This gets the actual settings
-  $settings = $display['settings'];
-  //Initialize the element variable
-  $element = array();
-  //Add our settings
-  $element['rotation'] = array(
-    '#type' => 'textfield',
-    '#size' => '5',
-    '#title' => t('Rotation'),
-    '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
-    '#default_value'  => $settings['rotation'],
-  );
-
-  $element['quality'] = array(
-    '#type'           => 'select',
-    '#options'        => array(
-        'default' => t('default'),
-        'color' => t('color'),
-        'gray' => t('gray'),
-        'bitonal' => t('bitonal')
-    ),
-    '#title'          => t('Quality'),
-    '#description'    => t('The quality parameter determines the mode of the image - color, greyscale, or black and white.'),
-    '#default_value'  => $settings['quality'],
-  );
-
-  $element['zoom'] = array(
-    '#type' => 'checkbox',
-    '#return_value' => 1, 
-    '#title' => t('Zoom'),
-    '#description' => t('Allow deep-zoom for this image via OpenSeadragon'),
-    '#default_value'  => $settings['zoom'],
-  );
-
-  $element['tooltip'] = array(
-    '#type'           => 'textfield',                        // Use a textbox
-    '#title'          => t('Tool Tip'),                      // Widget label
-    '#description'    => t('This text will appear when a user mouses over.'),  // helper text
-    '#default_value'  => $settings['tooltip'],               // Get the value if it's already been set
-  );
-  return $element;
-}
-*/
