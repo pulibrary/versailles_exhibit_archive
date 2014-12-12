@@ -84,6 +84,14 @@ function iiif_image_field_field_widget_form(&$form, &$form_state, $field, $insta
     '#default_value' => isset($items[$delta]['iiif_image_id'])?$items[$delta]['iiif_image_id']:''
  );
 
+  $element['iiif_image_rotate'] = array(
+    '#type' => 'textfield',
+    '#size' => '5',
+    '#title' => t('Rotation'),
+    '#description' => t('The rotation of the image in degrees.  You may enter a number from 0 to 360.  A background will be visible behind images where degrees are not multiples of 90. '),
+    '#default_value' => isset($items[$delta]['iiif_image_rotate'])?$items[$delta]['iiif_image_rotate']:''
+  );
+
  return $element;
 }
 
@@ -102,37 +110,11 @@ function iiif_image_field_field_formatter_info() {
    'iiif_image_field_formatter' => array(
      'label' => t('IIIF Image Formatter'),
      'field types' => array('iiif_image_field'),
+     'multiple values' => FIELD_BEHAVIOR_DEFAULT,
    )
  );
 }  
 
-/**
-*  Implementation of hook_field_formatter_prepare_view
-*  Prepare the view of the iiif image embed - if the embed code doesn't exist, create it using the url
-*/
-/*
-function iiif_image_field_field_formatter_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items, $displays){
- $handlers = iiif_image_get_handlers();
- foreach($items as $delta=>$item_wrapper){
-   foreach($item_wrapper as $key=>$item){
-     if(!$item['embed_code']){
-       $parts = parse_url($item['iiif_image_id']);
-       $host = $parts['host'];
-       if(stripos($host, 'www.') > -1){
-         $host = substr($host, 4);
-       }
-
-       if(isset($handlers[$host]['function']) && function_exists($handlers[$host]['function'])){
-         $items[$delta][$key]['embed_code'] = call_user_func($handlers[$host]['function'], $item['iiif_image_id']);
-       } else {
-         $items[$delta][$key]['embed_code'] = l($item['iiif_image_id'], $item['iiif_image_id']);
-       }
-     }
-   }
-   
- }
-}
-*/
 
 /**
 *  implementation of hook_field_formatter_view
@@ -142,7 +124,8 @@ function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $i
   $settings = $display['settings'];
 
   foreach ($items as $delta => $item) {
-        $element[$delta] = array('#markup' => $item['value']);
+     //$element[$delta] = array('#markup' => $item['value']);
+     $element[$delta] = array('#markup' => theme('iiif_image_field_formatter_' . $display['type'], array('element' => $item, 'field' => $instance)),);
         //$element[$delta] = array('#markup' => $settings['zoom'] . $item['value']);
   }
 
@@ -153,71 +136,36 @@ function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $i
 */
   return $element;
 }
-/**
- *  Creates a hook that other modules can implement to get handlers - hook_iiif_image_handler_info
- *  Can be used to add more handlers if needed - from other modules and such
- *  Handler should be an array of the form
- *  array(
- *    'function' => 'function_name_to_call' //should be of the signature function_name($url) and should return the embed code
- *    'domain' => 'libimages.princeton.edu' //the domain that this handler will create embed code for
- *  );
- */
-/*
-function iiif_image_get_handlers(){
-  $handlers = cache_get('iiif_image_field_handlers');
-  
-  if($handlers === FALSE){
-    $available = module_invoke_all('iiif_image_handler_info');
-    foreach($available as $handler){
-      $handlers[$handler['domain']] = $handler;
-    }
-    drupal_alter('iiif_image_field_handlers', $handlers);
-    cache_set('iiif_image_field_handlers', $handlers);
-  } else {
-    $handlers = $handlers->data;
-  }
-  return $handlers;
-}
-*/
+
 
 /**
- *  Implementation of hook_iiif_image_handler_info
+ * Implements hook_theme().
  */
 
-/*
-function iiif_image_field_iiif_image_handler_info(){
- return array(
-   'libimages' => array(
-     'domain' => 'libimages.princeton.edu',
-     'function' => 'iiif_image_field_handle_libimages',
-     'form' => 'iiif_image_field_handler_libimages_form',
-     'title' => 'LibImages'
-   )
- );
+function iiif_image_field_theme() {
+  return array(
+    // The theme function that our formatter uses:
+    'iiif_image_field_formatter_iiif_image_field_formatter' => array(
+      // Don't forget that all Drupal 7 theme functions have only one argument,
+      // so you declare what variables get passed within that argument instead.
+      // See http://drupal.org/node/224333#theme_changes
+      'variables' => array('element' => NULL),
+    ),
+  );
 }
-*/
+
 
 /**
- *  Create a form from the Image API configuration options
- *
+ * Theme function for 'iiif_image_field_formatter' link field formatter.
  */
-/*
-function iiif_image_field_get_form(){
-  $handlers = iiif_image_get_handlers();
-  $form = array();
-  foreach($handlers as $domain=>$handler){
-    if(isset($handler['form']) && function_exists($handler['form'])){
-      $form[$handler['title']] = call_user_func($handler['form']);
-      
-      $form[$handler['title']] += array(
-        '#type' => 'fieldset',
-        '#title' => t($handler['title']),
-      );       
-    }
-  }
-  return system_settings_form($form);
+
+function theme_iiif_image_field_formatter_iiif_image_field_formatter($element) {
+  // This code is specific to the Link field. It is based on theme_link_formatter_plain().
+  //return empty($element['element']['iiif_image_id']) ? check_plain($element['element']['title']) : url($element['element']['url'], array('absolute' => TRUE, 'attributes' => $element['element']['attributes']));
+  return "<img src='http://libimages.princeton.edu/loris/" . $element['element']['iiif_image_id'] . "/full/200,/90/native.jpg'/>";
 }
-*/
+
+// BELOW FUNCTIONS ARE NOT USED BUT I WANT THEM AROUND!!! 
 
 /**
  *  handler for iiif 2.0 images
@@ -347,6 +295,102 @@ function iiif_image_field_handler_libimages_form(){
   return $form;
 }
 
+
+/**
+*  Implementation of hook_field_formatter_prepare_view
+*  Prepare the view of the iiif image embed - if the embed code doesn't exist, create it using the url
+*/
+/*
+function iiif_image_field_field_formatter_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items, $displays){
+ $handlers = iiif_image_get_handlers();
+ foreach($items as $delta=>$item_wrapper){
+   foreach($item_wrapper as $key=>$item){
+     if(!$item['embed_code']){
+       $parts = parse_url($item['iiif_image_id']);
+       $host = $parts['host'];
+       if(stripos($host, 'www.') > -1){
+         $host = substr($host, 4);
+       }
+
+       if(isset($handlers[$host]['function']) && function_exists($handlers[$host]['function'])){
+         $items[$delta][$key]['embed_code'] = call_user_func($handlers[$host]['function'], $item['iiif_image_id']);
+       } else {
+         $items[$delta][$key]['embed_code'] = l($item['iiif_image_id'], $item['iiif_image_id']);
+       }
+     }
+   }
+   
+ }
+}
+*/
+
+
+
+/**
+ *  Creates a hook that other modules can implement to get handlers - hook_iiif_image_handler_info
+ *  Can be used to add more handlers if needed - from other modules and such
+ *  Handler should be an array of the form
+ *  array(
+ *    'function' => 'function_name_to_call' //should be of the signature function_name($url) and should return the embed code
+ *    'domain' => 'libimages.princeton.edu' //the domain that this handler will create embed code for
+ *  );
+ */
+/*
+function iiif_image_get_handlers(){
+  $handlers = cache_get('iiif_image_field_handlers');
+  
+  if($handlers === FALSE){
+    $available = module_invoke_all('iiif_image_handler_info');
+    foreach($available as $handler){
+      $handlers[$handler['domain']] = $handler;
+    }
+    drupal_alter('iiif_image_field_handlers', $handlers);
+    cache_set('iiif_image_field_handlers', $handlers);
+  } else {
+    $handlers = $handlers->data;
+  }
+  return $handlers;
+}
+*/
+
+/**
+ *  Implementation of hook_iiif_image_handler_info
+ */
+
+/*
+function iiif_image_field_iiif_image_handler_info(){
+ return array(
+   'libimages' => array(
+     'domain' => 'libimages.princeton.edu',
+     'function' => 'iiif_image_field_handle_libimages',
+     'form' => 'iiif_image_field_handler_libimages_form',
+     'title' => 'LibImages'
+   )
+ );
+}
+*/
+
+/**
+ *  Create a form from the Image API configuration options
+ *
+ */
+/*
+function iiif_image_field_get_form(){
+  $handlers = iiif_image_get_handlers();
+  $form = array();
+  foreach($handlers as $domain=>$handler){
+    if(isset($handler['form']) && function_exists($handler['form'])){
+      $form[$handler['title']] = call_user_func($handler['form']);
+      
+      $form[$handler['title']] += array(
+        '#type' => 'fieldset',
+        '#title' => t($handler['title']),
+      );       
+    }
+  }
+  return system_settings_form($form);
+}
+*/
 
 /**
  * Implements hook_field_formatter_settings_form().
