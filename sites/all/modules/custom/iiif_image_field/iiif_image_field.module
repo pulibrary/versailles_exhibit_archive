@@ -319,16 +319,49 @@ function theme_iiif_image_field_formatter($variables) {
     }
   }
 
-  $zoom = "";
-  if($variables['settings']['behavior'] == 'zoom'){
-    $zoom = "zoom";
+  // Basic "no behavior"
+  $markup = "<img src='" . $image_server_base . "/" . $variables['element']['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $quality . "." . $variables['settings']['format'] . "'/>";
+
+  // Link to Conent Behavior
+  if($variables['settings']['behavior'] == 'link_to_content'){
+     $markup = '<a href="'. $GLOBALS["base_url"] . '/' . $node_path . '" alt="' . $node_title . '">' . $markup . '</a>';
   }
+ 
+  // Zoom Behavior
+  if($variables['settings']['behavior'] == 'zoom'){
+    $markup = '<div class="viewer"></div>';
+    drupal_add_css(drupal_get_path('module', 'iiif_image_field') .'/css/iiifOsdViewer.css');
+    drupal_add_css('.viewer {
+        border: 1px solid #ccc;
+        height: 500px;
+        margin: 40px 0 0 40px;
+        width: 700px;
+      }', 'inline');
+    drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/openseadragon.min.js');
+    drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/jQuery.iiifOsdViewer.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
+    drupal_add_js("
 
-  $markup = "<img class='". $zoom . "' src='" . $image_server_base . "/" . $variables['element']['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $quality . "." . $variables['settings']['format'] . "'/>";
+    (function ($) {
+      
+      $('.viewer').iiifOsdViewer({
 
-   if($variables['settings']['behavior'] == 'link_to_content'){
-     $markup = "<a href='". $GLOBALS['base_url'] . "/" . $node_path . "' alt='". addslashes($node_title) . "'>" . $markup . "</a>";
-   }
+        data: [{
+          iiifServer: '". $image_server_base ."',
+          images: [
+            // { id: 'bh059ts1689%252F00008470_0001', label: 'Chronicle Building' },
+            // { id: 'cn006dx2288%252FW769_000001_300', label: 'Upper board outside' },
+            // { id: 'cn006dx2288%252FW769_000016_300', label: 'fol. 6v' },
+            // { id: 'cn006dx2288%252FW769_000017_300', label: 'fol. 7r' },
+            { id: '" . $variables['element']['iiif_image_id'] . "' }
+          ]}
+        ]
+
+      });
+
+    }(jQuery));",
+    array('type' => 'inline', 'scope' => 'footer', 'weight' => 3));
+
+  }
 
   return $markup;
 }
