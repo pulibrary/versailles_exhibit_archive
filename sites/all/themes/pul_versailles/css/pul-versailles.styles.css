@@ -362,22 +362,48 @@ hr:after {
 
 */
 /* line 25, ../sass/pul-versailles.styles.scss */
+body {
+  text-rendering: geometricPrecision; }
+
+/* line 29, ../sass/pul-versailles.styles.scss */
 .front .wrapper--navigation {
   display: none; }
 
-/* line 29, ../sass/pul-versailles.styles.scss */
+/* line 33, ../sass/pul-versailles.styles.scss */
 .front p {
   text-align: center;
   width: 50%;
   margin-left: auto;
   margin-right: auto; }
 
-/* line 37, ../sass/pul-versailles.styles.scss */
+/* line 41, ../sass/pul-versailles.styles.scss */
 .front h1, .front h2, .front h3, .front h4, .front h5, .front h6 {
   text-align: center; }
 
-/* line 42, ../sass/pul-versailles.styles.scss */
+/* line 46, ../sass/pul-versailles.styles.scss */
 .front .hero-copy {
   opacity: 0; }
+
+/* line 50, ../sass/pul-versailles.styles.scss */
+.pane-entity-view .node__content .field {
+  border-top: solid 1px #e6e6e6;
+  margin-top: 20px;
+  padding-top: 10px; }
+
+/* line 56, ../sass/pul-versailles.styles.scss */
+.pane-entity-view .node__content .field__label {
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #aaa;
+  width: 127px;
+  margin-right: 47px;
+  display: inline-block;
+  vertical-align: top;
+  clear: both; }
+
+/* line 67, ../sass/pul-versailles.styles.scss */
+.pane-entity-view .node__content .field__item {
+  line-height: 24px;
+  font-weight: bold; }
 
 /*# sourceMappingURL=pul-versailles.styles.css.map */

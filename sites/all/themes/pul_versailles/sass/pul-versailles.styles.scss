@@ -22,6 +22,10 @@
 @import "base/**/*";
 @import "components/**/*";
 
+body {
+	text-rendering: geometricPrecision;
+}
+
 .front .wrapper--navigation {
   display: none;
 }
@@ -41,4 +45,26 @@
 
 .front .hero-copy {
 	opacity:0;
+}
+
+.pane-entity-view .node__content .field {
+	border-top: solid 1px #e6e6e6;
+	margin-top: 20px;
+	padding-top: 10px;
+}
+
+.pane-entity-view .node__content .field__label {
+	line-height: 20px;
+	letter-spacing: 0.05em;
+	color: #aaa;
+	width: 127px;
+	margin-right: 47px;
+	display: inline-block;
+	vertical-align: top;
+	clear: both;
+}
+
+.pane-entity-view .node__content .field__item {
+	line-height: 24px;
+	font-weight: bold;
 }
