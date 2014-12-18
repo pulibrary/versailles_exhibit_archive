@@ -31,6 +31,8 @@
 .iov-menu-bar .iov-controls, .iov-menu-bar .iov-view-options {
   float: right;
   margin: 6px 10px 0 0;
+  height: 20px;
+  font-size: 14px;
 }
 
 .iov-menu-bar .iov-controls a, .iov-menu-bar .iov-controls a:hover {

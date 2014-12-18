@@ -64,8 +64,8 @@ function iiif_image_field_get_form($form, &$form_state) {
 function iiif_image_field_field_info(){
   return array(
     'iiif_image_field' => array(
-      'label' => 'IIIF Image Embed',
-      'description' => 'Embed images from IIIF Image Server',
+      'label' => 'IIIF Image',
+      'description' => 'Add Images from IIIF Image Server',
       'settings' => array(
         //no settings currently - not sure what we need
       ),
@@ -112,11 +112,23 @@ function iiif_image_field_field_widget_form(&$form, &$form_state, $field, $insta
  $element['iiif_image_id'] = array(
    '#type' => 'textfield',
    '#title' => 'Image ID',
-   '#attached' => array(
-     'css' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.css'),
-     'js' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.js'),
-    ),
+   // Add some js validation/form functions
+   //'#attached' => array(
+   //  'css' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.css'),
+   //  'js' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.js'),
+   // ),
     '#default_value' => isset($items[$delta]['iiif_image_id'])?$items[$delta]['iiif_image_id']:''
+ );
+
+  $element['iiif_image_caption'] = array(
+   '#type' => 'textfield',
+   '#title' => 'Caption/Label',
+   // Add some js validation/form functions
+   //'#attached' => array(
+   //  'css' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.css'),
+   //  'js' => array(drupal_get_path('module', 'iiif_image_field') . '/iiif_image_field.form.js'),
+   // ),
+    '#default_value' => isset($items[$delta]['iiif_image_caption'])?$items[$delta]['iiif_image_caption']:''
  );
 
  return $element;
@@ -328,7 +340,7 @@ function theme_iiif_image_field_formatter($variables) {
     $markup = '<div class="viewer"></div>';
     $img_sequence = "";
     foreach ($variables['element'] as $delta => $el) {
-              $img_sequence .= "{ id: '" . $el['iiif_image_id'] . "', label: '" . $el['embed_code'] . "' },";
+              $img_sequence .= "{ id: '" . $el['iiif_image_id'] . "', label: '" . $el['iiif_image_caption'] . "' },";
     }
     drupal_add_css('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', 'external');
     drupal_add_css(drupal_get_path('module', 'iiif_image_field') .'/css/iiifOsdViewer.css');
@@ -357,19 +369,32 @@ function theme_iiif_image_field_formatter($variables) {
   }else{
     // Non-zoom behaviors
     $markup = "";
+    drupal_add_css('figcaption { color: #999999; }', 'inline');
 
     foreach ($variables['element'] as $delta => $el) {
-        
+        $figure = "";
+
         // Basic "no behavior"
-        $img = "<img src='" . $image_server_base . "/" . $el['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $quality . "." . $variables['settings']['format'] . "'/>";
+        $figure = "<img src='" . $image_server_base . "/" . $el['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $quality . "." . $variables['settings']['format'] . "'/>";
 
         // Link to Conent Behavior
-        $img_num = $delta +1;
+        $fig_num = $delta +1;
         if($variables['settings']['behavior'] == 'link_to_content'){
-           $markup .= '<a href="'. $GLOBALS["base_url"] . '/' . $node_path . '" alt="' . $node_title . '[' . $img_num  .']">' . $img . '</a>';
-        }else{
-           $markup .= $img;
+           $figure = '<a href="'. $GLOBALS["base_url"] . '/' . $node_path . '" alt="' . $node_title . '[' . $fig_num  .']">' . $figure . '</a>';
         }
+
+
+
+        $figure = "<figure style='display:inline-block'>" . $figure; 
+
+        // If it has a caption or citation use the figure and figcaption elements
+        if(!empty($el['iiif_image_caption'])){
+          $figure .= "<figcaption>" . $el['iiif_image_caption'] . "</figcaption>";
+        }
+
+        $figure .= "</figure>";
+
+        $markup .= $figure;
 
     }
 

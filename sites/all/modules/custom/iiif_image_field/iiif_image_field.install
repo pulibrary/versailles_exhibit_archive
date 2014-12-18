@@ -21,7 +21,7 @@ function iiif_image_field_field_schema($field){
           'length' => 512,
           'default' => ''
         ),
-        'embed_code' => array(
+        'iiif_image_caption' => array(
           'type' => 'varchar',
           'length' => 1024,
           'default' => ''
