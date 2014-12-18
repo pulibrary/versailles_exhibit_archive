@@ -255,13 +255,18 @@ function iiif_image_field_field_formatter_settings_form($field, $instance, $view
 
 function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
   // dpm($entity->nid);
+  $element = array();
+  $delta = 0;
+  /*
   foreach ($items as $delta => $item) {
 
+  }
+  */
      $element[$delta] = 
       array(
         '#markup' => theme($display['type'], 
           array(
-            'element' => $item, 
+            'element' => $items, 
             'field' => $instance, 
             'settings' => $display['settings'],
             'entity' => $entity
@@ -269,7 +274,7 @@ function iiif_image_field_field_formatter_view($entity_type, $entity, $field, $i
         )
       );
 
-  }
+
 
   return $element;
 
@@ -298,7 +303,6 @@ function iiif_image_field_theme() {
  */
 
 function theme_iiif_image_field_formatter($variables) {
-  // dpm($variables);
 
   $nid = $variables['entity']->nid;
   $node_title = $variables['entity']->title;
@@ -319,17 +323,13 @@ function theme_iiif_image_field_formatter($variables) {
     }
   }
 
-  // Basic "no behavior"
-  $markup = "<img src='" . $image_server_base . "/" . $variables['element']['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $quality . "." . $variables['settings']['format'] . "'/>";
-
-  // Link to Conent Behavior
-  if($variables['settings']['behavior'] == 'link_to_content'){
-     $markup = '<a href="'. $GLOBALS["base_url"] . '/' . $node_path . '" alt="' . $node_title . '">' . $markup . '</a>';
-  }
- 
   // Zoom Behavior
   if($variables['settings']['behavior'] == 'zoom'){
     $markup = '<div class="viewer"></div>';
+    $img_sequence = "";
+    foreach ($variables['element'] as $delta => $el) {
+              $img_sequence .= "{ id: '" . $el['iiif_image_id'] . "', label: '" . $el['embed_code'] . "' },";
+    }
     drupal_add_css('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', 'external');
     drupal_add_css(drupal_get_path('module', 'iiif_image_field') .'/css/iiifOsdViewer.css');
     drupal_add_css('.viewer {
@@ -348,21 +348,33 @@ function theme_iiif_image_field_formatter($variables) {
 
         data: [{
           iiifServer: '". $image_server_base ."',
-          images: [
-            // { id: 'bh059ts1689%252F00008470_0001', label: 'Chronicle Building' },
-            // { id: 'cn006dx2288%252FW769_000001_300', label: 'Upper board outside' },
-            // { id: 'cn006dx2288%252FW769_000016_300', label: 'fol. 6v' },
-            // { id: 'cn006dx2288%252FW769_000017_300', label: 'fol. 7r' },
-            { id: '" . $variables['element']['iiif_image_id'] . "' }
-          ]}
-        ]
-
-      });
+          images: [". $img_sequence ."]}
+        ]});
 
     }(jQuery));",
     array('type' => 'inline', 'scope' => 'footer', 'weight' => 3));
 
+  }else{
+    // Non-zoom behaviors
+    $markup = "";
+
+    foreach ($variables['element'] as $delta => $el) {
+        
+        // Basic "no behavior"
+        $img = "<img src='" . $image_server_base . "/" . $el['iiif_image_id'] . "/full/200,/" . $variables['settings']['rotation'] . "/" . $quality . "." . $variables['settings']['format'] . "'/>";
+
+        // Link to Conent Behavior
+        $img_num = $delta +1;
+        if($variables['settings']['behavior'] == 'link_to_content'){
+           $markup .= '<a href="'. $GLOBALS["base_url"] . '/' . $node_path . '" alt="' . $node_title . '[' . $img_num  .']">' . $img . '</a>';
+        }else{
+           $markup .= $img;
+        }
+
+    }
+
   }
+
 
   return $markup;
 }
