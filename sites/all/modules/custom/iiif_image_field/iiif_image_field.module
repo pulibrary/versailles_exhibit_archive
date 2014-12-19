@@ -167,7 +167,8 @@ function iiif_image_field_field_formatter_info() {
           'region_h' => '',
           'region_w' => '300',
           'behavior' => 'none',
-          'display_first_only' => 0, 
+          'display_first_only' => '0', 
+          'display_caption' => '1',
           'rotation' => '0',
           'quality' => 'native',
           'format' => 'jpg'
@@ -186,10 +187,12 @@ function iiif_image_field_field_formatter_settings_summary($field, $instance, $v
   $display = $instance['display'][$view_mode];
   $settings = $display['settings'];
   if($settings['display_first_only']) { $first_only = "Only First Image"; } else { $first_only = "All Images"; }
+  if($settings['display_caption']) { $caption = "Yes"; } else { $caption = "No"; }
   $summary = '';
   if ($display['type'] == 'iiif_image_field_formatter') {
     $summary = t('Behavior: @behavior', array('@behavior' => $settings['behavior']));
     $summary .= '<br />' . t('Display: @first_only', array('@first_only' => $first_only));
+    $summary .= '<br />' . t('Display Caption: @caption', array('@caption' => $caption));
     $summary .= '<br />' . t('Rotation: @rotation', array('@rotation' => $settings['rotation']));
     $summary .= '<br />' . t('Quality: @quality', array('@quality' => $settings['quality']));
     $summary .= '<br />' . t('Format: @format', array('@format' => $settings['format']));
@@ -224,11 +227,23 @@ function iiif_image_field_field_formatter_settings_form($field, $instance, $view
       '#title' => t('Display First Image Only'),
       '#type' => 'select',
       '#options' => array(
-        0 => t('No'),
-        1 => t('Yes')
+        '0' => t('No'),
+        '1' => t('Yes')
       ),
       '#description' => t('If the field is set to be repeatable, select YES if you would like to only display one image for this View Mode. (Hint: recommended for Teaser-like views.)'),
       '#default_value' => $settings['display_first_only'],
+      '#required' => TRUE,
+    );
+
+    $element['display_caption'] = array(
+      '#title' => t('Display Caption'),
+      '#type' => 'select',
+      '#options' => array(
+        '0' => t('No'),
+        '1' => t('Yes')
+      ),
+      '#description' => t('Choose whether or not to display captions for this view mode.'),
+      '#default_value' => $settings['display_caption'],
       '#required' => TRUE,
     );
 
@@ -343,10 +358,11 @@ function theme_iiif_image_field_formatter($variables) {
   $elements = $variables['element'];
   $el_length = sizeof($elements);
   // If Display first only
+  // dpm($variables['settings']['display_first_only']);
   if($variables['settings']['display_first_only'] && !empty($variables['element'])){
-    $el_lenth = 1;
+    $el_length = 1;
   }
-  
+
   // ACCOMMODATE FOR DIFFERENCES IN API VERSIONS
   $quality = $variables['settings']['quality'];
   if($image_api_version == '2.0'){
@@ -358,20 +374,21 @@ function theme_iiif_image_field_formatter($variables) {
     }
   }
 
-  // Use this instead of foreach to paint images ... for display_first_only option
-  /*
-  for($i = 0; $i < $max;$i++)
-  {
-  code...
-  }
-  */
 
   // Zoom Behavior
   if($variables['settings']['behavior'] == 'zoom'){
     $markup = '<div class="viewer"></div>';
     $img_sequence = "";
+    $i = 0;
     foreach ($elements as $delta => $el) {
-              $img_sequence .= "{ id: '" . $el['iiif_image_id'] . "', label: '" . $el['iiif_image_caption'] . "' },";
+      if($i < $el_length){
+              $caption = '';
+              if($variables['settings']['display_caption']){
+                $caption = $el['iiif_image_caption'];
+              }
+              $img_sequence .= "{ id: '" . $el['iiif_image_id'] . "', label: '" . $caption . "' },";
+      }
+      $i++;
     }
     drupal_add_css('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', 'external');
     drupal_add_css(drupal_get_path('module', 'iiif_image_field') .'/css/iiifOsdViewer.css');
@@ -401,10 +418,10 @@ function theme_iiif_image_field_formatter($variables) {
     // Non-zoom behaviors
     $markup = "";
     drupal_add_css('figcaption { color: #999999; }', 'inline');
-
+    $i = 0;
     foreach ($elements as $delta => $el) {
-        if(!empty($el)){
-        dpm($el);
+        if(!empty($el) && $i < $el_length){
+        
           $figure = "";
 
           // Basic "no behavior"
@@ -416,12 +433,10 @@ function theme_iiif_image_field_formatter($variables) {
              $figure = '<a href="'. $GLOBALS["base_url"] . '/' . $node_path . '" alt="' . $node_title . '[' . $fig_num  .']">' . $figure . '</a>';
           }
 
-
-
           $figure = "<figure style='display:inline-block'>" . $figure; 
 
           // If it has a caption or citation use the figure and figcaption elements
-          if(!empty($el['iiif_image_caption'])){
+          if($variables['settings']['display_caption'] && !empty($el['iiif_image_caption'])){
             $figure .= "<figcaption>" . $el['iiif_image_caption'] . "</figcaption>";
           }
 
@@ -429,6 +444,7 @@ function theme_iiif_image_field_formatter($variables) {
 
           $markup .= $figure;
         }
+        $i++;
     }
 
   }
