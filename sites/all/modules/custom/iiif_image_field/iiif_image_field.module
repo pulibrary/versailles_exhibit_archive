@@ -186,6 +186,9 @@ function iiif_image_field_field_formatter_info() {
 function iiif_image_field_field_formatter_settings_summary($field, $instance, $view_mode) {
   $display = $instance['display'][$view_mode];
   $settings = $display['settings'];
+  $region = $settings['region_x'] . "," . $settings['region_y'] . "," . $settings['region_h'] . "," . $settings['region_w'];
+  $dimensions = $settings['height'] . "," . $settings['width'];
+
   if($settings['display_first_only']) { $first_only = "Only First Image"; } else { $first_only = "All Images"; }
   if($settings['display_caption']) { $caption = "Yes"; } else { $caption = "No"; }
   $summary = '';
@@ -193,6 +196,8 @@ function iiif_image_field_field_formatter_settings_summary($field, $instance, $v
     $summary = t('Behavior: @behavior', array('@behavior' => $settings['behavior']));
     $summary .= '<br />' . t('Display: @first_only', array('@first_only' => $first_only));
     $summary .= '<br />' . t('Display Caption: @caption', array('@caption' => $caption));
+    $summary .= '<br />' . t('Region: @region', array('@region' => $region));
+    $summary .= '<br />' . t('Dimensions: @dimensions', array('@dimensions' => $dimensions));
     $summary .= '<br />' . t('Rotation: @rotation', array('@rotation' => $settings['rotation']));
     $summary .= '<br />' . t('Quality: @quality', array('@quality' => $settings['quality']));
     $summary .= '<br />' . t('Format: @format', array('@format' => $settings['format']));
@@ -246,6 +251,51 @@ function iiif_image_field_field_formatter_settings_form($field, $instance, $view
       '#default_value' => $settings['display_caption'],
       '#required' => TRUE,
     );
+
+    $element['region_x'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Region X'),
+      '#description' => t('X-coordinate where cropping begins. '),
+      '#default_value' => $settings['region_x'],
+    );
+    $element['region_y'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Region Y'),
+      '#description' => t('Y-coordinate where cropping begins.'),
+      '#default_value' => $settings['region_y'],
+    );
+    $element['region_h'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Region Height'),
+      '#description' => t('Height of the cropped region.'),
+      '#default_value' => $settings['region_h'],
+    );
+    $element['region_w'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Region Width'),
+      '#description' => t('Width of the cropped region.'),
+      '#default_value' => $settings['region_w'],
+    );
+
+    $element['height'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Height'),
+      '#description' => t('Height of the image (after cropping). You can use percentages, pixels, and bangs.'),
+      '#default_value' => $settings['height'],
+    );
+    $element['width'] = array(
+      '#type' => 'textfield',
+      '#size' => '5',
+      '#title' => t('Width'),
+      '#description' => t('Width of the image (after cropping).  You can use percentages, pixels, and bangs.'),
+      '#default_value' => $settings['width'],
+    );
+
 
     $element['rotation'] = array(
       '#type' => 'textfield',

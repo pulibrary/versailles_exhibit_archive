@@ -39,40 +39,18 @@ function iiif_image_field_field_schema($field){
 
 
 /**
-* Implements hook_install()
-*/
-/*
-function iiif_image_field_install(){
-  // Check to see if iiif image field exists
-  $field = field_info_field('iiif_image_field');
-
-  // if not, create it
-  if (empty($field)) {
-    $field = array(
-        'field_name' => 'iiif_image_field',
-        'type' => 'text',
-        'entity_types' => array('node'),
-        'translatable' => FALSE,
-      );
-    
-    $field = field_create_field($field);
-
-  }
-
-}
-*/
-/**
 * Implements hook_uninstall()
 */
-/*
+
 function iiif_image_field_uninstall(){
   watchdog("IIIF Image Field Module", "Uninstalling module and deleting fields");
-
-  $types = node_type_get_types();
-
-  foreach($types as $type) {
-    iiif_image_field_delete_iiif_image_field($type);
-  }
+/*
+  db_query('TRUNCATE cache_field');
+*/
+  $result = db_truncate('field_data_field_iiif_image')->execute();
+  $result = db_truncate('field_revision_field_iiif_image')->execute();
+  $result = db_query("DROP TABLE field_data_field_iiif_image");
+  $result = db_query("DROP TABLE field_revision_field_iiif_image");
 
   $field = field_info_field('iiif_image_field');
 
@@ -80,14 +58,8 @@ function iiif_image_field_uninstall(){
     field_delete_field('iiif_image_field');
   }
 
-}
-
-function iiif_image_field_delete_iiif_image_field($type) {
-
-  $instance = field_info_instance('node', 'iiif_image_field', $type->type);
-  if ($instance) {
-    field_delete_instance($instance);
-  }
+  variable_del('image_server_base');
+  variable_del('image_api_version');
 
 }
-*/
+
