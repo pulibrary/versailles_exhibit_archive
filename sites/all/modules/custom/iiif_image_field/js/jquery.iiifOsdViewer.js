@@ -1,3 +1,10 @@
+/*
+ * jQuery IIIF OSD Viewer
+ * https://github.com/IIIF/iiif-osd-viewer
+ *
+ * Author: Chris Jesudurai (Stanford.edu)
+ * https://github.com/jchristo4
+ */
 (function($) {
 
   $.fn.iiifOsdViewer = function(options) {

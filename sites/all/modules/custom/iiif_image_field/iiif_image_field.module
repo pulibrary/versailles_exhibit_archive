@@ -449,7 +449,7 @@ function theme_iiif_image_field_formatter($variables) {
         background: #333;
       }', 'inline');
     drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/openseadragon.min.js');
-    drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/jQuery.iiifOsdViewer.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
+    drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/jquery.iiifOsdViewer.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
     drupal_add_js("
 
     (function ($) {
