@@ -431,7 +431,7 @@ function theme_iiif_image_field_formatter($variables) {
     $img_sequence = "";
     $i = 0;
     foreach ($elements as $delta => $el) {
-      if($i < $el_length){
+      if($i < $el_length && !empty($el['iiif_image_id'])){
               $caption = '';
               if($variables['settings']['display_caption']){
                 $caption = $el['iiif_image_caption'];
