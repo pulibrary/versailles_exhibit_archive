@@ -470,7 +470,7 @@ function theme_iiif_image_field_formatter($variables) {
     drupal_add_css('figcaption { color: #999999; }', 'inline');
     $i = 0;
     foreach ($elements as $delta => $el) {
-        if(!empty($el) && $i < $el_length){
+        if(!empty($el['iiif_image_id']) && $i < $el_length){
         
           $figure = "";
 
