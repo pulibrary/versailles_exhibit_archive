@@ -406,4 +406,9 @@ body {
   line-height: 24px;
   font-weight: bold; }
 
+/* line 72, ../sass/pul-versailles.styles.scss */
+.readable {
+  font-size: 1.3em;
+  line-spacing: 1.5em; }
+
 /*# sourceMappingURL=pul-versailles.styles.css.map */
