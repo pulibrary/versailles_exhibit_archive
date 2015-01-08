@@ -86,8 +86,10 @@
       <?php if (!empty($node->field_iiif_image['und'][0]['iiif_image_id'])):
         $rotation = 0;
         if(!empty($node->field_iiif_image['und'][0]['iiif_image_rotation'])){ $rotation = $node->field_iiif_image['und'][0]['iiif_image_rotation']; }
+        $hw = "200,";
+        if($rotation == 90 || $rotation == 270){ $hw = ",200"; }
       ?>
-        <img src="http://libimages.princeton.edu/loris/<?php print $node->field_iiif_image['und'][0]['iiif_image_id']; ?>/full/200,/<?php print $rotation; ?>/native.jpg" alt="<?php print $title; ?>" />
+        <img src="http://libimages.princeton.edu/loris/<?php print $node->field_iiif_image['und'][0]['iiif_image_id']; ?>/full/<?php print $hw; ?>/<?php print $rotation; ?>/native.jpg" alt="<?php print $title; ?>" />
       <?php endif; ?>
     </a>
 
