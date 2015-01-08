@@ -12,6 +12,31 @@ body {
 img, media {
   max-width: 100%; }
 
+/* ====== media ====== */
+/* line 7, ../sass/base/_media.scss */
+.media {
+  margin: 10px; }
+
+/* line 8, ../sass/base/_media.scss */
+.media, .bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1; }
+
+/* line 9, ../sass/base/_media.scss */
+.media .img {
+  float: left;
+  margin-right: 10px; }
+
+/* line 10, ../sass/base/_media.scss */
+.media .img img {
+  display: block; }
+
+/* line 11, ../sass/base/_media.scss */
+.media .imgExt {
+  float: right;
+  margin-left: 10px; }
+
 /* line 2, ../sass/base/_typography.scss */
 body {
   font-family: "Fanwood Text", Georgia, Times, serif;
@@ -29,7 +54,7 @@ h1.splash-title {
   font-family: "Pinyon Script";
   color: #893d26;
   font-variant: normal;
-  font-size: 60px;
+  font-size: 75px;
   letter-spacing: 0px; }
 
 /* line 2, ../sass/components/_branding.scss */
@@ -346,5 +371,11 @@ body {
 .readable {
   font-size: 1.3em;
   line-spacing: 1.5em; }
+
+/* line 77, ../sass/pul-versailles.styles.scss */
+.node--exhibit-rbsc-item--full .field__items {
+  vertical-align: top;
+  display: inline-block;
+  width: 600px; }
 
 /*# sourceMappingURL=pul-versailles.no-query.css.map */
