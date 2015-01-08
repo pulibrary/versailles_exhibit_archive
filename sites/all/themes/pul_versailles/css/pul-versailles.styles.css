@@ -410,13 +410,13 @@ body {
   opacity: 0; }
 
 /* line 50, ../sass/pul-versailles.styles.scss */
-.pane-entity-view .node__content .field {
+.node--exhibit-rbsc-item--full .content .field {
   border-top: solid 1px #e6e6e6;
   margin-top: 20px;
   padding-top: 10px; }
 
 /* line 56, ../sass/pul-versailles.styles.scss */
-.pane-entity-view .node__content .field__label {
+.node--exhibit-rbsc-item--full .content .field__label {
   line-height: 20px;
   letter-spacing: 0.05em;
   color: #aaa;
@@ -427,7 +427,7 @@ body {
   clear: both; }
 
 /* line 67, ../sass/pul-versailles.styles.scss */
-.pane-entity-view .node__content .field__item {
+.node--exhibit-rbsc-item--full .content .field__item {
   line-height: 24px;
   font-weight: bold; }
 
@@ -437,7 +437,7 @@ body {
   line-spacing: 1.5em; }
 
 /* line 77, ../sass/pul-versailles.styles.scss */
-.node--exhibit-rbsc-item--full .field__items {
+.node--exhibit-rbsc-item--full .content .field__items {
   vertical-align: top;
   display: inline-block;
   width: 600px; }

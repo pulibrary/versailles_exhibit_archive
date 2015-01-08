@@ -47,13 +47,13 @@ body {
 	opacity:0;
 }
 
-.pane-entity-view .node__content .field {
+.node--exhibit-rbsc-item--full .content .field {
 	border-top: solid 1px #e6e6e6;
 	margin-top: 20px;
 	padding-top: 10px;
 }
 
-.pane-entity-view .node__content .field__label {
+.node--exhibit-rbsc-item--full .content .field__label {
 	line-height: 20px;
 	letter-spacing: 0.05em;
 	color: #aaa;
@@ -64,7 +64,7 @@ body {
 	clear: both;
 }
 
-.pane-entity-view .node__content .field__item {
+.node--exhibit-rbsc-item--full .content .field__item {
 	line-height: 24px;
 	font-weight: bold;
 }
@@ -74,7 +74,7 @@ body {
 	line-spacing:1.5em;
 }
 
-.node--exhibit-rbsc-item--full .field__items {
+.node--exhibit-rbsc-item--full .content .field__items {
 	vertical-align: top;
 	display: inline-block;
 	width: 600px;
