@@ -80,9 +80,21 @@ body {
 	width: 600px;
 }
 
+.field--name-field-provenance {
+	font-style: italic;
+}
+
 /* ====== media ====== */
 .media {margin:10px;}
 .media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
 .media .img {float:left; margin-right: 10px;}
 .media .img img{display:block;}
 .media .imgExt{float:right; margin-left: 10px;}
+
+.media .field--name-field-ver-translated-print-title {
+	font-family: "Fanwood Text", Georgia, Times, serif;
+	font-weight: normal;
+	font-variant: small-caps;
+	letter-spacing: .02em;
+	margin-bottom: 20px;
+}

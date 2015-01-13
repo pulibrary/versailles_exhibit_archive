@@ -442,29 +442,41 @@ body {
   display: inline-block;
   width: 600px; }
 
+/* line 83, ../sass/pul-versailles.styles.scss */
+.field--name-field-provenance {
+  font-style: italic; }
+
 /* ====== media ====== */
-/* line 84, ../sass/pul-versailles.styles.scss */
+/* line 88, ../sass/pul-versailles.styles.scss */
 .media {
   margin: 10px; }
 
-/* line 85, ../sass/pul-versailles.styles.scss */
+/* line 89, ../sass/pul-versailles.styles.scss */
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
   zoom: 1; }
 
-/* line 86, ../sass/pul-versailles.styles.scss */
+/* line 90, ../sass/pul-versailles.styles.scss */
 .media .img {
   float: left;
   margin-right: 10px; }
 
-/* line 87, ../sass/pul-versailles.styles.scss */
+/* line 91, ../sass/pul-versailles.styles.scss */
 .media .img img {
   display: block; }
 
-/* line 88, ../sass/pul-versailles.styles.scss */
+/* line 92, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
+
+/* line 94, ../sass/pul-versailles.styles.scss */
+.media .field--name-field-ver-translated-print-title {
+  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: .02em;
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=pul-versailles.styles.css.map */
