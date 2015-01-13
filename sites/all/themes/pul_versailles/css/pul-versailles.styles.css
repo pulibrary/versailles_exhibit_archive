@@ -163,66 +163,68 @@ a.enter-site-button {
   @media (min-width: 44em) {
     /* line 1, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted {
-      background: url(../images/hero.jpg) bottom no-repeat; } }
-  /* line 12, ../sass/components/_spotlight.scss */
+      background: url(../images/hero.jpg) bottom no-repeat;
+      /* like z-index: 3; */
+      background-color: #d2c8bf; } }
+  /* line 14, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
     @media (min-width: 44em) {
-      /* line 12, ../sass/components/_spotlight.scss */
+      /* line 14, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted {
         padding: 4em 0; } }
-  /* line 21, ../sass/components/_spotlight.scss */
+  /* line 23, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
-  /* line 25, ../sass/components/_spotlight.scss */
+  /* line 27, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 2em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
-  /* line 32, ../sass/components/_spotlight.scss */
+  /* line 34, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
 
-/* line 37, ../sass/components/_spotlight.scss */
+/* line 39, ../sass/components/_spotlight.scss */
 .front .l-main {
   margin-top: -40px; }
 
-/* line 41, ../sass/components/_spotlight.scss */
+/* line 43, ../sass/components/_spotlight.scss */
 .wrapper--highlighted {
   background: rgba(213, 130, 105, 0.75);
   padding: 0;
   background-size: 1600px auto;
   max-height: 150px; }
   @media (min-width: 44em) {
-    /* line 41, ../sass/components/_spotlight.scss */
+    /* line 43, ../sass/components/_spotlight.scss */
     .wrapper--highlighted {
       background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(../images/hero.jpg) center no-repeat; } }
-  /* line 57, ../sass/components/_spotlight.scss */
+  /* line 59, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
     @media (min-width: 44em) {
-      /* line 57, ../sass/components/_spotlight.scss */
+      /* line 59, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted {
         padding: 1em 0; } }
-  /* line 66, ../sass/components/_spotlight.scss */
+  /* line 68, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
-  /* line 70, ../sass/components/_spotlight.scss */
+  /* line 72, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 1.5em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
-  /* line 77, ../sass/components/_spotlight.scss */
+  /* line 79, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
 
-/* line 84, ../sass/components/_spotlight.scss */
+/* line 86, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -232,7 +234,7 @@ a.enter-site-button {
   clear: both;
   display: none; }
   @media (min-width: 70em) {
-    /* line 84, ../sass/components/_spotlight.scss */
+    /* line 86, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block {
       width: 22.41379%;
       float: right;
@@ -243,7 +245,7 @@ a.enter-site-button {
       margin-right: 0;
       display: block; } }
 
-/* line 96, ../sass/components/_spotlight.scss */
+/* line 98, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -253,26 +255,26 @@ a.enter-site-button {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 104, ../sass/components/_spotlight.scss */
+  /* line 106, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 107, ../sass/components/_spotlight.scss */
+  /* line 109, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 114, ../sass/components/_spotlight.scss */
+  /* line 116, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 119, ../sass/components/_spotlight.scss */
+  /* line 121, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 124, ../sass/components/_spotlight.scss */
+/* line 126, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -288,7 +290,7 @@ a.enter-site-button {
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
   @media (min-width: 44em) {
-    /* line 124, ../sass/components/_spotlight.scss */
+    /* line 126, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 22.41379%;
@@ -298,7 +300,7 @@ a.enter-site-button {
       clear: none;
       margin-right: 0; } }
   @media (min-width: 70em) {
-    /* line 124, ../sass/components/_spotlight.scss */
+    /* line 126, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 13.7931%;
@@ -307,27 +309,27 @@ a.enter-site-button {
       margin-right: 0;
       clear: none;
       margin-right: 0; } }
-  /* line 148, ../sass/components/_spotlight.scss */
+  /* line 150, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 155, ../sass/components/_spotlight.scss */
+    /* line 157, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 161, ../sass/components/_spotlight.scss */
+/* line 163, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 166, ../sass/components/_spotlight.scss */
+  /* line 168, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 172, ../sass/components/_spotlight.scss */
+  /* line 174, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -337,7 +339,7 @@ a.enter-site-button {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 180, ../sass/components/_spotlight.scss */
+  /* line 182, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -347,12 +349,12 @@ a.enter-site-button {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 188, ../sass/components/_spotlight.scss */
+    /* line 190, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 193, ../sass/components/_spotlight.scss */
+  /* line 195, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;
