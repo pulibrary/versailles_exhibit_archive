@@ -4,25 +4,23 @@
     background-size: 1600px auto;
     max-height: 150px;
 
-    background: 
-            linear-gradient(
-              rgba(lighten($versailles-red, 28), 0.75), 
-              rgba(lighten($versailles-red, 28), 0.75)
-            ),  /* On top,    like z-index: 4; */
-            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;  
+    background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;  
     
     background-color: $parchment;
 
+    @include breakpoint($smart) {
+        background-size: 1100px auto;
+        max-height: 110px;
+
+        background: 
+            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat;             
+    }
 
     @include breakpoint($tab) {
         background-size: 1100px auto;
         max-height: 110px;
 
         background: 
-            linear-gradient(
-              rgba(lighten($versailles-red, 28), 0.75), 
-              rgba(lighten($versailles-red, 28), 0.75)
-            ),  /* On top,    like z-index: 4; */
             url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat;             
     }
 

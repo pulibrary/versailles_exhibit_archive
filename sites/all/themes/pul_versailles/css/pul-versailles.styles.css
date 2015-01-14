@@ -134,63 +134,69 @@ a.enter-site-button {
   padding: 0;
   background-size: 1600px auto;
   max-height: 150px;
-  background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;
+  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;
   background-color: #d2c8bf; }
+  @media (max-width: 44em) {
+    /* line 1, ../sass/components/_spotlight.scss */
+    .front .wrapper--highlighted {
+      background-size: 1100px auto;
+      max-height: 110px;
+      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 1, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 110px;
-      background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
-  /* line 31, ../sass/components/_spotlight.scss */
+      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
+  /* line 29, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 31, ../sass/components/_spotlight.scss */
+      /* line 29, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted {
         padding: 0; } }
-  /* line 40, ../sass/components/_spotlight.scss */
+  /* line 38, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 44, ../sass/components/_spotlight.scss */
+    /* line 42, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 {
       margin-top: 0px; } }
-  /* line 50, ../sass/components/_spotlight.scss */
+  /* line 48, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 1.5em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
     @media (max-width: 44em) {
-      /* line 50, ../sass/components/_spotlight.scss */
+      /* line 48, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1em;
         padding-left: .5em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 50, ../sass/components/_spotlight.scss */
+      /* line 48, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1.2em;
         padding-left: .5em; } }
-  /* line 68, ../sass/components/_spotlight.scss */
+  /* line 66, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
     @media (max-width: 44em) {
-      /* line 68, ../sass/components/_spotlight.scss */
+      /* line 66, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1em;
         line-height: 1.2em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 68, ../sass/components/_spotlight.scss */
+      /* line 66, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1.1em;
         line-height: 1.5em; } }
 
-/* line 86, ../sass/components/_spotlight.scss */
+/* line 84, ../sass/components/_spotlight.scss */
 .wrapper--highlighted {
   padding: 0;
   background-size: 1600px auto;
@@ -198,70 +204,70 @@ a.enter-site-button {
   background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;
   background-color: #d2c8bf; }
   @media (max-width: 44em) {
-    /* line 86, ../sass/components/_spotlight.scss */
+    /* line 84, ../sass/components/_spotlight.scss */
     .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 110px;
       background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 86, ../sass/components/_spotlight.scss */
+    /* line 84, ../sass/components/_spotlight.scss */
     .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 110px;
       background: linear-gradient(rgba(213, 130, 105, 0.75), rgba(213, 130, 105, 0.75)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
-  /* line 127, ../sass/components/_spotlight.scss */
+  /* line 125, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 127, ../sass/components/_spotlight.scss */
+      /* line 125, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted {
         padding: 0; } }
-  /* line 136, ../sass/components/_spotlight.scss */
+  /* line 134, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
   @media (max-width: 44em) {
-    /* line 140, ../sass/components/_spotlight.scss */
+    /* line 138, ../sass/components/_spotlight.scss */
     .wrapper--highlighted .l-region--highlighted .hero-copy h1 {
       margin-top: -.75em; } }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 140, ../sass/components/_spotlight.scss */
+    /* line 138, ../sass/components/_spotlight.scss */
     .wrapper--highlighted .l-region--highlighted .hero-copy h1 {
       margin-top: 0px; } }
-  /* line 150, ../sass/components/_spotlight.scss */
+  /* line 148, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 1.5em;
     color: white;
     text-shadow: 2px 2px #333;
     line-height: 1em; }
     @media (max-width: 44em) {
-      /* line 150, ../sass/components/_spotlight.scss */
+      /* line 148, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1em;
         padding-left: .5em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 150, ../sass/components/_spotlight.scss */
+      /* line 148, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1.2em;
         padding-left: .5em; } }
-  /* line 168, ../sass/components/_spotlight.scss */
+  /* line 166, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
     @media (max-width: 44em) {
-      /* line 168, ../sass/components/_spotlight.scss */
+      /* line 166, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1em;
         line-height: 1.2em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 168, ../sass/components/_spotlight.scss */
+      /* line 166, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1.1em;
         line-height: 1.5em; } }
 
-/* line 187, ../sass/components/_spotlight.scss */
+/* line 185, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -271,7 +277,7 @@ a.enter-site-button {
   clear: both;
   display: none; }
   @media (min-width: 70em) {
-    /* line 187, ../sass/components/_spotlight.scss */
+    /* line 185, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block {
       width: 22.41379%;
       float: right;
@@ -282,7 +288,7 @@ a.enter-site-button {
       margin-right: 0;
       display: block; } }
 
-/* line 199, ../sass/components/_spotlight.scss */
+/* line 197, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -292,26 +298,26 @@ a.enter-site-button {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 207, ../sass/components/_spotlight.scss */
+  /* line 205, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 210, ../sass/components/_spotlight.scss */
+  /* line 208, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 217, ../sass/components/_spotlight.scss */
+  /* line 215, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 222, ../sass/components/_spotlight.scss */
+  /* line 220, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 227, ../sass/components/_spotlight.scss */
+/* line 225, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -327,7 +333,7 @@ a.enter-site-button {
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 227, ../sass/components/_spotlight.scss */
+    /* line 225, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 22.41379%;
@@ -337,7 +343,7 @@ a.enter-site-button {
       clear: none;
       margin-right: 0; } }
   @media (min-width: 70em) {
-    /* line 227, ../sass/components/_spotlight.scss */
+    /* line 225, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 13.7931%;
@@ -346,27 +352,27 @@ a.enter-site-button {
       margin-right: 0;
       clear: none;
       margin-right: 0; } }
-  /* line 251, ../sass/components/_spotlight.scss */
+  /* line 249, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 258, ../sass/components/_spotlight.scss */
+    /* line 256, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 264, ../sass/components/_spotlight.scss */
+/* line 262, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 269, ../sass/components/_spotlight.scss */
+  /* line 267, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 275, ../sass/components/_spotlight.scss */
+  /* line 273, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -376,7 +382,7 @@ a.enter-site-button {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 283, ../sass/components/_spotlight.scss */
+  /* line 281, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -386,12 +392,12 @@ a.enter-site-button {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 291, ../sass/components/_spotlight.scss */
+    /* line 289, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 296, ../sass/components/_spotlight.scss */
+  /* line 294, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;
