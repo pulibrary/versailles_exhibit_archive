@@ -17,7 +17,8 @@
  * KIND, either express or implied. See the License for the specific language governing 
  * permissions and limitations under the License.
  *
- * Image Rotation options added on 12/31/2014
+ * Image Rotation options added on 12/31/2014 and
+ * ToolTip Icon swapped on 1/15/2015
  * by Shaun Ellis (Princeton.edu)
  * 
  *
@@ -281,7 +282,7 @@
           '<div class="iov-list-view-controls">',
             '<a href="javascript:;" class="fa fa-plus-circle" id="iov-list-zoom-in"></a>',
             '<a href="javascript:;" class="fa fa-minus-circle" id="iov-list-zoom-out"></a>',
-            '<a href="javascript:;" class="fa fa-repeat" id="iov-list-home"></a>',
+            '<a href="javascript:;" class="fa fa-picture-o" id="iov-list-home"></a>',
           '</div>'
         ].join(''));
 
@@ -300,13 +301,6 @@
       function loadListViewThumbs() {
         $.each(config.data, function(index, collection) {
           $.each(collection.images, function(index, image) {
-            // if rotated swap height and width values
-            
-            if(image.rotation == '90' || image.rotation == '270') {
-              var tmpH = image.height;
-              image.height = image.width;
-              image.width = tmpH;
-            }   
             
             var imgUrl = getIiifImageUrl(collection.iiifServer, image.id, config.listView.thumbsWidth, null),
                 infoUrl = getIiifInfoUrl(collection.iiifServer, image.id),
@@ -418,7 +412,7 @@
           osd.open(infoUrl);
   
         } else {
-          
+          OpenSeadragon.setString("Tooltips.Home","Fit to frame");
           osd = OpenSeadragon({
             id:             'iov-list-view-osd',
             tileSources:    infoUrl,
