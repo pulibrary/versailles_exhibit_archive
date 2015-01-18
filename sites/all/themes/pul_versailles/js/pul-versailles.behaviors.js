@@ -56,7 +56,7 @@
       });
     }
   };
-
+            console.log(Drupal);
   Drupal.behaviors.pulVersaillesMapBehavior = {
     attach: function (context, settings) {
       // By using the 'context' variable we make sure that our code only runs on
@@ -70,7 +70,7 @@
         (function(window, document, L, undefined) {
           'use strict';
 
-          L.Icon.Default.imagePath = 'images/';
+          L.Icon.Default.imagePath = Drupal.settings.pathToTheme + '/images/markers';
 
           var BASE_ITEM_URL = '/versailles/item/',
             BASE_MAP = 'http://libimages.princeton.edu/loris2/' +

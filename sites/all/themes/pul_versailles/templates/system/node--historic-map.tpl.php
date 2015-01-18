@@ -89,13 +89,6 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
-    <?php if ($display_submitted): ?>
-      <div class="meta submitted">
-        <?php print $user_picture; ?>
-        <?php print $submitted; ?>
-      </div>
-    <?php endif; ?>
-
     <div class="content"<?php print $content_attributes; ?>>
       <?php
         // We hide the comments and links now so that we can render them later.
