@@ -57,13 +57,13 @@
     margin-top: 5px; 
 
     @include breakpoint($smart) {
-      
+      @include grid-span(12);
       margin-left: 0.5em;
       width: 100%;
     }
 
     @include breakpoint($tab) {
-
+      @include grid-span(12);
       margin-left: 0.5em;
       height: 35px;
       width: 40%;

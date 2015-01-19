@@ -91,11 +91,21 @@ h1.splash-title {
   @media (max-width: 44em) {
     /* line 51, ../sass/components/_branding.scss */
     .svg .site-logo {
+      width: 100%;
+      float: right;
+      margin-left: 0;
+      margin-right: 0;
+      clear: none;
       margin-left: 0.5em;
       width: 100%; } }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 51, ../sass/components/_branding.scss */
     .svg .site-logo {
+      width: 100%;
+      float: right;
+      margin-left: 0;
+      margin-right: 0;
+      clear: none;
       margin-left: 0.5em;
       height: 35px;
       width: 40%;
