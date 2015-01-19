@@ -106,12 +106,14 @@
 <?php 
       print "<div class='prev-next-wrapper'>";      
       $curIndex = $node->field_exhibit_sort_order['und'][0][value];
+      $curCase = $node->field_exhibit_case['und'][0][target_id];
 
       $queryPrev = new EntityFieldQuery();
 
       $queryPrev->entityCondition('entity_type', 'node')
         ->entityCondition('bundle', 'exhibit_rbsc_item')
         ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_exhibit_case', 'target_id', $curCase, '=')
         ->fieldCondition('field_exhibit_sort_order', 'value', $curIndex, '<')
         ->fieldOrderBy('field_exhibit_sort_order', 'value', 'DESC')
         ->range(0, 1)
@@ -129,6 +131,7 @@
       $queryNext->entityCondition('entity_type', 'node')
         ->entityCondition('bundle', 'exhibit_rbsc_item')
         ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_exhibit_case', 'target_id', $curCase, '=')
         ->fieldCondition('field_exhibit_sort_order', 'value', $curIndex, '>')
         ->fieldOrderBy('field_exhibit_sort_order', 'value', 'ASC')
         ->range(0, 1)
