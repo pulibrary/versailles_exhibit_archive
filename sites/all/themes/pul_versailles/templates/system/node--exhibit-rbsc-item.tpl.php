@@ -103,12 +103,57 @@
 <?php if ($view_mode != 'media_object'):?>
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
+<?php 
+      print "<div class='prev-next-wrapper'>";      
+      $curIndex = $node->field_exhibit_sort_order['und'][0][value];
+
+      $queryPrev = new EntityFieldQuery();
+
+      $queryPrev->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'exhibit_rbsc_item')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_exhibit_sort_order', 'value', $curIndex, '<')
+        ->fieldOrderBy('field_exhibit_sort_order', 'value', 'DESC')
+        ->range(0, 1)
+        ->addMetaData('account', user_load(1)); // Run the query as user 1.
+
+      $result = $queryPrev->execute();
+
+      if (isset($result['node'])) {
+        $prev_nid = array_keys($result['node']);
+        print "<a class='prev-button' title='Previous Exhibit Item' href='" . $prev_nid[0] . "'><i class='fa fa-chevron-left'></i></a>";
+      }
+
+      $queryNext = new EntityFieldQuery();
+
+      $queryNext->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'exhibit_rbsc_item')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_exhibit_sort_order', 'value', $curIndex, '>')
+        ->fieldOrderBy('field_exhibit_sort_order', 'value', 'ASC')
+        ->range(0, 1)
+        ->addMetaData('account', user_load(1)); // Run the query as user 1.
+
+      $result = $queryNext->execute();
+
+      if (isset($result['node'])) {
+        $next_nid = array_keys($result['node']);
+        print "<a class='next-button' title='Next Exhibit Item' href='" . $next_nid[0] . "'><i class='fa fa-chevron-right'></i></a>";
+      }
+
+      print "</div>"; 
+
+     ?>
+
     <?php print render($title_prefix); ?>
     <?php if (!$page): ?>
       <h2<?php print $title_attributes; ?>>
         <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
       </h2>
     <?php endif; ?>
+
+
+
     <?php print render($title_suffix); ?>
 
     <?php if ($display_submitted): ?>
@@ -117,6 +162,8 @@
         <?php print $submitted; ?>
       </div>
     <?php endif; ?>
+
+    
 
     <div class="content clearfix"<?php print $content_attributes; ?>>
       <?php

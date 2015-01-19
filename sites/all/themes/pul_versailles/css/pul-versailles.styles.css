@@ -145,6 +145,62 @@ a.enter-site-button {
     opacity: 0.5;
     cursor: not-allowed; }
 
+/* line 7, ../sass/components/_buttons.scss */
+a.prev-button, a.next-button {
+  border: 1px solid #d4cdb6;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #333333;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #ecebe5;
+  background-image: -webkit-linear-gradient(#ecebe5, #d9d4c0);
+  background-image: linear-gradient(#ecebe5, #d9d4c0);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #f6f5f0;
+  background-clip: padding-box;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #e8e6df;
+  box-shadow: inset 0 0px 0 0 white;
+  border: 1px solid white;
+  color: #333;
+  line-height: 36px;
+  font-size: 1.25rem;
+  padding: 4px 0px 0 12px;
+  position: relative;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  margin: 5px; }
+  /* line 131, ../sass/vendor/bourbon/addons/_button.scss */
+  a.prev-button:hover:not(:disabled), a.next-button:hover:not(:disabled) {
+    box-shadow: inset 0 1px 0 0 #f6f6f4;
+    cursor: pointer;
+    background-color: #e0ded8;
+    background-image: -webkit-linear-gradient(#e0ded8, #d3cdb7);
+    background-image: linear-gradient(#e0ded8, #d3cdb7); }
+  /* line 147, ../sass/vendor/bourbon/addons/_button.scss */
+  a.prev-button:active:not(:disabled), a.prev-button:focus:not(:disabled), a.next-button:active:not(:disabled), a.next-button:focus:not(:disabled) {
+    border: 1px solid #d4cdb6;
+    box-shadow: inset 0 0 8px 4px #cdc6ae, inset 0 0 8px 4px #cdc6ae; }
+  /* line 51, ../sass/vendor/bourbon/addons/_button.scss */
+  a.prev-button:disabled, a.next-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+
+/* line 25, ../sass/components/_buttons.scss */
+a.prev-button:hover, a.next-button:hover {
+  box-shadow: inset 0 0px 0 0 white;
+  color: black; }
+
+/* line 30, ../sass/components/_buttons.scss */
+.prev-next-wrapper {
+  margin-top: -50px;
+  float: right; }
+
 /* line 3, ../sass/components/_map.scss */
 .map {
   width: 100vh;
@@ -504,7 +560,7 @@ body {
   margin-top: 20px;
   padding-top: 10px; }
 
-/* line 56, ../sass/pul-versailles.styles.scss */
+/* line 58, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__label {
   line-height: 20px;
   letter-spacing: 0.05em;
@@ -515,52 +571,52 @@ body {
   vertical-align: top;
   clear: both; }
 
-/* line 67, ../sass/pul-versailles.styles.scss */
+/* line 69, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__item {
   line-height: 24px;
   font-weight: bold; }
 
-/* line 72, ../sass/pul-versailles.styles.scss */
+/* line 74, ../sass/pul-versailles.styles.scss */
 .readable {
   font-size: 1.3em;
   line-spacing: 1.5em; }
 
-/* line 77, ../sass/pul-versailles.styles.scss */
+/* line 79, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__items {
   vertical-align: top;
   display: inline-block;
   width: 600px; }
 
-/* line 83, ../sass/pul-versailles.styles.scss */
+/* line 85, ../sass/pul-versailles.styles.scss */
 .field--name-field-provenance {
   font-style: italic; }
 
 /* ====== media ====== */
-/* line 88, ../sass/pul-versailles.styles.scss */
+/* line 90, ../sass/pul-versailles.styles.scss */
 .media {
   margin: 10px; }
 
-/* line 89, ../sass/pul-versailles.styles.scss */
+/* line 91, ../sass/pul-versailles.styles.scss */
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
   zoom: 1; }
 
-/* line 90, ../sass/pul-versailles.styles.scss */
+/* line 92, ../sass/pul-versailles.styles.scss */
 .media .img {
   float: left;
   margin-right: 10px; }
 
-/* line 91, ../sass/pul-versailles.styles.scss */
+/* line 93, ../sass/pul-versailles.styles.scss */
 .media .img img {
   display: block; }
 
-/* line 92, ../sass/pul-versailles.styles.scss */
+/* line 94, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
 
-/* line 94, ../sass/pul-versailles.styles.scss */
+/* line 96, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
   font-family: "Fanwood Text", Georgia, Times, serif;
   font-weight: normal;
