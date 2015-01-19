@@ -6,6 +6,9 @@
     "selectivizr": "fubhy/selectivizr",
     "html5shiv": "fubhy/html5shiv",
     "matchmedia": "fubhy/matchmedia",
-    "pie": "fubhy/pie"
+    "pie": "fubhy/pie",
+    "leaflet": "~0.7.2",
+    "leaflet-iiif": "~0.0.3",
+    "leaflet.markercluster": "~0.4.0"
   }
 }

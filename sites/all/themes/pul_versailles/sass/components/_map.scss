@@ -1,0 +1,22 @@
+// _map.scss
+
+.map {
+  width: 100vh;
+  height: 100vh;
+}
+
+.leaflet-container {
+  background: #FFF;
+}
+
+.popup-text {
+  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: .02em;
+  color: black;
+}
+
+a.popup:link {
+  text-decoration: none;
+}

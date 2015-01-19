@@ -45,6 +45,7 @@ h1.splash-title {
 .l-branding .homepage-tab-form-message {
   display: none; }
 
+/* non-SVG logo */
 /* line 20, ../sass/components/_branding.scss */
 .site-logo {
   line-height: 21px;
@@ -62,12 +63,13 @@ h1.splash-title {
     margin: 0 auto;
     height: 25px; }
 
-/* line 46, ../sass/components/_branding.scss */
+/* SVG logo */
+/* line 47, ../sass/components/_branding.scss */
 .svg .site-logo img {
   display: none; }
-/* line 49, ../sass/components/_branding.scss */
+/* line 51, ../sass/components/_branding.scss */
 .svg .site-logo {
-  background: url("../logo.svg") center center no-repeat;
+  background: url("../images/logo.svg") center center no-repeat;
   background-size: contain;
   display: block;
   height: 25px;
@@ -107,6 +109,27 @@ a.enter-site-button {
   a.enter-site-button:disabled {
     opacity: 0.5;
     cursor: not-allowed; }
+
+/* line 3, ../sass/components/_map.scss */
+.map {
+  width: 100vh;
+  height: 100vh; }
+
+/* line 8, ../sass/components/_map.scss */
+.leaflet-container {
+  background: #FFF; }
+
+/* line 12, ../sass/components/_map.scss */
+.popup-text {
+  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: .02em;
+  color: black; }
+
+/* line 20, ../sass/components/_map.scss */
+a.popup:link {
+  text-decoration: none; }
 
 /* line 1, ../sass/components/_search.scss */
 #edit-search-block-form--2 {

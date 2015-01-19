@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Historic Map Content Type feature.
+ */
+
+include_once 'rbsc_historic_map.features.inc';

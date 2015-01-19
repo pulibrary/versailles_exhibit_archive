@@ -15,5 +15,4 @@ function pul_versailles_preprocess_link(&$variables) {
   	$rpos = strrpos($p, '%2F', 0);
   	$variables['path'] = urldecode(substr($p, 0, $rpos));
   }
-
 }
