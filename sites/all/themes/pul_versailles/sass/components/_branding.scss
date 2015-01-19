@@ -16,7 +16,7 @@
 }
 
 
-// non-SVG logo
+/* non-SVG logo */
 .site-logo {
     line-height: 21px;
     margin-left: -0.7em;
@@ -25,7 +25,7 @@
     clear: both;
 
     @include breakpoint($tab) {
-        @include grid-span(6,1);
+      @include grid-span(6,1);
     }
 
     img {
@@ -41,21 +41,34 @@
     }
 }
 
-// SVG logo 
+/* SVG logo */
 .svg {
- .site-logo img {
-   display: none;
- }
- .site-logo {
-   background: url("../logo.svg") center center no-repeat;
-   background-size: contain;
-   display: block;
-   height: 25px;
-   width: 20%;
-   margin-top: 5px; 
 
-   @include breakpoint($tab) {
-    margin-left: 0.5em;
-   }
- }
+  .site-logo img {
+   display: none;
+  }
+ 
+  .site-logo {
+    background: url("../images/logo.svg") center center no-repeat;
+    background-size: contain;
+    display: block;
+    height: 25px;
+    width: 20%;
+    margin-top: 5px; 
+
+    @include breakpoint($smart) {
+      
+      margin-left: 0.5em;
+      width: 100%;
+    }
+
+    @include breakpoint($tab) {
+
+      margin-left: 0.5em;
+      height: 35px;
+      width: 40%;
+      margin-top: 5px; 
+    }
+  }
 }
+
