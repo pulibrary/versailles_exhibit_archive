@@ -53,13 +53,14 @@
 <?php else: ?>
   <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <?php endif; ?>
-<link rel="canonical" href="http://rbsc.princeton.edu/versailles" />
+
 <head>
   <meta http-equiv="x-ua-compatible" content="IE=Edge">
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <link rel="canonical" href="http://rbsc.princeton.edu/versailles" />
 </head>
 <body<?php print $attributes;?>>
   <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
