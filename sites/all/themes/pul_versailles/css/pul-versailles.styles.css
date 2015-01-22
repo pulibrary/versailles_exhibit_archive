@@ -617,12 +617,16 @@ body {
   opacity: 0; }
 
 /* line 50, ../sass/pul-versailles.styles.scss */
+.three_six_three-region--first {
+  padding-top: 30px; }
+
+/* line 55, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field {
   border-top: solid 1px #e6e6e6;
   margin-top: 20px;
   padding-top: 10px; }
 
-/* line 58, ../sass/pul-versailles.styles.scss */
+/* line 63, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__label {
   line-height: 20px;
   letter-spacing: 0.05em;
@@ -633,52 +637,52 @@ body {
   vertical-align: top;
   clear: both; }
 
-/* line 69, ../sass/pul-versailles.styles.scss */
+/* line 74, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__item {
   line-height: 24px;
   font-weight: bold; }
 
-/* line 74, ../sass/pul-versailles.styles.scss */
+/* line 79, ../sass/pul-versailles.styles.scss */
 .readable {
   font-size: 1.3em;
   line-spacing: 1.5em; }
 
-/* line 79, ../sass/pul-versailles.styles.scss */
+/* line 84, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__items {
   vertical-align: top;
   display: inline-block;
   width: 600px; }
 
-/* line 85, ../sass/pul-versailles.styles.scss */
+/* line 90, ../sass/pul-versailles.styles.scss */
 .field--name-field-provenance {
   font-style: italic; }
 
 /* ====== media ====== */
-/* line 90, ../sass/pul-versailles.styles.scss */
+/* line 95, ../sass/pul-versailles.styles.scss */
 .media {
   margin: 10px; }
 
-/* line 91, ../sass/pul-versailles.styles.scss */
+/* line 96, ../sass/pul-versailles.styles.scss */
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
   zoom: 1; }
 
-/* line 92, ../sass/pul-versailles.styles.scss */
+/* line 97, ../sass/pul-versailles.styles.scss */
 .media .img {
   float: left;
   margin-right: 10px; }
 
-/* line 93, ../sass/pul-versailles.styles.scss */
+/* line 98, ../sass/pul-versailles.styles.scss */
 .media .img img {
   display: block; }
 
-/* line 94, ../sass/pul-versailles.styles.scss */
+/* line 99, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
 
-/* line 96, ../sass/pul-versailles.styles.scss */
+/* line 101, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
