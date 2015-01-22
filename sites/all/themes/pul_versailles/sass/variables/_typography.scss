@@ -1,10 +1,13 @@
 @import "compass";
 
-$font-serif: "Fanwood Text", Georgia, Times, serif !default; 
+$font-serif: "Alegreya", Georgia, Times, serif !default; 
+$font-serif-sc: "Alegreya SC","Alegreya", Georgia, Times, serif !default;
 $font-sans: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-mono: 'Lucida Console', Monaco, monospace !default;
 $font-script: 'Pinyon Script', !default;
 $text-color: #000 !default;
+
+$font-bold: 700;
 
 $base-font-size: 16px;
 $base-line-height: 24px;

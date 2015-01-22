@@ -94,9 +94,8 @@ body {
 .media .imgExt{float:right; margin-left: 10px;}
 
 .media .field--name-field-ver-translated-print-title {
-	font-family: "Fanwood Text", Georgia, Times, serif;
+	font-family: $font-serif-sc;
 	font-weight: normal;
-	font-variant: small-caps;
 	letter-spacing: .02em;
 	margin-bottom: 20px;
 }

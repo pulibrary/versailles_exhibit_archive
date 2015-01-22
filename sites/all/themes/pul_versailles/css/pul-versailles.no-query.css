@@ -14,17 +14,16 @@ img, media {
 
 /* line 2, ../sass/base/_typography.scss */
 body {
-  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-family: "Alegreya", Georgia, Times, serif;
   font-size: 1em; }
 
 /* line 8, ../sass/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
-  font-variant: small-caps;
   letter-spacing: .02em; }
 
-/* line 15, ../sass/base/_typography.scss */
+/* line 14, ../sass/base/_typography.scss */
 .splash-title {
   font-family: "Pinyon Script";
   color: #893d26;
@@ -34,15 +33,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal;
   letter-spacing: 0px; }
 
-/* line 28, ../sass/base/_typography.scss */
+/* line 27, ../sass/base/_typography.scss */
 .splash-subtitle {
   font-size: 1.3rem; }
 
-/* line 35, ../sass/base/_typography.scss */
+/* line 34, ../sass/base/_typography.scss */
 .splash-location, .splash-dates, .splash-copytext {
   font-size: 1.1rem; }
 
-/* line 42, ../sass/base/_typography.scss */
+/* line 41, ../sass/base/_typography.scss */
 .enter-site-button a:hover {
   color: #ffffff; }
 
@@ -208,30 +207,29 @@ a.popup:link {
 
 /* line 2, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .field-content a {
-  font-family: "Fanwood Text", Georgia, Times, serif;
-  font-weight: bold;
-  font-variant: small-caps;
+  font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
+  font-weight: normal;
   letter-spacing: .01em;
   color: #494f57; }
 
-/* line 10, ../sass/components/_navigation.scss */
+/* line 9, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row {
   border-top: solid 1px #e6e6e6;
   padding: 10px; }
 
-/* line 15, ../sass/components/_navigation.scss */
+/* line 14, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row:hover {
   border-color: #893d26; }
 
-/* line 19, ../sass/components/_navigation.scss */
+/* line 18, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row a:hover {
   color: #893d26; }
 
-/* line 23, ../sass/components/_navigation.scss */
+/* line 22, ../sass/components/_navigation.scss */
 .menu > .active, .view-exhibition-menu-case > .active {
   color: #893d26 !important; }
 
-/* line 27, ../sass/components/_navigation.scss */
+/* line 26, ../sass/components/_navigation.scss */
 a:hover {
   color: #893d26; }
 
@@ -516,9 +514,8 @@ body {
 
 /* line 96, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
-  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
-  font-variant: small-caps;
   letter-spacing: .02em;
   margin-bottom: 20px; }
 
