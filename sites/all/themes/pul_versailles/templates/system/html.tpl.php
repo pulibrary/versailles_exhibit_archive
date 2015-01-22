@@ -60,7 +60,6 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
-  <link rel="canonical" href="http://rbsc.princeton.edu/versailles" />
 </head>
 <body<?php print $attributes;?>>
   <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
