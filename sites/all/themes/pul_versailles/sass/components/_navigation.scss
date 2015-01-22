@@ -1,0 +1,29 @@
+
+.view-exhibition-menu-case .field-content a{
+	font-family: $font-serif;
+	font-weight: bold;
+	font-variant: small-caps;
+	letter-spacing: .01em;
+	color: $gray-dark;
+}
+
+.view-exhibition-menu-case .views-row{
+	border-top: solid 1px #e6e6e6;
+	padding: 10px;
+}
+
+.view-exhibition-menu-case .views-row:hover{
+	border-color: $versailles-red;
+}
+
+.view-exhibition-menu-case .views-row a:hover{
+	color: $versailles-red;
+}
+
+.menu > .active, .view-exhibition-menu-case > .active {
+	color: $versailles-red !important;
+}
+
+a:hover {
+	color: $versailles-red;
+}

@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /* No files to import found in abstractions/**\/* */
-/* line 3, ../sass/base/_grids.scss */
+/* line 2, ../sass/base/_grids.scss */
 body {
-  background: #EBF5EF; }
+  background: #ffffff; }
 
-/* line 7, ../sass/base/_grids.scss */
+/* line 6, ../sass/base/_grids.scss */
 .l-page {
-  background: #EBF5EF; }
+  background: #ffffff; }
 
 /* line 1, ../sass/base/_media.scss */
 img, media {
@@ -25,16 +25,42 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: .02em; }
 
 /* line 15, ../sass/base/_typography.scss */
-h1.splash-title {
+.splash-title {
   font-family: "Pinyon Script";
   color: #893d26;
   font-variant: normal;
-  font-size: 75px;
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: normal;
   letter-spacing: 0px; }
+  @media (min-width: 70em) {
+    /* line 15, ../sass/base/_typography.scss */
+    .splash-title {
+      font-size: 8vw; } }
+
+/* line 28, ../sass/base/_typography.scss */
+.splash-subtitle {
+  font-size: 1.3rem; }
+  @media (min-width: 70em) {
+    /* line 28, ../sass/base/_typography.scss */
+    .splash-subtitle {
+      font-size: 1.5vw; } }
+
+/* line 35, ../sass/base/_typography.scss */
+.splash-location, .splash-dates, .splash-copytext {
+  font-size: 1.1rem; }
+  @media (min-width: 70em) {
+    /* line 35, ../sass/base/_typography.scss */
+    .splash-location, .splash-dates, .splash-copytext {
+      font-size: 1.3vw; } }
+
+/* line 42, ../sass/base/_typography.scss */
+.enter-site-button a:hover {
+  color: #ffffff; }
 
 /* line 2, ../sass/components/_branding.scss */
 .wrapper--branding {
-  background-color: #333;
+  background-color: #494f57;
   min-height: 35px;
   border-top: 2px solid #e87511; }
   /* line 7, ../sass/components/_branding.scss */
@@ -146,6 +172,10 @@ a.enter-site-button {
     cursor: not-allowed; }
 
 /* line 7, ../sass/components/_buttons.scss */
+a.enter-site-button:hover {
+  color: white; }
+
+/* line 11, ../sass/components/_buttons.scss */
 a.prev-button, a.next-button {
   border: 1px solid #d4cdb6;
   border-radius: 3px;
@@ -191,12 +221,12 @@ a.prev-button, a.next-button {
     opacity: 0.5;
     cursor: not-allowed; }
 
-/* line 25, ../sass/components/_buttons.scss */
+/* line 29, ../sass/components/_buttons.scss */
 a.prev-button:hover, a.next-button:hover {
   box-shadow: inset 0 0px 0 0 white;
   color: black; }
 
-/* line 30, ../sass/components/_buttons.scss */
+/* line 34, ../sass/components/_buttons.scss */
 .prev-next-wrapper {
   margin-top: -50px;
   float: right; }
@@ -206,11 +236,12 @@ a.prev-button:hover, a.next-button:hover {
   width: 100vh;
   height: 100vh; }
 
-/* line 8, ../sass/components/_map.scss */
+/* line 9, ../sass/components/_map.scss */
 .leaflet-container {
-  background: #FFF; }
+  background: #d2c8bf !important;
+  border: solid 1px #494f57; }
 
-/* line 12, ../sass/components/_map.scss */
+/* line 14, ../sass/components/_map.scss */
 .popup-text {
   font-family: "Fanwood Text", Georgia, Times, serif;
   font-weight: normal;
@@ -218,9 +249,38 @@ a.prev-button:hover, a.next-button:hover {
   letter-spacing: .02em;
   color: black; }
 
-/* line 20, ../sass/components/_map.scss */
+/* line 22, ../sass/components/_map.scss */
 a.popup:link {
   text-decoration: none; }
+
+/* line 2, ../sass/components/_navigation.scss */
+.view-exhibition-menu-case .field-content a {
+  font-family: "Fanwood Text", Georgia, Times, serif;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: .01em;
+  color: #494f57; }
+
+/* line 10, ../sass/components/_navigation.scss */
+.view-exhibition-menu-case .views-row {
+  border-top: solid 1px #e6e6e6;
+  padding: 10px; }
+
+/* line 15, ../sass/components/_navigation.scss */
+.view-exhibition-menu-case .views-row:hover {
+  border-color: #893d26; }
+
+/* line 19, ../sass/components/_navigation.scss */
+.view-exhibition-menu-case .views-row a:hover {
+  color: #893d26; }
+
+/* line 23, ../sass/components/_navigation.scss */
+.menu > .active, .view-exhibition-menu-case > .active {
+  color: #893d26 !important; }
+
+/* line 27, ../sass/components/_navigation.scss */
+a:hover {
+  color: #893d26; }
 
 /* line 1, ../sass/components/_search.scss */
 #edit-search-block-form--2 {
@@ -230,37 +290,37 @@ a.popup:link {
 .front .wrapper--highlighted {
   padding: 0;
   background-size: 1600px auto;
-  max-height: 150px;
-  background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;
+  max-height: 200px;
+  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
   background-color: #d2c8bf; }
   @media (max-width: 44em) {
     /* line 1, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted {
       background-size: 1100px auto;
-      max-height: 110px;
-      background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
+      max-height: 160px;
+      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 1, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted {
       background-size: 1100px auto;
-      max-height: 110px;
-      background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
-  /* line 31, ../sass/components/_spotlight.scss */
+      max-height: 160px;
+      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
+  /* line 35, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;
     position: relative; }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 31, ../sass/components/_spotlight.scss */
+      /* line 35, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted {
         padding: 0; } }
-  /* line 40, ../sass/components/_spotlight.scss */
+  /* line 44, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 44, ../sass/components/_spotlight.scss */
+    /* line 48, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 {
       margin-top: 0px; } }
-  /* line 50, ../sass/components/_spotlight.scss */
+  /* line 54, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
     font-size: 1.5em;
     color: white;
@@ -268,106 +328,110 @@ a.popup:link {
     line-height: 1em;
     font-weight: bold; }
     @media (max-width: 44em) {
-      /* line 50, ../sass/components/_spotlight.scss */
+      /* line 54, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1em;
         padding-left: .5em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 50, ../sass/components/_spotlight.scss */
+      /* line 54, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1.2em;
         padding-left: .5em; } }
-  /* line 69, ../sass/components/_spotlight.scss */
+  /* line 73, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: block;
     font-size: .6em; }
     @media (max-width: 44em) {
-      /* line 69, ../sass/components/_spotlight.scss */
+      /* line 73, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1em;
         line-height: 1.2em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 69, ../sass/components/_spotlight.scss */
+      /* line 73, ../sass/components/_spotlight.scss */
       .front .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1.1em;
         line-height: 1.5em; } }
 
-/* line 87, ../sass/components/_spotlight.scss */
+/* line 91, ../sass/components/_spotlight.scss */
 .wrapper--highlighted {
   padding: 0;
   background-size: 1600px auto;
-  max-height: 150px;
-  background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;
+  max-height: 200px;
+  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
   background-color: #d2c8bf; }
   @media (max-width: 44em) {
-    /* line 87, ../sass/components/_spotlight.scss */
+    /* line 91, ../sass/components/_spotlight.scss */
     .wrapper--highlighted {
       background-size: 1100px auto;
-      max-height: 110px;
-      background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
+      max-height: 160px;
+      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 87, ../sass/components/_spotlight.scss */
+    /* line 91, ../sass/components/_spotlight.scss */
     .wrapper--highlighted {
       background-size: 1100px auto;
-      max-height: 110px;
-      background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat; } }
-  /* line 119, ../sass/components/_spotlight.scss */
+      max-height: 160px;
+      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
+  /* line 123, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
-    padding: 1em 0;
+    padding: 2.5em 0;
     position: relative; }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 119, ../sass/components/_spotlight.scss */
+      /* line 123, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted {
         padding: 0; } }
-  /* line 128, ../sass/components/_spotlight.scss */
+  /* line 132, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
   @media (max-width: 44em) {
-    /* line 132, ../sass/components/_spotlight.scss */
+    /* line 136, ../sass/components/_spotlight.scss */
     .wrapper--highlighted .l-region--highlighted .hero-copy h1 {
       margin-top: -.75em; } }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 132, ../sass/components/_spotlight.scss */
+    /* line 136, ../sass/components/_spotlight.scss */
     .wrapper--highlighted .l-region--highlighted .hero-copy h1 {
       margin-top: 0px; } }
-  /* line 143, ../sass/components/_spotlight.scss */
+  /* line 147, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
-    font-size: 1.5em;
-    color: antiquewhite;
+    font-size: 1em;
+    font-family: "Pinyon Script";
+    font-variant: normal;
+    color: #893d26;
     font-weight: bold;
-    text-shadow: 2px 2px 10px #000;
-    line-height: 1em;
-    letter-spacing: 0.05em; }
+    /* text-shadow: 2px 2px 10px #000; */
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 5px 5px 10px; }
     @media (max-width: 44em) {
-      /* line 143, ../sass/components/_spotlight.scss */
+      /* line 147, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1em;
         padding-left: .5em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 143, ../sass/components/_spotlight.scss */
+      /* line 147, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1.2em;
         padding-left: .5em; } }
-  /* line 165, ../sass/components/_spotlight.scss */
+  /* line 171, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
-    display: block;
+    display: none;
     font-size: .6em; }
     @media (max-width: 44em) {
-      /* line 165, ../sass/components/_spotlight.scss */
+      /* line 171, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1em;
         line-height: 1.2em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 165, ../sass/components/_spotlight.scss */
+      /* line 171, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1.1em;
         line-height: 1.5em; } }
 
-/* line 184, ../sass/components/_spotlight.scss */
+/* line 190, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -377,7 +441,7 @@ a.popup:link {
   clear: both;
   display: none; }
   @media (min-width: 70em) {
-    /* line 184, ../sass/components/_spotlight.scss */
+    /* line 190, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block {
       width: 22.41379%;
       float: right;
@@ -388,7 +452,7 @@ a.popup:link {
       margin-right: 0;
       display: block; } }
 
-/* line 196, ../sass/components/_spotlight.scss */
+/* line 202, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -398,26 +462,26 @@ a.popup:link {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 204, ../sass/components/_spotlight.scss */
+  /* line 210, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 207, ../sass/components/_spotlight.scss */
+  /* line 213, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 214, ../sass/components/_spotlight.scss */
+  /* line 220, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 219, ../sass/components/_spotlight.scss */
+  /* line 225, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 224, ../sass/components/_spotlight.scss */
+/* line 230, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -433,7 +497,7 @@ a.popup:link {
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 224, ../sass/components/_spotlight.scss */
+    /* line 230, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 22.41379%;
@@ -443,7 +507,7 @@ a.popup:link {
       clear: none;
       margin-right: 0; } }
   @media (min-width: 70em) {
-    /* line 224, ../sass/components/_spotlight.scss */
+    /* line 230, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 13.7931%;
@@ -452,27 +516,27 @@ a.popup:link {
       margin-right: 0;
       clear: none;
       margin-right: 0; } }
-  /* line 248, ../sass/components/_spotlight.scss */
+  /* line 254, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 255, ../sass/components/_spotlight.scss */
+    /* line 261, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 261, ../sass/components/_spotlight.scss */
+/* line 267, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 266, ../sass/components/_spotlight.scss */
+  /* line 272, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 272, ../sass/components/_spotlight.scss */
+  /* line 278, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -482,7 +546,7 @@ a.popup:link {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 280, ../sass/components/_spotlight.scss */
+  /* line 286, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -492,12 +556,12 @@ a.popup:link {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 288, ../sass/components/_spotlight.scss */
+    /* line 294, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 293, ../sass/components/_spotlight.scss */
+  /* line 299, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;
@@ -542,7 +606,7 @@ body {
 /* line 33, ../sass/pul-versailles.styles.scss */
 .front p {
   text-align: center;
-  width: 50%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto; }
 

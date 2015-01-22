@@ -4,6 +4,10 @@ a.enter-site-button {
     margin-bottom: 0.5em;
 }
 
+a.enter-site-button:hover {
+    color: white; 
+}
+
 a.prev-button, a.next-button {
 	@include button(simple, lighten(#e8e6df,2));
 	display: inline-block;

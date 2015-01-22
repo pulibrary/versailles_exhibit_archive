@@ -2,28 +2,32 @@
    // background: rgba(lighten($versailles-red, 28), 0.75);
     padding: 0;
     background-size: 1600px auto;
-    max-height: 150px;
+    max-height: 200px;
 
-    background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;  
-    
+    // background: linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)), url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,560/1600,/0/native.jpg) bottom no-repeat;  
+
+    background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; 
+
     background-color: $parchment;
 
     @include breakpoint($smart) {
         background-size: 1100px auto;
-        max-height: 110px;
+        max-height: 160px;
 
         background: 
-            linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
-            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat;             
+            //linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
+            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;             
+
     }
 
     @include breakpoint($tab) {
         background-size: 1100px auto;
-        max-height: 110px;
+        max-height: 160px;
 
         background: 
-            linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
-            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat;             
+            //linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
+            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; 
+           
     }
 
 
@@ -88,36 +92,36 @@
     // background: rgba(lighten($versailles-red, 28), 0.75);
     padding: 0;
     background-size: 1600px auto;
-    max-height: 150px;
+    max-height: 200px;
 
     background: 
-            linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
-            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1600,/0/native.jpg) bottom no-repeat;  
+            //linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
+            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;   
     
     background-color: $parchment;
 
     @include breakpoint($smart) {
         background-size: 1100px auto;
-        max-height: 110px;
+        max-height: 160px;
 
         background: 
-            linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
-            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat;             
+            //linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
+            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;              
     }
 
     @include breakpoint($tab) {
         background-size: 1100px auto;
-        max-height: 110px;
+        max-height: 160px;
 
         background: 
-            linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
-            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2478,4736,510/1100,/0/native.jpg) bottom no-repeat;             
+            //linear-gradient(rgba(25, 21, 37, 0.6), rgba(25, 21, 37, 0.5)),
+            url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;              
     }
 
 
 
     .l-region--highlighted {
-        padding: 1em 0;
+        padding: 2.5em 0;
         position: relative;
 
         @include breakpoint($tab) {
@@ -141,14 +145,16 @@
     }
 
     .l-region--highlighted .hero-copy h1 a{
-        font-size:1.5em;
-        color:antiquewhite;
+        font-size: 1em;
+        font-family: $font-script;
+        font-variant: normal;
+        color: $versailles-red;
         font-weight: bold;
-        // color:#a8000f;
-        text-shadow: 2px 2px 10px #000;
-        // text-shadow: 2px 2px #333;
-        line-height: 1em;
-        letter-spacing: 0.05em;
+        /* text-shadow: 2px 2px 10px #000; */
+        line-height: 1.3em;
+        letter-spacing: 0.01em;
+        background: rgba(255,255,255,0.8);
+        padding: 5px 5px 5px 10px;
 
         @include breakpoint($smart) {
             font-size: 1em;
@@ -163,7 +169,7 @@
     } 
 
     .l-region--highlighted .hero-copy h1 a .subtitle{
-        display:block;
+        display:none;
         font-size:.6em;
         @include breakpoint($smart) {
             font-size: .5em;

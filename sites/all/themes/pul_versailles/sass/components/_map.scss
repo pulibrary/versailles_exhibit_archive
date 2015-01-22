@@ -5,9 +5,11 @@
   height: 100vh;
 }
 
+
 .leaflet-container {
-  background: #FFF;
-}
+	background: $parchment !important;
+	border: solid 1px $gray-dark;
+	}
 
 .popup-text {
   font-family: "Fanwood Text", Georgia, Times, serif;
