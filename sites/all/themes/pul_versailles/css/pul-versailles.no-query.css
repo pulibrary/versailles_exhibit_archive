@@ -230,7 +230,7 @@ a.popup:link {
   color: #893d26 !important; }
 
 /* line 26, ../sass/components/_navigation.scss */
-.active-row {
+.active_row {
   background-color: #f5f4f1; }
 
 /* line 1, ../sass/components/_search.scss */
@@ -491,44 +491,45 @@ a {
 
 /* line 91, ../sass/pul-versailles.styles.scss */
 a:hover {
+  color: #893d26;
   text-decoration: underline; }
 
-/* line 95, ../sass/pul-versailles.styles.scss */
+/* line 96, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__items {
   vertical-align: top;
   display: inline-block;
   width: 600px; }
 
-/* line 101, ../sass/pul-versailles.styles.scss */
+/* line 102, ../sass/pul-versailles.styles.scss */
 .field--name-field-provenance {
   font-style: italic; }
 
 /* ====== media ====== */
-/* line 106, ../sass/pul-versailles.styles.scss */
+/* line 107, ../sass/pul-versailles.styles.scss */
 .media {
   margin: 10px; }
 
-/* line 107, ../sass/pul-versailles.styles.scss */
+/* line 108, ../sass/pul-versailles.styles.scss */
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
   zoom: 1; }
 
-/* line 108, ../sass/pul-versailles.styles.scss */
+/* line 109, ../sass/pul-versailles.styles.scss */
 .media .img {
   float: left;
   margin-right: 10px; }
 
-/* line 109, ../sass/pul-versailles.styles.scss */
+/* line 110, ../sass/pul-versailles.styles.scss */
 .media .img img {
   display: block; }
 
-/* line 110, ../sass/pul-versailles.styles.scss */
+/* line 111, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
 
-/* line 112, ../sass/pul-versailles.styles.scss */
+/* line 113, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
