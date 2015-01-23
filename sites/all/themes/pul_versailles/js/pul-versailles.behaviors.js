@@ -9,7 +9,7 @@
    *
    * In most cases, there is no good reason to NOT wrap your markup producing
    * JavaScript in a theme function.
-   */
+  
   Drupal.theme.prototype.pulVersaillesExampleButton = function (path, title) {
     // Create an anchor element with jQuery.
     //return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
@@ -17,6 +17,7 @@
     return $('.views-row a.active').closest('views-row').addClass('active_row');
 
   };
+ */
 
   /**
    * Behaviors are Drupal's way of applying JavaScript to a page. In short, the
@@ -41,7 +42,7 @@
    *   Drupal.settings directly you should use this because of potential
    *   modifications made by the Ajax callback that also produced 'context'.
    */
-  Drupal.behaviors.pulVersaillesExampleBehavior = {
+  Drupal.behaviors.pulVersaillesActiveNavItem = {
     attach: function (context, settings) {
       // By using the 'context' variable we make sure that our code only runs on
       // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
@@ -49,14 +50,18 @@
       // processed previously. By using .once('foo') all processed elements will
       // get tagged with a 'foo-processed' class, causing all future invocations
       // of this behavior to ignore them.
-      $('.some-selector', context).once('foo', function () {
-        // Now, we are invoking the previously declared theme function using two
-        // settings as arguments.
-        var $anchor = Drupal.theme('pulVersaillesExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
+      $('.view-exhibition-menu-case .views-row', context).once('active-nav-item', function () {
 
-        // The anchor is then appended to the current element.
-        $anchor.appendTo(this);
+        $('.active').closest('.views-row').addClass('active_row');
+
       });
+
+      $('.prev-next-wrapper', context).once('active-nav-item', function () {
+          var sectionClass = '.section-' + $( ".prev-next-wrapper" ).data( "section" );
+          $(sectionClass).addClass('active_row');
+          $(sectionClass + ' a').addClass('active');
+      });
+
     }
   };
 

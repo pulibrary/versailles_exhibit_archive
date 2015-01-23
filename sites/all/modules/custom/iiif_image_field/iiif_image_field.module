@@ -484,7 +484,6 @@ function theme_iiif_image_field_formatter($variables) {
 
     }(jQuery));",
     array('type' => 'inline', 'scope' => 'footer', 'weight' => 3));
-    drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/rotate.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 4));
 
   }else{
     // Non-zoom behaviors

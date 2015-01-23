@@ -78,7 +78,6 @@
  * @see template_process()
  */
 ?>
-
 <?php if ($view_mode == 'media_object'):?>
   <div id="node-<?php print $node->nid; ?>" class="media" <?php print $attributes; ?>>
 
@@ -104,10 +103,10 @@
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 <?php 
-      print "<div class='prev-next-wrapper'>";      
       $curIndex = $node->field_exhibit_sort_order['und'][0][value];
       $curCase = $node->field_exhibit_case['und'][0][target_id];
-
+      print "<div data-section='". $curCase ."' class='prev-next-wrapper'>";      
+      
       $queryPrev = new EntityFieldQuery();
 
       $queryPrev->entityCondition('entity_type', 'node')
