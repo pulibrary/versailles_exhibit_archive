@@ -12,7 +12,10 @@
    */
   Drupal.theme.prototype.pulVersaillesExampleButton = function (path, title) {
     // Create an anchor element with jQuery.
-    return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
+    //return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
+
+    return $('.views-row a.active').closest('views-row').addClass('active_row');
+
   };
 
   /**
@@ -56,7 +59,7 @@
       });
     }
   };
-            console.log(Drupal);
+
   Drupal.behaviors.pulVersaillesMapBehavior = {
     attach: function (context, settings) {
       // By using the 'context' variable we make sure that our code only runs on
@@ -178,7 +181,6 @@
       });
     }
   };
-
 
 
 })(jQuery);

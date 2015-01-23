@@ -19,10 +19,10 @@
 	color: $versailles-red;
 }
 
-.menu > .active, .view-exhibition-menu-case > .active {
+.menu .active, .view-exhibition-menu-case .active {
 	color: $versailles-red !important;
 }
 
-a:hover {
-	color: $versailles-red;
+.active-row {
+	background-color: #f5f4f1;
 }

@@ -51,13 +51,16 @@ body {
 	padding-top:30px;
 }
 
-
 .node--exhibit-rbsc-item--full .content .field {
 	
 	border-top: solid 1px #e6e6e6;
 	margin-top: 20px;
 	padding-top: 10px;
 
+}
+
+.node--exhibit-rbsc-item--full .content .field:first-child {
+    margin-top: 0px;
 }
 
 .node--exhibit-rbsc-item--full .content .field__label {
@@ -79,6 +82,14 @@ body {
 .readable {
 	font-size:1.3em;
 	line-spacing:1.5em;
+}
+
+a {
+	color: $versailles-red;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .node--exhibit-rbsc-item--full .content .field__items {
