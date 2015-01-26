@@ -35,25 +35,26 @@ h1, h2, h3, h4, h5, h6 {
   @media (min-width: 70em) {
     /* line 14, ../sass/base/_typography.scss */
     .splash-title {
-      font-size: 8vw; } }
+      font-size: 8vw;
+      line-height: 7vw; } }
 
-/* line 27, ../sass/base/_typography.scss */
+/* line 28, ../sass/base/_typography.scss */
 .splash-subtitle {
   font-size: 1.3rem; }
   @media (min-width: 70em) {
-    /* line 27, ../sass/base/_typography.scss */
+    /* line 28, ../sass/base/_typography.scss */
     .splash-subtitle {
       font-size: 1.5vw; } }
 
-/* line 34, ../sass/base/_typography.scss */
+/* line 35, ../sass/base/_typography.scss */
 .splash-location, .splash-dates, .splash-copytext {
   font-size: 1.1rem; }
   @media (min-width: 70em) {
-    /* line 34, ../sass/base/_typography.scss */
+    /* line 35, ../sass/base/_typography.scss */
     .splash-location, .splash-dates, .splash-copytext {
       font-size: 1.3vw; } }
 
-/* line 41, ../sass/base/_typography.scss */
+/* line 42, ../sass/base/_typography.scss */
 .enter-site-button a:hover {
   color: #ffffff; }
 
@@ -679,7 +680,8 @@ a:hover {
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
-  zoom: 1; }
+  zoom: 1;
+  min-width: 100px; }
 
 /* line 109, ../sass/pul-versailles.styles.scss */
 .media .img {
@@ -688,18 +690,36 @@ a:hover {
 
 /* line 110, ../sass/pul-versailles.styles.scss */
 .media .img img {
-  display: block; }
+  display: inline-block;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
 
-/* line 111, ../sass/pul-versailles.styles.scss */
+/* line 123, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
 
-/* line 113, ../sass/pul-versailles.styles.scss */
+/* line 125, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
   letter-spacing: .02em;
   margin-bottom: 20px; }
+
+/* line 132, ../sass/pul-versailles.styles.scss */
+.view-exhibit-items-top-level-cases .views-row-odd {
+  background-color: #f5f4f1;
+  padding: 10px; }
+
+/* line 137, ../sass/pul-versailles.styles.scss */
+.view-exhibit-items-top-level-cases .views-row-even {
+  padding: 10px; }
 
 /*# sourceMappingURL=pul-versailles.styles.css.map */
