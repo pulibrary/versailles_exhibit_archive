@@ -559,4 +559,44 @@ a:hover {
 .viewer {
   width: 800px; }
 
+/* line 151, ../sass/pul-versailles.styles.scss */
+table.chronology {
+  width: auto;
+  border: 0px solid #ddd; }
+
+/* line 156, ../sass/pul-versailles.styles.scss */
+table.chronology td {
+  border: 0px solid #ddd; }
+
+/* line 160, ../sass/pul-versailles.styles.scss */
+.chronology thead {
+  color: #893d26;
+  font-family: "Pinyon Script";
+  font-size: 1.5em; }
+
+/* line 166, ../sass/pul-versailles.styles.scss */
+.chronology thead .romans {
+  font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
+  font-style: italic;
+  font-size: .8em;
+  font-weight: normal; }
+
+/* line 173, ../sass/pul-versailles.styles.scss */
+.chronology th {
+  border: 0px solid #ddd;
+  background-color: #ffffff;
+  text-align: center; }
+
+/* line 179, ../sass/pul-versailles.styles.scss */
+.chronology td {
+  padding: 10px; }
+
+/* line 183, ../sass/pul-versailles.styles.scss */
+.chronology tr td:nth-child(odd) {
+  white-space: nowrap; }
+
+/* line 187, ../sass/pul-versailles.styles.scss */
+.chronology tbody tr:nth-child(odd) {
+  background-color: #f5f4f1; }
+
 /*# sourceMappingURL=pul-versailles.no-query.css.map */

@@ -147,3 +147,43 @@ a:hover {
 		width:600px;
 	}
 }
+
+table.chronology {
+	width: auto;
+	border: 0px solid #ddd;
+}
+
+table.chronology td {
+	border: 0px solid #ddd;
+}
+
+.chronology thead {
+	color: $versailles-red;
+	font-family: $font-script;
+	font-size: 1.5em;
+}
+
+.chronology thead .romans{
+	font-family: $font-serif-sc;
+	font-style: italic;
+	font-size: .8em;
+	font-weight: normal;
+}
+
+.chronology th{
+	border: 0px solid #ddd;
+	background-color: $white;
+	text-align: center;
+}
+
+.chronology td {
+   padding: 10px;
+}
+
+.chronology tr td:nth-child(odd) {
+   white-space: nowrap;
+}
+
+.chronology tbody tr:nth-child(odd) {
+   background-color: #f5f4f1;
+}
