@@ -728,7 +728,7 @@ a:hover {
   @media (max-width: 44em) {
     /* line 141, ../sass/pul-versailles.styles.scss */
     .viewer {
-      width: 500px; } }
+      width: 300px; } }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 141, ../sass/pul-versailles.styles.scss */
     .viewer {
