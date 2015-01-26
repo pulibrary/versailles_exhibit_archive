@@ -585,17 +585,18 @@ table.chronology td {
 .chronology th {
   border: 0px solid #ddd;
   background-color: #ffffff;
-  text-align: center; }
+  text-align: center;
+  width: 50%; }
 
-/* line 179, ../sass/pul-versailles.styles.scss */
+/* line 180, ../sass/pul-versailles.styles.scss */
 .chronology td {
   padding: 10px; }
 
-/* line 183, ../sass/pul-versailles.styles.scss */
+/* line 184, ../sass/pul-versailles.styles.scss */
 .chronology tr td:nth-child(odd) {
   white-space: nowrap; }
 
-/* line 187, ../sass/pul-versailles.styles.scss */
+/* line 188, ../sass/pul-versailles.styles.scss */
 .chronology tbody tr:nth-child(odd) {
   background-color: #f5f4f1; }
 
