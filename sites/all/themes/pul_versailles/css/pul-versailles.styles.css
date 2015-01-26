@@ -722,4 +722,16 @@ a:hover {
 .view-exhibit-items-top-level-cases .views-row-even {
   padding: 10px; }
 
+/* line 141, ../sass/pul-versailles.styles.scss */
+.viewer {
+  width: 800px; }
+  @media (max-width: 44em) {
+    /* line 141, ../sass/pul-versailles.styles.scss */
+    .viewer {
+      width: 500px; } }
+  @media (min-width: 44em) and (max-width: 70em) {
+    /* line 141, ../sass/pul-versailles.styles.scss */
+    .viewer {
+      width: 600px; } }
+
 /*# sourceMappingURL=pul-versailles.styles.css.map */

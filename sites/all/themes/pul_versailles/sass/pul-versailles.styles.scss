@@ -138,3 +138,12 @@ a:hover {
 	padding: 10px;
 }
 
+.viewer {
+	width:800px;
+	@include breakpoint($smart) {
+		width:500px;
+	}
+	@include breakpoint($tab) {
+		width:600px;
+	}
+}
