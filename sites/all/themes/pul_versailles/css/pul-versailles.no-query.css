@@ -600,4 +600,8 @@ table.chronology td {
 .chronology tbody tr:nth-child(odd) {
   background-color: #f5f4f1; }
 
+/* line 192, ../sass/pul-versailles.styles.scss */
+.l-footer {
+  margin: 0px; }
+
 /*# sourceMappingURL=pul-versailles.no-query.css.map */
