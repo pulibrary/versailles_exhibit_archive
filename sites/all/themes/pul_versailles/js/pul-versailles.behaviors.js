@@ -62,6 +62,29 @@
           $(sectionClass + ' a').addClass('active');
       });
 
+      $('.view-exhibition-menu-case', context).once('sliding-nav', function () {
+
+        $(".pane-exhibition-menu-case .pane-title").click(function(){
+          $( "html" ).toggleClass( "openNav" );
+          $( ".pane-exhibition-menu-case .fa" ).toggleClass( "fa-arrow-circle-left" );
+          $( ".pane-exhibition-menu-case .fa" ).toggleClass( "fa-bars" );
+          
+        });
+
+        var str = $( ".pane-exhibition-menu-case .active" ).text();
+        $( ".pane-exhibition-menu-case .pane-title" ).append( " " + str );
+/*
+        $(".pane-exhibition-menu-case .pane-title").click(function(){
+          $("html").addClass("openNav");
+        });
+          
+        $(".pane-exhibition-menu-case .pane-title").click(function(){
+          $("html").removeClass("openNav"); 
+        });
+*/
+      });
+
+
     }
   };
 

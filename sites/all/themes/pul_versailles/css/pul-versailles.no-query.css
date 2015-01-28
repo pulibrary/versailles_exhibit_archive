@@ -233,6 +233,11 @@ a.popup:link {
 .active_row {
   background-color: #f5f4f1; }
 
+/* hamburger "bars" get hidden unless viewed on a smart phone */
+/* line 31, ../sass/components/_navigation.scss */
+.pane-exhibition-menu-case .pane-title {
+  display: none; }
+
 /* line 1, ../sass/components/_search.scss */
 #edit-search-block-form--2 {
   width: 100%; }
