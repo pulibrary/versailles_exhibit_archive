@@ -257,42 +257,46 @@ a.prev-button:hover, a.next-button:hover {
 a.popup:link {
   text-decoration: none; }
 
-/* line 2, ../sass/components/_navigation.scss */
+/* line 1, ../sass/components/_navigation.scss */
+.menu a:hover {
+  color: #893d26 !important; }
+
+/* line 5, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .field-content a {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
   letter-spacing: .01em;
   color: #494f57; }
 
-/* line 9, ../sass/components/_navigation.scss */
+/* line 12, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row {
   border-top: solid 1px #e6e6e6;
   padding: 10px; }
 
-/* line 14, ../sass/components/_navigation.scss */
+/* line 17, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row:hover {
   border-color: #893d26; }
 
-/* line 18, ../sass/components/_navigation.scss */
+/* line 21, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row a:hover {
   color: #893d26; }
 
-/* line 22, ../sass/components/_navigation.scss */
+/* line 25, ../sass/components/_navigation.scss */
 .menu .active, .view-exhibition-menu-case .active {
   color: #893d26 !important; }
 
-/* line 26, ../sass/components/_navigation.scss */
+/* line 29, ../sass/components/_navigation.scss */
 .active_row {
   background-color: #f5f4f1; }
 
 /* hamburger "bars" get hidden unless viewed on a smart phone */
-/* line 31, ../sass/components/_navigation.scss */
+/* line 34, ../sass/components/_navigation.scss */
 .pane-exhibition-menu-case .pane-title {
   display: none; }
 
 @media (max-width: 44em) {
   /* Move nav off screen, setup transitions */
-  /* line 37, ../sass/components/_navigation.scss */
+  /* line 40, ../sass/components/_navigation.scss */
   .view-exhibition-menu-case {
     width: 65%;
     position: absolute;
@@ -300,11 +304,11 @@ a.popup:link {
     top: 0;
     height: 100%; }
 
-  /* line 45, ../sass/components/_navigation.scss */
+  /* line 48, ../sass/components/_navigation.scss */
   .view-exhibition-menu-case .view-content {
     border-top: 1px solid #888; }
 
-  /* line 49, ../sass/components/_navigation.scss */
+  /* line 52, ../sass/components/_navigation.scss */
   .view-exhibition-menu-case .views-row {
     float: none;
     width: 100%;
@@ -312,11 +316,11 @@ a.popup:link {
     box-sizing: border-box; }
 
   /* show hamburger "bars" indicating collapsed/hidden menu */
-  /* line 57, ../sass/components/_navigation.scss */
+  /* line 60, ../sass/components/_navigation.scss */
   .pane-exhibition-menu-case .pane-title {
     display: block; }
 
-  /* line 61, ../sass/components/_navigation.scss */
+  /* line 64, ../sass/components/_navigation.scss */
   .openNav .panel-display {
     left: 0;
     -webkit-transform: translate3d(70%, 0, 0);
@@ -330,7 +334,7 @@ a.popup:link {
     transition: transform 500ms ease; }
 
   /* When the panel is closed, transition the page back to the left */
-  /* line 75, ../sass/components/_navigation.scss */
+  /* line 78, ../sass/components/_navigation.scss */
   .panel-display {
     left: 0;
     -webkit-transform: translate3d(0, 0, 0);

@@ -64,9 +64,11 @@
         $( ".view-exhibition-menu-case .views-row" ).hover(
           function() {
             $( this ).find("a").css( "color", "#893d26" );
+            $( this ).find("a").css( "text-decoration", "underline" );
             $( this ).css( "cursor", "pointer" );
           }, function() {
             $( this ).find("a").css( "color", "#494f57" );
+            $( this ).find("a").css( "text-decoration", "none" );
             $( this ).css( "cursor", "default" );
           }
         );
