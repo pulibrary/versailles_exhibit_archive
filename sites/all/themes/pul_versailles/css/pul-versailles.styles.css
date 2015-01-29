@@ -39,22 +39,26 @@ h1, h2, h3, h4, h5, h6 {
       line-height: 7vw; } }
 
 /* line 28, ../sass/base/_typography.scss */
+.splash-title a:hover {
+  text-decoration: none; }
+
+/* line 32, ../sass/base/_typography.scss */
 .splash-subtitle {
   font-size: 1.3rem; }
   @media (min-width: 70em) {
-    /* line 28, ../sass/base/_typography.scss */
+    /* line 32, ../sass/base/_typography.scss */
     .splash-subtitle {
       font-size: 1.5vw; } }
 
-/* line 35, ../sass/base/_typography.scss */
+/* line 39, ../sass/base/_typography.scss */
 .splash-location, .splash-dates, .splash-copytext {
   font-size: 1.1rem; }
   @media (min-width: 70em) {
-    /* line 35, ../sass/base/_typography.scss */
+    /* line 39, ../sass/base/_typography.scss */
     .splash-location, .splash-dates, .splash-copytext {
       font-size: 1.3vw; } }
 
-/* line 42, ../sass/base/_typography.scss */
+/* line 46, ../sass/base/_typography.scss */
 .enter-site-button a:hover {
   color: #ffffff; }
 
