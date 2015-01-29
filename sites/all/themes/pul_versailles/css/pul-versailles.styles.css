@@ -459,7 +459,8 @@ a.popup:link {
     line-height: 1.3em;
     letter-spacing: 0.01em;
     background: rgba(255, 255, 255, 0.8);
-    padding: 5px 5px 5px 10px; }
+    padding: 5px 5px 5px 10px;
+    border-radius: 5px; }
     @media (max-width: 44em) {
       /* line 147, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
@@ -470,24 +471,28 @@ a.popup:link {
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
         font-size: 1.2em;
         padding-left: .5em; } }
-  /* line 171, ../sass/components/_spotlight.scss */
+  /* line 172, ../sass/components/_spotlight.scss */
+  .wrapper--highlighted .l-region--highlighted .hero-copy h1 a:hover {
+    background: rgba(255, 255, 255, 0.9);
+    text-decoration: none; }
+  /* line 177, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: none;
     font-size: .6em; }
     @media (max-width: 44em) {
-      /* line 171, ../sass/components/_spotlight.scss */
+      /* line 177, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1em;
         line-height: 1.2em; } }
     @media (min-width: 44em) and (max-width: 70em) {
-      /* line 171, ../sass/components/_spotlight.scss */
+      /* line 177, ../sass/components/_spotlight.scss */
       .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
         font-size: .5em;
         padding-left: 1.1em;
         line-height: 1.5em; } }
 
-/* line 190, ../sass/components/_spotlight.scss */
+/* line 196, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -497,7 +502,7 @@ a.popup:link {
   clear: both;
   display: none; }
   @media (min-width: 70em) {
-    /* line 190, ../sass/components/_spotlight.scss */
+    /* line 196, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block {
       width: 22.41379%;
       float: right;
@@ -508,7 +513,7 @@ a.popup:link {
       margin-right: 0;
       display: block; } }
 
-/* line 202, ../sass/components/_spotlight.scss */
+/* line 208, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -518,26 +523,26 @@ a.popup:link {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 210, ../sass/components/_spotlight.scss */
+  /* line 216, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 213, ../sass/components/_spotlight.scss */
+  /* line 219, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 220, ../sass/components/_spotlight.scss */
+  /* line 226, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 225, ../sass/components/_spotlight.scss */
+  /* line 231, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 230, ../sass/components/_spotlight.scss */
+/* line 236, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -553,7 +558,7 @@ a.popup:link {
   background: rgba(137, 61, 38, 0.35);
   padding: 0.5em; }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 230, ../sass/components/_spotlight.scss */
+    /* line 236, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 22.41379%;
@@ -563,7 +568,7 @@ a.popup:link {
       clear: none;
       margin-right: 0; } }
   @media (min-width: 70em) {
-    /* line 230, ../sass/components/_spotlight.scss */
+    /* line 236, ../sass/components/_spotlight.scss */
     .block--pudl-highlight {
       display: block;
       width: 13.7931%;
@@ -572,27 +577,27 @@ a.popup:link {
       margin-right: 0;
       clear: none;
       margin-right: 0; } }
-  /* line 254, ../sass/components/_spotlight.scss */
+  /* line 260, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white;
     text-align: center; }
-    /* line 261, ../sass/components/_spotlight.scss */
+    /* line 267, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 267, ../sass/components/_spotlight.scss */
+/* line 273, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 272, ../sass/components/_spotlight.scss */
+  /* line 278, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 278, ../sass/components/_spotlight.scss */
+  /* line 284, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -602,7 +607,7 @@ a.popup:link {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 286, ../sass/components/_spotlight.scss */
+  /* line 292, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -612,12 +617,12 @@ a.popup:link {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 294, ../sass/components/_spotlight.scss */
+    /* line 300, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 299, ../sass/components/_spotlight.scss */
+  /* line 305, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;

@@ -155,6 +155,7 @@
         letter-spacing: 0.01em;
         background: rgba(255,255,255,0.8);
         padding: 5px 5px 5px 10px;
+        border-radius: 5px;
 
         @include breakpoint($smart) {
             font-size: 1em;
@@ -167,6 +168,11 @@
         }
         
     } 
+
+    .l-region--highlighted .hero-copy h1 a:hover{
+        background: rgba(255,255,255,0.9);
+        text-decoration: none;
+    }
 
     .l-region--highlighted .hero-copy h1 a .subtitle{
         display:none;
