@@ -553,13 +553,13 @@ a.popup:link {
   right: 0;
   margin-top: 1em;
   text-align: center;
-  display: none;
+  display: block;
   width: 100%;
   float: right;
   margin-left: 0;
   margin-right: 0;
   clear: none;
-  background: rgba(137, 61, 38, 0.35);
+  background: rgba(255, 255, 255, 0.65);
   padding: 0.5em; }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 236, ../sass/components/_spotlight.scss */
@@ -586,7 +586,7 @@ a.popup:link {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
-    color: white;
+    color: #893d26;
     text-align: center; }
     /* line 267, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {

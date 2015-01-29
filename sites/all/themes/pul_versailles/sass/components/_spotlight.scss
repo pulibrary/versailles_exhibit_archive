@@ -240,9 +240,9 @@
     margin-top: 1em;
     text-align: center;
 
-    display: none;
+    display: block;
     @include grid-span(12); 
-    background: rgba($versailles-red, .35);
+    background: rgba($white, .65);
     padding: 0.5em;
 
     @include breakpoint($tab) {
@@ -261,7 +261,7 @@
         font-size: $font-size-smaller;
         font-family: $font-sans;
         margin: 0;
-        color: white;
+        color: $versailles-red;
         text-align: center;
 
         .icon-newtab {

@@ -32,5 +32,9 @@
 <?php if ($content): ?>
   <div<?php print $attributes; ?>>
     <?php print $content; ?>
+    <div class="block--pudl-highlight">
+      <a target="_blank" title="Background image is the &quot;Ceiling of the Great Staircase of the Palace of Versailles&quot;, from the Princeton University Art Museum" 
+        href="/versailles/item/911"><span class="icon-newtab"></span> About the Image</a>
+    </div>
   </div>
 <?php endif; ?>
