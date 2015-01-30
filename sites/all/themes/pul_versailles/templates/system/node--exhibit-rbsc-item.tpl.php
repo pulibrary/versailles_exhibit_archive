@@ -78,7 +78,18 @@
  * @see template_process()
  */
 ?>
+<?php 
+  // GET THE IIIF SERVER BASE URI AND API VERSION
+  $image_server_base = variable_get('image_server_base', '');
+  $image_api_version = variable_get('image_api_version', '1.1');
+  $default = 'default';
+  if($image_api_version == '1.1'){
+    $default = 'native';
+  }
+?>
+
 <?php if ($view_mode == 'media_object'):?>
+
   <div id="node-<?php print $node->nid; ?>" class="media" <?php print $attributes; ?>>
 
     <a href="<?php print $node_url; ?>" class="img">
@@ -88,7 +99,7 @@
         $hw = "200,";
         if($rotation == 90 || $rotation == 270){ $hw = ",200"; }
       ?>
-        <img src="http://libimages.princeton.edu/loris/<?php print $node->field_iiif_image['und'][0]['iiif_image_id']; ?>/full/<?php print $hw; ?>/<?php print $rotation; ?>/native.jpg" alt="<?php print $title; ?>" />
+        <img src="<?php print $image_server_base;?>/<?php print $node->field_iiif_image['und'][0]['iiif_image_id']; ?>/full/<?php print $hw; ?>/<?php print $rotation; ?>/<?php print $default; ?>.jpg" alt="<?php print $title; ?>" />
       <?php endif; ?>
     </a>
 
