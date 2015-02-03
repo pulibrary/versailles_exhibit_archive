@@ -852,4 +852,29 @@ table.chronology td {
 .l-footer {
   margin: 0px; }
 
+/* line 196, ../sass/pul-versailles.styles.scss */
+.l-region--footer {
+  float: left;
+  padding-top: 1em;
+  clear: none;
+  /*
+  @include grid-span(9, 5);
+  width:100%;
+  text-align: right;
+  float: none;
+  margin-right: 0px;
+  margin-left: 0px;
+  clear: none;
+  */ }
+
+/* line 211, ../sass/pul-versailles.styles.scss */
+.friends {
+  padding: 20px 40px 20px 40px;
+  float: left;
+  width: 20em; }
+
+/* line 218, ../sass/pul-versailles.styles.scss */
+.text-muted {
+  color: #999; }
+
 /*# sourceMappingURL=pul-versailles.styles.css.map */
