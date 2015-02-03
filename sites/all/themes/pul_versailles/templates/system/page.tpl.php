@@ -130,7 +130,7 @@
   <footer class="l-footer" role="contentinfo">
     <div class="friends">
       <a target="_blank" href="http://www.fpul.org" title="Friends of Princeton University Library">
-        <img src="/<?php print path_to_theme(); ?>/images/friends.png" alt="Friends of Princeton University Library" border="0">
+        <img src="/versailles/<?php print path_to_theme(); ?>/images/friends.png" alt="Friends of Princeton University Library" border="0">
       </a>
       <div id="university-copyright-footer" class="text-muted">
         The Friends of the Princeton University Library make 
