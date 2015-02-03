@@ -205,9 +205,9 @@
 
               // create marker cluster with non-default params
               var markers = L.markerClusterGroup({
-                spiderfyDistanceMultiplier: 3,
+                spiderfyDistanceMultiplier: 4,
                 showCoverageOnHover: false,
-                maxClusterRadius: 70
+                maxClusterRadius: 50
               });
 
               // add geojson layer to map
