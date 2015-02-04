@@ -19,8 +19,8 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 4rem;
 	letter-spacing: normal;
 	@include breakpoint($desk) {
-		font-size: 8vw;
-		line-height: 7vw;
+		font-size: 7vw;
+		line-height: 6vw;
 	}
 	letter-spacing: 0px;
 } 

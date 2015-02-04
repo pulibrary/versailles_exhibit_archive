@@ -90,8 +90,10 @@ h1, h2, h3, h4, h5, h6 {
   background-size: contain;
   display: block;
   height: 25px;
-  width: 20%;
-  margin-top: 5px; }
+  width: 18em;
+  margin-top: 5px;
+  margin-right: 1em;
+  float: right; }
 
 /* line 1, ../sass/components/_buttons.scss */
 a.enter-site-button {
@@ -259,7 +261,7 @@ a.popup:link {
   background-color: #d2c8bf; }
   /* line 35, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
-    padding: 1em 0;
+    padding: 2.5em 0;
     position: relative; }
   /* line 44, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted h2 {
@@ -285,17 +287,30 @@ a.popup:link {
   background-size: 1600px auto;
   max-height: 200px;
   background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
-  background-color: #d2c8bf; }
+  background-color: #d2c8bf;
+    /*
+    .l-region--highlighted .hero-copy h1 {
+
+        @include breakpoint($smart) {
+            margin-top: -.75em;
+        }
+
+        @include breakpoint($tab) {
+            margin-top: 0px;
+        }
+    }
+*/ }
   /* line 127, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
-    padding: 2.5em 0;
+    padding: 1em 0;
     position: relative; }
-  /* line 136, ../sass/components/_spotlight.scss */
+  /* line 141, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted h2 {
     display: none; }
-  /* line 151, ../sass/components/_spotlight.scss */
+  /* line 158, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a {
-    font-size: 1em;
+    font-size: 1.2em;
+    padding-left: .5em;
     font-family: "Pinyon Script";
     font-variant: normal;
     color: #893d26;
@@ -306,16 +321,16 @@ a.popup:link {
     background: rgba(255, 255, 255, 0.8);
     padding: 5px 5px 5px 10px;
     border-radius: 5px; }
-  /* line 176, ../sass/components/_spotlight.scss */
+  /* line 184, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a:hover {
     background: rgba(255, 255, 255, 0.9);
     text-decoration: none; }
-  /* line 181, ../sass/components/_spotlight.scss */
+  /* line 189, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted .hero-copy h1 a .subtitle {
     display: none;
     font-size: .6em; }
 
-/* line 200, ../sass/components/_spotlight.scss */
+/* line 208, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   width: 100%;
   float: right;
@@ -325,7 +340,7 @@ a.popup:link {
   clear: both;
   display: none; }
 
-/* line 212, ../sass/components/_spotlight.scss */
+/* line 220, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   background: rgba(137, 61, 38, 0.65);
   margin-top: 1.5em;
@@ -335,26 +350,26 @@ a.popup:link {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-  /* line 220, ../sass/components/_spotlight.scss */
+  /* line 228, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block h2 {
     display: none; }
-  /* line 223, ../sass/components/_spotlight.scss */
+  /* line 231, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block a {
     font-size: 0.875rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: white; }
-  /* line 230, ../sass/components/_spotlight.scss */
+  /* line 238, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block img {
     width: 260px;
     height: 159px; }
-  /* line 235, ../sass/components/_spotlight.scss */
+  /* line 243, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
 
-/* line 240, ../sass/components/_spotlight.scss */
+/* line 248, ../sass/components/_spotlight.scss */
 .block--pudl-highlight {
   position: absolute;
   bottom: 0;
@@ -369,27 +384,27 @@ a.popup:link {
   clear: none;
   background: rgba(255, 255, 255, 0.65);
   padding: 0.5em; }
-  /* line 264, ../sass/components/_spotlight.scss */
+  /* line 272, ../sass/components/_spotlight.scss */
   .block--pudl-highlight a {
     font-size: 0.75rem;
     font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #893d26;
     text-align: center; }
-    /* line 271, ../sass/components/_spotlight.scss */
+    /* line 279, ../sass/components/_spotlight.scss */
     .block--pudl-highlight a .icon-newtab {
       margin-right: 0.5em; }
 
-/* line 277, ../sass/components/_spotlight.scss */
+/* line 285, ../sass/components/_spotlight.scss */
 #block-views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer; }
-  /* line 282, ../sass/components/_spotlight.scss */
+  /* line 290, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .view-content .views-row {
     height: 159px;
     overflow: hidden;
     position: relative; }
-  /* line 288, ../sass/components/_spotlight.scss */
+  /* line 296, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field {
     -moz-transition: all, ease-in-out 0.2s;
     -o-transition: all, ease-in-out 0.2s;
@@ -399,7 +414,7 @@ a.popup:link {
     color: white;
     height: inherit;
     padding: 0.5em 0.7em; }
-  /* line 296, ../sass/components/_spotlight.scss */
+  /* line 304, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.125rem;
@@ -409,12 +424,12 @@ a.popup:link {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
-    /* line 304, ../sass/components/_spotlight.scss */
+    /* line 312, ../sass/components/_spotlight.scss */
     #block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px; }
-  /* line 309, ../sass/components/_spotlight.scss */
+  /* line 317, ../sass/components/_spotlight.scss */
   #block-views-spotlight-dispalsys-block .views-field-title {
     position: absolute;
     top: 0;
@@ -475,17 +490,17 @@ body {
 .three_six_three-region--first {
   padding-top: 30px; }
 
-/* line 54, ../sass/pul-versailles.styles.scss */
+/* line 57, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field {
   border-top: solid 1px #e6e6e6;
   margin-top: 20px;
   padding-top: 10px; }
 
-/* line 62, ../sass/pul-versailles.styles.scss */
+/* line 65, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field:first-child {
   margin-top: 0px; }
 
-/* line 66, ../sass/pul-versailles.styles.scss */
+/* line 69, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__label {
   line-height: 20px;
   letter-spacing: 0.05em;
@@ -496,53 +511,53 @@ body {
   vertical-align: top;
   clear: both; }
 
-/* line 77, ../sass/pul-versailles.styles.scss */
+/* line 80, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__item {
   line-height: 24px;
   font-weight: bold; }
 
-/* line 82, ../sass/pul-versailles.styles.scss */
+/* line 85, ../sass/pul-versailles.styles.scss */
 .readable {
   font-size: 1.3em;
   line-spacing: 1.5em; }
 
-/* line 87, ../sass/pul-versailles.styles.scss */
+/* line 90, ../sass/pul-versailles.styles.scss */
 a {
   color: #893d26; }
 
-/* line 91, ../sass/pul-versailles.styles.scss */
+/* line 94, ../sass/pul-versailles.styles.scss */
 a:hover {
   color: #893d26;
   text-decoration: underline; }
 
-/* line 96, ../sass/pul-versailles.styles.scss */
+/* line 99, ../sass/pul-versailles.styles.scss */
 .node--exhibit-rbsc-item--full .content .field__items {
   vertical-align: top;
   display: inline-block;
   width: 600px; }
 
-/* line 102, ../sass/pul-versailles.styles.scss */
+/* line 105, ../sass/pul-versailles.styles.scss */
 .field--name-field-provenance {
   font-style: italic; }
 
 /* ====== media ====== */
-/* line 107, ../sass/pul-versailles.styles.scss */
+/* line 110, ../sass/pul-versailles.styles.scss */
 .media {
   margin: 10px; }
 
-/* line 108, ../sass/pul-versailles.styles.scss */
+/* line 111, ../sass/pul-versailles.styles.scss */
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
   zoom: 1;
   min-width: 100px; }
 
-/* line 109, ../sass/pul-versailles.styles.scss */
+/* line 112, ../sass/pul-versailles.styles.scss */
 .media .img {
   float: left;
   margin-right: 10px; }
 
-/* line 110, ../sass/pul-versailles.styles.scss */
+/* line 113, ../sass/pul-versailles.styles.scss */
 .media .img img {
   display: inline-block;
   height: auto;
@@ -555,77 +570,77 @@ a:hover {
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
 
-/* line 123, ../sass/pul-versailles.styles.scss */
+/* line 126, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
 
-/* line 125, ../sass/pul-versailles.styles.scss */
+/* line 128, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
   letter-spacing: .02em;
   margin-bottom: 20px; }
 
-/* line 132, ../sass/pul-versailles.styles.scss */
+/* line 135, ../sass/pul-versailles.styles.scss */
 .view-exhibit-items-top-level-cases .views-row-odd {
   background-color: #f5f4f1;
   padding: 10px; }
 
-/* line 137, ../sass/pul-versailles.styles.scss */
+/* line 140, ../sass/pul-versailles.styles.scss */
 .view-exhibit-items-top-level-cases .views-row-even {
   padding: 10px; }
 
-/* line 141, ../sass/pul-versailles.styles.scss */
+/* line 144, ../sass/pul-versailles.styles.scss */
 .viewer {
   width: 800px; }
 
-/* line 151, ../sass/pul-versailles.styles.scss */
+/* line 154, ../sass/pul-versailles.styles.scss */
 table.chronology {
   width: auto;
   border: 0px solid #ddd; }
 
-/* line 156, ../sass/pul-versailles.styles.scss */
+/* line 159, ../sass/pul-versailles.styles.scss */
 table.chronology td {
   border: 0px solid #ddd; }
 
-/* line 160, ../sass/pul-versailles.styles.scss */
+/* line 163, ../sass/pul-versailles.styles.scss */
 .chronology thead {
   color: #893d26;
   font-family: "Pinyon Script";
   font-size: 1.5em; }
 
-/* line 166, ../sass/pul-versailles.styles.scss */
+/* line 169, ../sass/pul-versailles.styles.scss */
 .chronology thead .romans {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-style: italic;
   font-size: .8em;
   font-weight: normal; }
 
-/* line 173, ../sass/pul-versailles.styles.scss */
+/* line 176, ../sass/pul-versailles.styles.scss */
 .chronology th {
   border: 0px solid #ddd;
   background-color: #ffffff;
   text-align: center;
   width: 50%; }
 
-/* line 180, ../sass/pul-versailles.styles.scss */
+/* line 183, ../sass/pul-versailles.styles.scss */
 .chronology td {
   padding: 10px; }
 
-/* line 184, ../sass/pul-versailles.styles.scss */
+/* line 187, ../sass/pul-versailles.styles.scss */
 .chronology tr td:nth-child(odd) {
   white-space: nowrap; }
 
-/* line 188, ../sass/pul-versailles.styles.scss */
+/* line 191, ../sass/pul-versailles.styles.scss */
 .chronology tbody tr:nth-child(odd) {
   background-color: #f5f4f1; }
 
-/* line 192, ../sass/pul-versailles.styles.scss */
+/* line 195, ../sass/pul-versailles.styles.scss */
 .l-footer {
   margin: 0px; }
 
-/* line 196, ../sass/pul-versailles.styles.scss */
+/* line 199, ../sass/pul-versailles.styles.scss */
 .l-region--footer {
   float: left;
   padding-top: 1em;
@@ -640,13 +655,13 @@ table.chronology td {
   clear: none;
   */ }
 
-/* line 211, ../sass/pul-versailles.styles.scss */
+/* line 214, ../sass/pul-versailles.styles.scss */
 .friends {
   padding: 20px 40px 20px 40px;
   float: left;
   width: 20em; }
 
-/* line 218, ../sass/pul-versailles.styles.scss */
+/* line 221, ../sass/pul-versailles.styles.scss */
 .text-muted {
   color: #999; }
 

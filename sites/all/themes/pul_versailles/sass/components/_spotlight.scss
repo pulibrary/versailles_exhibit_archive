@@ -33,11 +33,11 @@
 
 
     .l-region--highlighted {
-        padding: 1em 0;
+        padding: 2.5em 0;
         position: relative;
 
         @include breakpoint($tab) {
-            padding: 0;
+            padding: 2em 0;
         }
     }
 
@@ -125,18 +125,24 @@
 
 
     .l-region--highlighted {
-        padding: 2.5em 0;
+        padding: 1em 0;
         position: relative;
 
         @include breakpoint($tab) {
-            padding: 0;
+            padding: 1.5em;
         }
+
+        @include breakpoint($smart) {
+            padding: 1.5em;
+        }
+
     }
 
     .l-region--highlighted h2 {
         display:none;
     }
     
+    /*
     .l-region--highlighted .hero-copy h1 {
 
         @include breakpoint($smart) {
@@ -147,9 +153,11 @@
             margin-top: 0px;
         }
     }
+*/
 
     .l-region--highlighted .hero-copy h1 a{
-        font-size: 1em;
+        font-size: 1.2em;
+        padding-left: .5em;
         font-family: $font-script;
         font-variant: normal;
         color: $versailles-red;
@@ -163,12 +171,12 @@
 
         @include breakpoint($smart) {
             font-size: 1em;
-            padding-left: .5em;
+           
         }
 
         @include breakpoint($tab) {
             font-size: 1.2em;
-            padding-left: .5em;
+            
         }
         
     } 

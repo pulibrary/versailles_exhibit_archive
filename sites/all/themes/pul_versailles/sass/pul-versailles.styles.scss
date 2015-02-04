@@ -49,6 +49,9 @@ body {
 
 .three_six_three-region--first {
 	padding-top:30px;
+	@include breakpoint($smart) {
+		padding-top:0px;
+	}
 }
 
 .node--exhibit-rbsc-item--full .content .field {
