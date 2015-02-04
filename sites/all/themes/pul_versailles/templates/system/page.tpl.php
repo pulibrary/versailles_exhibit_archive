@@ -128,18 +128,6 @@
   </section>
 
   <footer class="l-footer" role="contentinfo">
-    <div class="friends">
-      <a target="_blank" href="http://www.fpul.org" title="Friends of Princeton University Library">
-        <img src="/versailles/<?php print path_to_theme(); ?>/images/friends.png" alt="Friends of Princeton University Library" border="0">
-      </a>
-      <div id="university-copyright-footer" class="text-muted">
-        The Friends of the Princeton University Library make 
-        exhibitions like <em>Versailles on Paper</em> possible. Become a friend
-        <a href="tel:6092583155">by phone (609-258-3155)</a>, and receive a subscription to the 
-        <em>Princeton University Library Chronicle</em>.
-
-      </div>
-    </div>
     <?php print render($page['footer']); ?>
   </footer>
 </div>
