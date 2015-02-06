@@ -1,6 +1,6 @@
 //! OpenSeadragon 1.2.1
-//! Built on 2015-02-04
-//! Git commit: v1.2.1-1-0b5b776
+//! Built on 2015-02-06
+//! Git commit: v1.2.1-4-edc04df
 //! http://openseadragon.github.io
 //! License: http://openseadragon.github.io/license/
 
@@ -11540,6 +11540,7 @@ $.extend( $.IIIFTileSource.prototype, $.TileSource.prototype, /** @lends OpenSea
             levelHeight = Math.ceil( this.height * scale ),
 
             //## iiif region
+            tileSize,
             iiifTileSizeWidth,
             iiifTileSizeHeight,
             iiifRegion,
@@ -11551,7 +11552,8 @@ $.extend( $.IIIFTileSource.prototype, $.TileSource.prototype, /** @lends OpenSea
             iiifQuality,
             uri;
 
-        iiifTileSizeWidth = Math.ceil( this.getTileSize(level) / scale );
+        tileSize = this.getTileSize(level);
+        iiifTileSizeWidth = Math.ceil( tileSize / scale );
         iiifTileSizeHeight = iiifTileSizeWidth;
 
         if ( this['@context'].indexOf('/1.0/context.json') > -1 ||
@@ -11562,7 +11564,7 @@ $.extend( $.IIIFTileSource.prototype, $.TileSource.prototype, /** @lends OpenSea
             iiifQuality = "default.jpg";
         }
 
-        if ( levelWidth < this.tile_width && levelHeight < this.tile_height ){
+        if ( levelWidth < tileSize && levelHeight < tileSize ){
             iiifSize = levelWidth + ",";
             iiifRegion = 'full';
         } else {
@@ -11579,6 +11581,7 @@ $.extend( $.IIIFTileSource.prototype, $.TileSource.prototype, /** @lends OpenSea
     }
 
   });
+
 
     function configureFromXml10(xmlDoc) {
         //parse the xml

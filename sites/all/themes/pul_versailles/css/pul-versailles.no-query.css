@@ -212,39 +212,43 @@ a.popup:link {
   text-decoration: none; }
 
 /* line 1, ../sass/components/_navigation.scss */
+nav .menu {
+  white-space: nowrap; }
+
+/* line 5, ../sass/components/_navigation.scss */
 .menu a:hover {
   color: #893d26 !important; }
 
-/* line 5, ../sass/components/_navigation.scss */
+/* line 9, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .field-content a {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
   letter-spacing: .01em;
   color: #494f57; }
 
-/* line 12, ../sass/components/_navigation.scss */
+/* line 16, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row {
   border-top: solid 1px #e6e6e6;
   padding: 10px; }
 
-/* line 17, ../sass/components/_navigation.scss */
+/* line 21, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row:hover {
   border-color: #893d26; }
 
-/* line 21, ../sass/components/_navigation.scss */
+/* line 25, ../sass/components/_navigation.scss */
 .view-exhibition-menu-case .views-row a:hover {
   color: #893d26; }
 
-/* line 25, ../sass/components/_navigation.scss */
+/* line 29, ../sass/components/_navigation.scss */
 .menu .active, .view-exhibition-menu-case .active {
   color: #893d26 !important; }
 
-/* line 29, ../sass/components/_navigation.scss */
+/* line 33, ../sass/components/_navigation.scss */
 .active_row {
   background-color: #f5f4f1; }
 
 /* hamburger "bars" get hidden unless viewed on a smart phone */
-/* line 34, ../sass/components/_navigation.scss */
+/* line 38, ../sass/components/_navigation.scss */
 .pane-exhibition-menu-case .pane-title {
   display: none; }
 
