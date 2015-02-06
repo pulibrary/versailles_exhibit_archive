@@ -160,10 +160,10 @@
             if (rotation !== 0) {
               // if image needs rotation, swap width and height in image request
               thumbnailParams = 'full/' + ',' + THUMBNAIL_SIZE +
-                '/' + rotation + '/native.jpg';
+                '/' + rotation + '/default.jpg';
             } else {
               thumbnailParams = 'full/' + THUMBNAIL_SIZE +',' +
-                '/' + rotation + '/native.jpg';
+                '/' + rotation + '/default.jpg';
             }
 
             // generate thumbnail url
