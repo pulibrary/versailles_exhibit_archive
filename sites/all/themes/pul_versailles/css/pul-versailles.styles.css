@@ -730,29 +730,33 @@ a:hover {
   vertical-align: top;
   display: inline-block;
   width: 600px; }
+  @media (min-width: 44em) and (max-width: 70em) {
+    /* line 99, ../sass/pul-versailles.styles.scss */
+    .node--exhibit-rbsc-item--full .content .field__items {
+      width: 300px; } }
 
-/* line 105, ../sass/pul-versailles.styles.scss */
+/* line 108, ../sass/pul-versailles.styles.scss */
 .field--name-field-provenance {
   font-style: italic; }
 
 /* ====== media ====== */
-/* line 110, ../sass/pul-versailles.styles.scss */
+/* line 113, ../sass/pul-versailles.styles.scss */
 .media {
   margin: 10px; }
 
-/* line 111, ../sass/pul-versailles.styles.scss */
+/* line 114, ../sass/pul-versailles.styles.scss */
 .media, .bd {
   overflow: hidden;
   _overflow: visible;
   zoom: 1;
   min-width: 100px; }
 
-/* line 112, ../sass/pul-versailles.styles.scss */
+/* line 115, ../sass/pul-versailles.styles.scss */
 .media .img {
   float: left;
   margin-right: 10px; }
 
-/* line 113, ../sass/pul-versailles.styles.scss */
+/* line 116, ../sass/pul-versailles.styles.scss */
 .media .img img {
   display: inline-block;
   height: auto;
@@ -765,89 +769,89 @@ a:hover {
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
 
-/* line 126, ../sass/pul-versailles.styles.scss */
+/* line 129, ../sass/pul-versailles.styles.scss */
 .media .imgExt {
   float: right;
   margin-left: 10px; }
 
-/* line 128, ../sass/pul-versailles.styles.scss */
+/* line 131, ../sass/pul-versailles.styles.scss */
 .media .field--name-field-ver-translated-print-title {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-weight: normal;
   letter-spacing: .02em;
   margin-bottom: 20px; }
 
-/* line 135, ../sass/pul-versailles.styles.scss */
+/* line 138, ../sass/pul-versailles.styles.scss */
 .view-exhibit-items-top-level-cases .views-row-odd {
   background-color: #f5f4f1;
   padding: 10px; }
 
-/* line 140, ../sass/pul-versailles.styles.scss */
+/* line 143, ../sass/pul-versailles.styles.scss */
 .view-exhibit-items-top-level-cases .views-row-even {
   padding: 10px; }
 
-/* line 144, ../sass/pul-versailles.styles.scss */
+/* line 147, ../sass/pul-versailles.styles.scss */
 .viewer {
   width: 800px; }
   @media (max-width: 44em) {
-    /* line 144, ../sass/pul-versailles.styles.scss */
+    /* line 147, ../sass/pul-versailles.styles.scss */
     .viewer {
       width: 300px; } }
   @media (min-width: 44em) and (max-width: 70em) {
-    /* line 144, ../sass/pul-versailles.styles.scss */
+    /* line 147, ../sass/pul-versailles.styles.scss */
     .viewer {
       width: 505px; } }
 
-/* line 154, ../sass/pul-versailles.styles.scss */
+/* line 157, ../sass/pul-versailles.styles.scss */
 table.chronology {
   width: auto;
   border: 0px solid #ddd; }
 
-/* line 159, ../sass/pul-versailles.styles.scss */
+/* line 162, ../sass/pul-versailles.styles.scss */
 table.chronology td {
   border: 0px solid #ddd; }
 
-/* line 163, ../sass/pul-versailles.styles.scss */
+/* line 166, ../sass/pul-versailles.styles.scss */
 .chronology thead {
   color: #893d26;
   font-family: "Pinyon Script";
   font-size: 1.5em; }
 
-/* line 169, ../sass/pul-versailles.styles.scss */
+/* line 172, ../sass/pul-versailles.styles.scss */
 .chronology thead .romans {
   font-family: "Alegreya SC", "Alegreya", Georgia, Times, serif;
   font-style: italic;
   font-size: .8em;
   font-weight: normal; }
 
-/* line 176, ../sass/pul-versailles.styles.scss */
+/* line 179, ../sass/pul-versailles.styles.scss */
 .chronology th {
   border: 0px solid #ddd;
   background-color: #ffffff;
   text-align: center;
   width: 50%; }
 
-/* line 183, ../sass/pul-versailles.styles.scss */
+/* line 186, ../sass/pul-versailles.styles.scss */
 .chronology td {
   padding: 10px; }
 
-/* line 187, ../sass/pul-versailles.styles.scss */
+/* line 190, ../sass/pul-versailles.styles.scss */
 .chronology tr td:nth-child(odd) {
   white-space: nowrap; }
 
-/* line 191, ../sass/pul-versailles.styles.scss */
+/* line 194, ../sass/pul-versailles.styles.scss */
 .chronology tbody tr:nth-child(odd) {
   background-color: #f5f4f1; }
 
-/* line 195, ../sass/pul-versailles.styles.scss */
+/* line 198, ../sass/pul-versailles.styles.scss */
 .l-footer {
   margin: 0px; }
 
-/* line 199, ../sass/pul-versailles.styles.scss */
+/* line 202, ../sass/pul-versailles.styles.scss */
 .text-muted {
   color: #999; }
 
-/* line 203, ../sass/pul-versailles.styles.scss */
+/* line 206, ../sass/pul-versailles.styles.scss */
 #friends-copy {
   margin-top: -20px; }
 

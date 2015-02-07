@@ -100,6 +100,9 @@ a:hover {
 	vertical-align: top;
 	display: inline-block;
 	width: 600px;
+	@include breakpoint($tab) {
+		width: 300px;
+	}
 }
 
 .field--name-field-provenance {
