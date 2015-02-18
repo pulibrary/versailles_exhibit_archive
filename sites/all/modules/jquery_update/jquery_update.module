@@ -76,7 +76,7 @@ function jquery_update_library() {
  */
 function jquery_update_library_alter(&$javascript, $module) {
   $path = drupal_get_path('module', 'jquery_update');
-  $version = variable_get('jquery_update_jquery_version', '1.11');
+  $version = variable_get('jquery_update_jquery_version', '1.10');
 
 
   // Modified System Library.
@@ -97,7 +97,7 @@ function jquery_update_library_alter(&$javascript, $module) {
     // If the ajax version is set then that one always win.
     if (!empty($_POST['ajax_page_state']['jquery_version'])) {
       $ajax_version = $_POST['ajax_page_state']['jquery_version'];
-      if (in_array($ajax_version, array('default', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10', '1.11'))) {
+      if (in_array($ajax_version, array('default', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10'))) {
         $version = $ajax_version;
       }
     }
@@ -182,9 +182,8 @@ function jquery_update_settings_form() {
       '1.8' => '1.8',
       '1.9' => '1.9',
       '1.10' => '1.10',
-      '1.11' => '1.11',
     ),
-    '#default_value' => variable_get('jquery_update_jquery_version', '1.11'),
+    '#default_value' => variable_get('jquery_update_jquery_version', '1.10'),
     '#description' => t('Select which jQuery version to use by default.'),
   );
 
@@ -198,7 +197,6 @@ function jquery_update_settings_form() {
       '1.7' => '1.7',
       '1.8' => '1.8',
       '1.10' => '1.10',
-      '1.11' => '1.11',
     ),
     '#default_value' => variable_get('jquery_update_jquery_admin_version', ''),
     '#description' => t('Optionally select a different version of jQuery to use on administrative pages.'),
@@ -282,10 +280,6 @@ function jquery_update_jquery_replace(&$javascript, $cdn, $path, $min, $version)
 
     case '1.10':
       $trueversion = '1.10.2';
-      break;
-
-    case '1.11':
-      $trueversion = '1.11.1';
       break;
   }
   $javascript['jquery']['version'] = $trueversion;
