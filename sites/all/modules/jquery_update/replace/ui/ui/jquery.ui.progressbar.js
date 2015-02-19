@@ -1,21 +1,31 @@
 /*!
- * jQuery UI Progressbar 1.10.2
+ * jQuery UI Progressbar 1.11.2
  * http://jqueryui.com
  *
- * Copyright 2013 jQuery Foundation and other contributors
+ * Copyright 2014 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/progressbar/
- *
- * Depends:
- *   jquery.ui.core.js
- *   jquery.ui.widget.js
  */
-(function( $, undefined ) {
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
 
-$.widget( "ui.progressbar", {
-	version: "1.10.2",
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"./core",
+			"./widget"
+		], factory );
+	} else {
+
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
+return $.widget( "ui.progressbar", {
+	version: "1.11.2",
 	options: {
 		max: 100,
 		value: 0,
@@ -97,7 +107,11 @@ $.widget( "ui.progressbar", {
 			// Don't allow a max less than min
 			value = Math.max( this.min, value );
 		}
-
+		if ( key === "disabled" ) {
+			this.element
+				.toggleClass( "ui-state-disabled", !!value )
+				.attr( "aria-disabled", value );
+		}
 		this._super( key, value );
 	},
 
@@ -142,4 +156,4 @@ $.widget( "ui.progressbar", {
 	}
 });
 
-})( jQuery );
+}));
