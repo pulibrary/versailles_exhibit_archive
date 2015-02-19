@@ -1,24 +1,33 @@
 /*!
- * jQuery UI Effects Blind 1.10.2
+ * jQuery UI Effects Blind 1.11.2
  * http://jqueryui.com
  *
- * Copyright 2013 jQuery Foundation and other contributors
+ * Copyright 2014 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/blind-effect/
- *
- * Depends:
- *	jquery.ui.effect.js
  */
-(function( $, undefined ) {
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
 
-var rvertical = /up|down|vertical/,
-	rpositivemotion = /up|left|vertical|horizontal/;
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"./effect"
+		], factory );
+	} else {
 
-$.effects.effect.blind = function( o, done ) {
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
+return $.effects.effect.blind = function( o, done ) {
 	// Create element
 	var el = $( this ),
+		rvertical = /up|down|vertical/,
+		rpositivemotion = /up|left|vertical|horizontal/,
 		props = [ "position", "top", "bottom", "left", "right", "height", "width" ],
 		mode = $.effects.setMode( el, o.mode || "hide" ),
 		direction = o.direction || "up",
@@ -57,7 +66,7 @@ $.effects.effect.blind = function( o, done ) {
 	// start at 0 if we are showing
 	if ( show ) {
 		wrapper.css( ref, 0 );
-		if ( ! motion ) {
+		if ( !motion ) {
 			wrapper.css( ref2, margin + distance );
 		}
 	}
@@ -76,7 +85,6 @@ $.effects.effect.blind = function( o, done ) {
 			done();
 		}
 	});
-
 };
 
-})(jQuery);
+}));

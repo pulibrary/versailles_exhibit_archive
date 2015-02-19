@@ -76,7 +76,7 @@ function jquery_update_library() {
  */
 function jquery_update_library_alter(&$javascript, $module) {
   $path = drupal_get_path('module', 'jquery_update');
-  $version = variable_get('jquery_update_jquery_version', '1.10');
+  $version = variable_get('jquery_update_jquery_version', '1.11');
 
 
   // Modified System Library.
@@ -97,7 +97,7 @@ function jquery_update_library_alter(&$javascript, $module) {
     // If the ajax version is set then that one always win.
     if (!empty($_POST['ajax_page_state']['jquery_version'])) {
       $ajax_version = $_POST['ajax_page_state']['jquery_version'];
-      if (in_array($ajax_version, array('default', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10'))) {
+      if (in_array($ajax_version, array('default', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10', '1.11'))) {
         $version = $ajax_version;
       }
     }
@@ -182,8 +182,9 @@ function jquery_update_settings_form() {
       '1.8' => '1.8',
       '1.9' => '1.9',
       '1.10' => '1.10',
+      '1.11' => '1.11',
     ),
-    '#default_value' => variable_get('jquery_update_jquery_version', '1.10'),
+    '#default_value' => variable_get('jquery_update_jquery_version', '1.11'),
     '#description' => t('Select which jQuery version to use by default.'),
   );
 
@@ -197,6 +198,7 @@ function jquery_update_settings_form() {
       '1.7' => '1.7',
       '1.8' => '1.8',
       '1.10' => '1.10',
+      '1.11' => '1.11',
     ),
     '#default_value' => variable_get('jquery_update_jquery_admin_version', ''),
     '#description' => t('Optionally select a different version of jQuery to use on administrative pages.'),
@@ -281,6 +283,10 @@ function jquery_update_jquery_replace(&$javascript, $cdn, $path, $min, $version)
     case '1.10':
       $trueversion = '1.10.2';
       break;
+
+    case '1.11':
+      $trueversion = '1.11.1';
+      break;
   }
   $javascript['jquery']['version'] = $trueversion;
 
@@ -354,7 +360,7 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
   $javascript['ui.menu'] = array(
     'title' => 'jQuery UI: Menu',
     'website' => 'http://jqueryui.com/demos/menu/',
-    'version' => '1.10.2',
+    'version' => '1.11.2',
     'js' => array('misc/ui/jquery.ui.menu.min.js' => array()),
     'css' => array('misc/ui/jquery.ui.menu.css' => array()),
     'dependencies' => array(array('system', 'ui.widget'), array('system', 'ui.position')),
@@ -362,7 +368,7 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
   $javascript['ui.spinner'] = array(
     'title' => 'jQuery UI: Spinner',
     'website' => 'http://jqueryui.com/demos/spinner/',
-    'version' => '1.10.2',
+    'version' => '1.11.2',
     'js' => array('misc/ui/jquery.ui.spinner.min.js' => array()),
     'css' => array('misc/ui/jquery.ui.spinner.css' => array()),
     'dependencies' => array(array('system', 'ui.widget'), array('system', 'ui.button')),
@@ -370,7 +376,7 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
   $javascript['ui.tooltip'] = array(
     'title' => 'jQuery UI: Spinner',
     'website' => 'http://jqueryui.com/demos/tooltip/',
-    'version' => '1.10.2',
+    'version' => '1.11.2',
     'js' => array('misc/ui/jquery.ui.tooltip.min.js' => array()),
     'css' => array('misc/ui/jquery.ui.tooltip.css' => array()),
     'dependencies' => array(array('system', 'ui.widget'), array('system', 'ui.position')),
@@ -404,19 +410,19 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
 
   switch ($cdn) {
     case 'google':
-      $cdn = '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui' . $min . '.js';
+      $cdn = '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
 
     case 'microsoft':
-      $cdn = '//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/jquery-ui' . $min . '.js';
+      $cdn = '//ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
 
     case 'jquery':
-      $cdn = '//code.jquery.com/ui/1.10.2/jquery-ui' . $min . '.js';
+      $cdn = '//code.jquery.com/ui/1.11.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
@@ -499,7 +505,7 @@ function jquery_update_jqueryui_cdn($cdn, &$javascript, $path, $min, $names) {
     $corefile = 'misc/ui/jquery.' . $file_core . '.min.js';
     // Remove the core files.
     unset($javascript[$name]['js'][$corefile]);
-    $javascript[$name]['version'] = '1.10.2';
+    $javascript[$name]['version'] = '1.11.2';
   }
 
   // UI is used by all of UI. Add the js cdn here.
@@ -539,6 +545,6 @@ function jquery_update_jqueryui_local(&$javascript, $path, $min, $names) {
     list($file_core, $file_updated) = is_array($file) ? $file : array($file, $file);
     $corefile = 'misc/ui/jquery.' . $file_core . '.min.js';
     $javascript[$name]['js'][$corefile]['data'] = $jspath . 'jquery.' . $file_updated . $min . '.js';
-    $javascript[$name]['version'] = '1.10.2';
+    $javascript[$name]['version'] = '1.11.2';
   }
 }

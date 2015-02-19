@@ -1,19 +1,29 @@
 /*!
- * jQuery UI Effects Bounce 1.10.2
+ * jQuery UI Effects Bounce 1.11.2
  * http://jqueryui.com
  *
- * Copyright 2013 jQuery Foundation and other contributors
+ * Copyright 2014 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/bounce-effect/
- *
- * Depends:
- *	jquery.ui.effect.js
  */
-(function( $, undefined ) {
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
 
-$.effects.effect.bounce = function( o, done ) {
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"./effect"
+		], factory );
+	} else {
+
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
+return $.effects.effect.bounce = function( o, done ) {
 	var el = $( this ),
 		props = [ "position", "top", "bottom", "left", "right", "height", "width" ],
 
@@ -110,4 +120,4 @@ $.effects.effect.bounce = function( o, done ) {
 
 };
 
-})(jQuery);
+}));

@@ -1,49 +1,32 @@
 /*!
- * jQuery UI Tooltip 1.10.2
+ * jQuery UI Tooltip 1.11.2
  * http://jqueryui.com
  *
- * Copyright 2013 jQuery Foundation and other contributors
+ * Copyright 2014 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/tooltip/
- *
- * Depends:
- *	jquery.ui.core.js
- *	jquery.ui.widget.js
- *	jquery.ui.position.js
  */
-(function( $ ) {
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
 
-var increments = 0;
-
-function addDescribedBy( elem, id ) {
-	var describedby = (elem.attr( "aria-describedby" ) || "").split( /\s+/ );
-	describedby.push( id );
-	elem
-		.data( "ui-tooltip-id", id )
-		.attr( "aria-describedby", $.trim( describedby.join( " " ) ) );
-}
-
-function removeDescribedBy( elem ) {
-	var id = elem.data( "ui-tooltip-id" ),
-		describedby = (elem.attr( "aria-describedby" ) || "").split( /\s+/ ),
-		index = $.inArray( id, describedby );
-	if ( index !== -1 ) {
-		describedby.splice( index, 1 );
-	}
-
-	elem.removeData( "ui-tooltip-id" );
-	describedby = $.trim( describedby.join( " " ) );
-	if ( describedby ) {
-		elem.attr( "aria-describedby", describedby );
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"./core",
+			"./widget",
+			"./position"
+		], factory );
 	} else {
-		elem.removeAttr( "aria-describedby" );
-	}
-}
 
-$.widget( "ui.tooltip", {
-	version: "1.10.2",
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
+return $.widget( "ui.tooltip", {
+	version: "1.11.2",
 	options: {
 		content: function() {
 			// support: IE<9, Opera in jQuery <1.7
@@ -69,6 +52,32 @@ $.widget( "ui.tooltip", {
 		open: null
 	},
 
+	_addDescribedBy: function( elem, id ) {
+		var describedby = (elem.attr( "aria-describedby" ) || "").split( /\s+/ );
+		describedby.push( id );
+		elem
+			.data( "ui-tooltip-id", id )
+			.attr( "aria-describedby", $.trim( describedby.join( " " ) ) );
+	},
+
+	_removeDescribedBy: function( elem ) {
+		var id = elem.data( "ui-tooltip-id" ),
+			describedby = (elem.attr( "aria-describedby" ) || "").split( /\s+/ ),
+			index = $.inArray( id, describedby );
+
+		if ( index !== -1 ) {
+			describedby.splice( index, 1 );
+		}
+
+		elem.removeData( "ui-tooltip-id" );
+		describedby = $.trim( describedby.join( " " ) );
+		if ( describedby ) {
+			elem.attr( "aria-describedby", describedby );
+		} else {
+			elem.removeAttr( "aria-describedby" );
+		}
+	},
+
 	_create: function() {
 		this._on({
 			mouseover: "open",
@@ -77,12 +86,23 @@ $.widget( "ui.tooltip", {
 
 		// IDs of generated tooltips, needed for destroy
 		this.tooltips = {};
+
 		// IDs of parent tooltips where we removed the title attribute
 		this.parents = {};
 
 		if ( this.options.disabled ) {
 			this._disable();
 		}
+
+		// Append the aria-live region so tooltips announce correctly
+		this.liveRegion = $( "<div>" )
+			.attr({
+				role: "log",
+				"aria-live": "assertive",
+				"aria-relevant": "additions"
+			})
+			.addClass( "ui-helper-hidden-accessible" )
+			.appendTo( this.document[ 0 ].body );
 	},
 
 	_setOption: function( key, value ) {
@@ -98,8 +118,8 @@ $.widget( "ui.tooltip", {
 		this._super( key, value );
 
 		if ( key === "content" ) {
-			$.each( this.tooltips, function( id, element ) {
-				that._updateContent( element );
+			$.each( this.tooltips, function( id, tooltipData ) {
+				that._updateContent( tooltipData.element );
 			});
 		}
 	},
@@ -108,9 +128,9 @@ $.widget( "ui.tooltip", {
 		var that = this;
 
 		// close open tooltips
-		$.each( this.tooltips, function( id, element ) {
+		$.each( this.tooltips, function( id, tooltipData ) {
 			var event = $.Event( "blur" );
-			event.target = event.currentTarget = element[0];
+			event.target = event.currentTarget = tooltipData.element[ 0 ];
 			that.close( event, true );
 		});
 
@@ -120,7 +140,7 @@ $.widget( "ui.tooltip", {
 			if ( element.is( "[title]" ) ) {
 				element
 					.data( "ui-tooltip-title", element.attr( "title" ) )
-					.attr( "title", "" );
+					.removeAttr( "title" );
 			}
 		});
 	},
@@ -212,7 +232,7 @@ $.widget( "ui.tooltip", {
 	},
 
 	_open: function( event, target, content ) {
-		var tooltip, events, delayedShow,
+		var tooltipData, tooltip, events, delayedShow, a11yContent,
 			positionOption = $.extend( {}, this.options.position );
 
 		if ( !content ) {
@@ -221,9 +241,9 @@ $.widget( "ui.tooltip", {
 
 		// Content can be updated multiple times. If the tooltip already
 		// exists, then just update the content and bail.
-		tooltip = this._find( target );
-		if ( tooltip.length ) {
-			tooltip.find( ".ui-tooltip-content" ).html( content );
+		tooltipData = this._find( target );
+		if ( tooltipData ) {
+			tooltipData.tooltip.find( ".ui-tooltip-content" ).html( content );
 			return;
 		}
 
@@ -242,9 +262,22 @@ $.widget( "ui.tooltip", {
 			}
 		}
 
-		tooltip = this._tooltip( target );
-		addDescribedBy( target, tooltip.attr( "id" ) );
+		tooltipData = this._tooltip( target );
+		tooltip = tooltipData.tooltip;
+		this._addDescribedBy( target, tooltip.attr( "id" ) );
 		tooltip.find( ".ui-tooltip-content" ).html( content );
+
+		// Support: Voiceover on OS X, JAWS on IE <= 9
+		// JAWS announces deletions even when aria-relevant="additions"
+		// Voiceover will sometimes re-read the entire log region's contents from the beginning
+		this.liveRegion.children().hide();
+		if ( content.clone ) {
+			a11yContent = content.clone();
+			a11yContent.removeAttr( "id" ).find( "[id]" ).removeAttr( "id" );
+		} else {
+			a11yContent = content;
+		}
+		$( "<div>" ).html( a11yContent ).appendTo( this.liveRegion );
 
 		function position( event ) {
 			positionOption.of = event;
@@ -289,11 +322,17 @@ $.widget( "ui.tooltip", {
 					fakeEvent.currentTarget = target[0];
 					this.close( fakeEvent, true );
 				}
-			},
-			remove: function() {
-				this._removeTooltip( tooltip );
 			}
 		};
+
+		// Only bind remove handler for delegated targets. Non-delegated
+		// tooltips will handle this in destroy.
+		if ( target[ 0 ] !== this.element[ 0 ] ) {
+			events.remove = function() {
+				this._removeTooltip( tooltip );
+			};
+		}
+
 		if ( !event || event.type === "mouseover" ) {
 			events.mouseleave = "close";
 		}
@@ -304,13 +343,21 @@ $.widget( "ui.tooltip", {
 	},
 
 	close: function( event ) {
-		var that = this,
+		var tooltip,
+			that = this,
 			target = $( event ? event.currentTarget : this.element ),
-			tooltip = this._find( target );
+			tooltipData = this._find( target );
+
+		// The tooltip may already be closed
+		if ( !tooltipData ) {
+			return;
+		}
+
+		tooltip = tooltipData.tooltip;
 
 		// disabling closes the tooltip, so we need to track when we're closing
 		// to avoid an infinite loop in case the tooltip becomes disabled on close
-		if ( this.closing ) {
+		if ( tooltipData.closing ) {
 			return;
 		}
 
@@ -318,12 +365,14 @@ $.widget( "ui.tooltip", {
 		clearInterval( this.delayedShow );
 
 		// only set title if we had one before (see comment in _open())
-		if ( target.data( "ui-tooltip-title" ) ) {
+		// If the title attribute has changed since open(), don't restore
+		if ( target.data( "ui-tooltip-title" ) && !target.attr( "title" ) ) {
 			target.attr( "title", target.data( "ui-tooltip-title" ) );
 		}
 
-		removeDescribedBy( target );
+		this._removeDescribedBy( target );
 
+		tooltipData.hiding = true;
 		tooltip.stop( true );
 		this._hide( tooltip, this.options.hide, function() {
 			that._removeTooltip( $( this ) );
@@ -331,8 +380,9 @@ $.widget( "ui.tooltip", {
 
 		target.removeData( "ui-tooltip-open" );
 		this._off( target, "mouseleave focusout keyup" );
+
 		// Remove 'remove' binding only on delegated targets
-		if ( target[0] !== this.element[0] ) {
+		if ( target[ 0 ] !== this.element[ 0 ] ) {
 			this._off( target, "remove" );
 		}
 		this._off( this.document, "mousemove" );
@@ -344,31 +394,35 @@ $.widget( "ui.tooltip", {
 			});
 		}
 
-		this.closing = true;
+		tooltipData.closing = true;
 		this._trigger( "close", event, { tooltip: tooltip } );
-		this.closing = false;
+		if ( !tooltipData.hiding ) {
+			tooltipData.closing = false;
+		}
 	},
 
 	_tooltip: function( element ) {
-		var id = "ui-tooltip-" + increments++,
-			tooltip = $( "<div>" )
-				.attr({
-					id: id,
-					role: "tooltip"
-				})
+		var tooltip = $( "<div>" )
+				.attr( "role", "tooltip" )
 				.addClass( "ui-tooltip ui-widget ui-corner-all ui-widget-content " +
-					( this.options.tooltipClass || "" ) );
+					( this.options.tooltipClass || "" ) ),
+			id = tooltip.uniqueId().attr( "id" );
+
 		$( "<div>" )
 			.addClass( "ui-tooltip-content" )
 			.appendTo( tooltip );
+
 		tooltip.appendTo( this.document[0].body );
-		this.tooltips[ id ] = element;
-		return tooltip;
+
+		return this.tooltips[ id ] = {
+			element: element,
+			tooltip: tooltip
+		};
 	},
 
 	_find: function( target ) {
 		var id = target.data( "ui-tooltip-id" );
-		return id ? $( "#" + id ) : $();
+		return id ? this.tooltips[ id ] : null;
 	},
 
 	_removeTooltip: function( tooltip ) {
@@ -380,10 +434,11 @@ $.widget( "ui.tooltip", {
 		var that = this;
 
 		// close open tooltips
-		$.each( this.tooltips, function( id, element ) {
+		$.each( this.tooltips, function( id, tooltipData ) {
 			// Delegate to close method to handle common cleanup
-			var event = $.Event( "blur" );
-			event.target = event.currentTarget = element[0];
+			var event = $.Event( "blur" ),
+				element = tooltipData.element;
+			event.target = event.currentTarget = element[ 0 ];
 			that.close( event, true );
 
 			// Remove immediately; destroying an open tooltip doesn't use the
@@ -392,11 +447,15 @@ $.widget( "ui.tooltip", {
 
 			// Restore the title
 			if ( element.data( "ui-tooltip-title" ) ) {
-				element.attr( "title", element.data( "ui-tooltip-title" ) );
+				// If the title attribute has changed since open(), don't restore
+				if ( !element.attr( "title" ) ) {
+					element.attr( "title", element.data( "ui-tooltip-title" ) );
+				}
 				element.removeData( "ui-tooltip-title" );
 			}
 		});
+		this.liveRegion.remove();
 	}
 });
 
-}( jQuery ) );
+}));
