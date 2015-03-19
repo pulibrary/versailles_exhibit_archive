@@ -475,7 +475,7 @@ function theme_iiif_image_field_formatter($variables) {
 
     (function ($) {
 
-      if(Object.keys(window).length == 13){
+      if(Object.keys(window).length == 18){
         $('.viewer').iiifOsdViewer({
           data: [{
             iiifServer: '". $image_server_base ."',
