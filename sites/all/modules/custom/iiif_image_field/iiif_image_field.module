@@ -486,7 +486,7 @@ function theme_iiif_image_field_formatter($variables) {
             images: [". $img_sequence ."]}
           ]});
       }else{
-        console.log('wtf: '' + w);
+        console.log('wtf: ' + w);
       }
 
     }(jQuery));",
