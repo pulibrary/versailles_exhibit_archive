@@ -408,7 +408,7 @@ function iiif_image_field_theme() {
  */
 
 function theme_iiif_image_field_formatter($variables) {
-  //dpm($variables['entity']);
+
   $nid = $variables['entity']->nid;
   $node_title = $variables['entity']->title;
   $node_path = drupal_lookup_path('alias', "node/".$nid);
@@ -436,7 +436,7 @@ function theme_iiif_image_field_formatter($variables) {
     }
   }
 
-  //dpm($elements);
+
   // APPLY INSTANCE OVERRIDES TO VIEW MODE SETTINGS
   $rotation = $variables['settings']['rotation'];
 
@@ -471,12 +471,14 @@ function theme_iiif_image_field_formatter($variables) {
       }', 'inline');
     drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/openseadragon.min.js');
     drupal_add_js(drupal_get_path('module', 'iiif_image_field') .'/js/jquery.iiifOsdViewer.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
+    
     drupal_add_js("
 
     (function ($) {
       var w = Object.keys(window).length;
-      //if(w == 13 || w == 177 || w == 130 || w == 23){
-      if(w == 18 || w == 181 || w == 130 || w == 23){
+      if(w == 13 || w == 177 || w == 130 || w == 23){
+      //if(w == 18 || w == 181 || w == 130 || w == 23){
+        console.log(w);
         $('.viewer').iiifOsdViewer({
           data: [{
             iiifServer: '". $image_server_base ."',
