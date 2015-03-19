@@ -476,7 +476,7 @@ function theme_iiif_image_field_formatter($variables) {
 
     (function ($) {
       var w = Object.keys(window).length;
-      var arr = [13,177,126,130,23,17,179,131,23,19];
+      var arr = [13,15,177,126,130,23,17,179,131,23,19];
       if(jQuery.inArray( w, arr ) > -1){
         $('.viewer').iiifOsdViewer({
           data: [{
