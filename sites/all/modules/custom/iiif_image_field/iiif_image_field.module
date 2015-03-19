@@ -474,8 +474,8 @@ function theme_iiif_image_field_formatter($variables) {
     drupal_add_js("
 
     (function ($) {
-
-      if(Object.keys(window).length == 18){
+!("key" in obj)
+      if(Object.keys(window).length == 18 || Object.keys(window).length == 181 || Object.keys(window).length == 23 || Object.keys(window).length == 130){
         $('.viewer').iiifOsdViewer({
           data: [{
             iiifServer: '". $image_server_base ."',
