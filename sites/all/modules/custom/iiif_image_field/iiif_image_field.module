@@ -476,7 +476,36 @@ function theme_iiif_image_field_formatter($variables) {
 
     (function ($) {
       var w = Object.keys(window).length;
-      var arr = [13,15,177,126,130,23,17,179,131,23,19];
+
+      var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+      var isFirefox = typeof InstallTrigger !== 'undefined';   
+      var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+      var isChrome = !!window.chrome && !isOpera;              
+      var isIE = /*@cc_on!@*/false || !!document.documentMode;   
+
+      var cArr = [13,15,17];
+      var fArr = [177,179];
+      var sArr = [126,130,131];
+      var iArr = [23,19];
+      var arr = [13,15,177,126,130,17,179,131,23,19];
+
+      if (isFirefox) {
+        var arr = fArr;
+      }
+
+      if (isSafari) {
+        var arr = sArr;
+      }
+
+      if (isChrome) {
+        var arr = cArr;
+      }
+
+      if (isIE) {
+        var arr = iArr;
+      }
+
+      
       if(jQuery.inArray( w, arr ) > -1){
         $('.viewer').iiifOsdViewer({
           data: [{
@@ -484,9 +513,6 @@ function theme_iiif_image_field_formatter($variables) {
             iiifImageAPI: '". $image_api_version ."',
             images: [". $img_sequence ."]}
           ]});
-      }else{
-        console.log('key_count: ' + w);
-        console.log(jQuery.inArray( w, arr ));
       }
 
     }(jQuery));",
