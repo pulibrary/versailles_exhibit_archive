@@ -507,12 +507,16 @@ function theme_iiif_image_field_formatter($variables) {
 
       
       if(jQuery.inArray( w, arr ) > -1){
+        console.log('key_count: ' + w);
         $('.viewer').iiifOsdViewer({
           data: [{
             iiifServer: '". $image_server_base ."',
             iiifImageAPI: '". $image_api_version ."',
             images: [". $img_sequence ."]}
           ]});
+      }else{
+        console.log('key_count: ' + w);
+        console.log(jQuery.inArray( w, arr ));
       }
 
     }(jQuery));",
