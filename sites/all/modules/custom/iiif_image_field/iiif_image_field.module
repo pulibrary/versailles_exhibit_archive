@@ -476,8 +476,8 @@ function theme_iiif_image_field_formatter($variables) {
 
     (function ($) {
       var w = Object.keys(window).length;
-      if(w == 13 || w == 177 || w == 130 || w == 23){
-      //if(w == 18 || w == 181 || w == 130 || w == 23){
+      //if(w == 13 || w == 177 || w == 130 || w == 23){
+      if(w == 18 || w == 181 || w == 130 || w == 23){
         console.log(w);
         $('.viewer').iiifOsdViewer({
           data: [{
