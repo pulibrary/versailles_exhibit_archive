@@ -485,6 +485,8 @@ function theme_iiif_image_field_formatter($variables) {
             iiifImageAPI: '". $image_api_version ."',
             images: [". $img_sequence ."]}
           ]});
+      }else{
+        console.log("wtf: " + w);
       }
 
     }(jQuery));",
