@@ -1,29 +1,18 @@
 /*!
- * jQuery UI Position 1.11.2
+ * jQuery UI Position 1.10.2
  * http://jqueryui.com
  *
- * Copyright 2014 jQuery Foundation and other contributors
+ * Copyright 2013 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/position/
  */
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
-
-		// AMD. Register as an anonymous module.
-		define( [ "jquery" ], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
-(function() {
+(function( $, undefined ) {
 
 $.ui = $.ui || {};
 
-var cachedScrollbarWidth, supportsOffsetFractions,
+var cachedScrollbarWidth,
 	max = Math.max,
 	abs = Math.abs,
 	round = Math.round,
@@ -81,7 +70,7 @@ $.position = {
 			return cachedScrollbarWidth;
 		}
 		var w1, w2,
-			div = $( "<div style='display:block;position:absolute;width:50px;height:50px;overflow:hidden;'><div style='height:100px;width:auto;'></div></div>" ),
+			div = $( "<div style='display:block;width:50px;height:50px;overflow:hidden;'><div style='height:100px;width:auto;'></div></div>" ),
 			innerDiv = div.children()[0];
 
 		$( "body" ).append( div );
@@ -99,10 +88,8 @@ $.position = {
 		return (cachedScrollbarWidth = w1 - w2);
 	},
 	getScrollInfo: function( within ) {
-		var overflowX = within.isWindow || within.isDocument ? "" :
-				within.element.css( "overflow-x" ),
-			overflowY = within.isWindow || within.isDocument ? "" :
-				within.element.css( "overflow-y" ),
+		var overflowX = within.isWindow ? "" : within.element.css( "overflow-x" ),
+			overflowY = within.isWindow ? "" : within.element.css( "overflow-y" ),
 			hasOverflowX = overflowX === "scroll" ||
 				( overflowX === "auto" && within.width < within.element[0].scrollWidth ),
 			hasOverflowY = overflowY === "scroll" ||
@@ -114,20 +101,15 @@ $.position = {
 	},
 	getWithinInfo: function( element ) {
 		var withinElement = $( element || window ),
-			isWindow = $.isWindow( withinElement[0] ),
-			isDocument = !!withinElement[ 0 ] && withinElement[ 0 ].nodeType === 9;
+			isWindow = $.isWindow( withinElement[0] );
 		return {
 			element: withinElement,
 			isWindow: isWindow,
-			isDocument: isDocument,
 			offset: withinElement.offset() || { left: 0, top: 0 },
 			scrollLeft: withinElement.scrollLeft(),
 			scrollTop: withinElement.scrollTop(),
-
-			// support: jQuery 1.6.x
-			// jQuery 1.6 doesn't support .outerWidth/Height() on documents or windows
-			width: isWindow || isDocument ? withinElement.width() : withinElement.outerWidth(),
-			height: isWindow || isDocument ? withinElement.height() : withinElement.outerHeight()
+			width: isWindow ? withinElement.width() : withinElement.outerWidth(),
+			height: isWindow ? withinElement.height() : withinElement.outerHeight()
 		};
 	}
 };
@@ -239,7 +221,7 @@ $.fn.position = function( options ) {
 		position.top += myOffset[ 1 ];
 
 		// if the browser doesn't support fractions, then round for consistent results
-		if ( !supportsOffsetFractions ) {
+		if ( !$.support.offsetFractions ) {
 			position.left = round( position.left );
 			position.top = round( position.top );
 		}
@@ -263,7 +245,7 @@ $.fn.position = function( options ) {
 					my: options.my,
 					at: options.at,
 					within: within,
-					elem: elem
+					elem : elem
 				});
 			}
 		});
@@ -417,7 +399,8 @@ $.ui.position = {
 				if ( newOverRight < 0 || newOverRight < abs( overLeft ) ) {
 					position.left += myOffset + atOffset + offset;
 				}
-			} else if ( overRight > 0 ) {
+			}
+			else if ( overRight > 0 ) {
 				newOverLeft = position.left - data.collisionPosition.marginLeft + myOffset + atOffset + offset - offsetLeft;
 				if ( newOverLeft > 0 || abs( newOverLeft ) < overRight ) {
 					position.left += myOffset + atOffset + offset;
@@ -451,8 +434,9 @@ $.ui.position = {
 				if ( ( position.top + myOffset + atOffset + offset) > overTop && ( newOverBottom < 0 || newOverBottom < abs( overTop ) ) ) {
 					position.top += myOffset + atOffset + offset;
 				}
-			} else if ( overBottom > 0 ) {
-				newOverTop = position.top - data.collisionPosition.marginTop + myOffset + atOffset + offset - offsetTop;
+			}
+			else if ( overBottom > 0 ) {
+				newOverTop = position.top -  data.collisionPosition.marginTop + myOffset + atOffset + offset - offsetTop;
 				if ( ( position.top + myOffset + atOffset + offset) > overBottom && ( newOverTop > 0 || abs( newOverTop ) < overBottom ) ) {
 					position.top += myOffset + atOffset + offset;
 				}
@@ -472,7 +456,7 @@ $.ui.position = {
 };
 
 // fraction support test
-(function() {
+(function () {
 	var testElement, testElementParent, testElementStyle, offsetLeft, i,
 		body = document.getElementsByTagName( "body" )[ 0 ],
 		div = document.createElement( "div" );
@@ -504,14 +488,10 @@ $.ui.position = {
 	div.style.cssText = "position: absolute; left: 10.7432222px;";
 
 	offsetLeft = $( div ).offset().left;
-	supportsOffsetFractions = offsetLeft > 10 && offsetLeft < 11;
+	$.support.offsetFractions = offsetLeft > 10 && offsetLeft < 11;
 
 	testElement.innerHTML = "";
 	testElementParent.removeChild( testElement );
 })();
 
-})();
-
-return $.ui.position;
-
-}));
+}( jQuery ) );

@@ -1,29 +1,19 @@
 /*!
- * jQuery UI Effects Shake 1.11.2
+ * jQuery UI Effects Shake 1.10.2
  * http://jqueryui.com
  *
- * Copyright 2014 jQuery Foundation and other contributors
+ * Copyright 2013 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/shake-effect/
+ *
+ * Depends:
+ *	jquery.ui.effect.js
  */
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
+(function( $, undefined ) {
 
-		// AMD. Register as an anonymous module.
-		define([
-			"jquery",
-			"./effect"
-		], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
-
-return $.effects.effect.shake = function( o, done ) {
+$.effects.effect.shake = function( o, done ) {
 
 	var el = $( this ),
 		props = [ "position", "top", "bottom", "left", "right", "height", "width" ],
@@ -32,7 +22,7 @@ return $.effects.effect.shake = function( o, done ) {
 		distance = o.distance || 20,
 		times = o.times || 3,
 		anims = times * 2 + 1,
-		speed = Math.round( o.duration / anims ),
+		speed = Math.round(o.duration/anims),
 		ref = (direction === "up" || direction === "down") ? "top" : "left",
 		positiveMotion = (direction === "up" || direction === "left"),
 		animation = {},
@@ -81,4 +71,4 @@ return $.effects.effect.shake = function( o, done ) {
 
 };
 
-}));
+})(jQuery);

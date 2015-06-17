@@ -1,29 +1,19 @@
 /*!
- * jQuery UI Effects Fold 1.11.2
+ * jQuery UI Effects Fold 1.10.2
  * http://jqueryui.com
  *
- * Copyright 2014 jQuery Foundation and other contributors
+ * Copyright 2013 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/fold-effect/
+ *
+ * Depends:
+ *	jquery.ui.effect.js
  */
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
+(function( $, undefined ) {
 
-		// AMD. Register as an anonymous module.
-		define([
-			"jquery",
-			"./effect"
-		], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
-
-return $.effects.effect.fold = function( o, done ) {
+$.effects.effect.fold = function( o, done ) {
 
 	// Create element
 	var el = $( this ),
@@ -83,4 +73,4 @@ return $.effects.effect.fold = function( o, done ) {
 
 };
 
-}));
+})(jQuery);
