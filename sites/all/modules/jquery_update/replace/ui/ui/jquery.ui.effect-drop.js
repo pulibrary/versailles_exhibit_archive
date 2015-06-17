@@ -1,29 +1,19 @@
 /*!
- * jQuery UI Effects Drop 1.11.2
+ * jQuery UI Effects Drop 1.10.2
  * http://jqueryui.com
  *
- * Copyright 2014 jQuery Foundation and other contributors
+ * Copyright 2013 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/drop-effect/
+ *
+ * Depends:
+ *	jquery.ui.effect.js
  */
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
+(function( $, undefined ) {
 
-		// AMD. Register as an anonymous module.
-		define([
-			"jquery",
-			"./effect"
-		], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
-
-return $.effects.effect.drop = function( o, done ) {
+$.effects.effect.drop = function( o, done ) {
 
 	var el = $( this ),
 		props = [ "position", "top", "bottom", "left", "right", "opacity", "height", "width" ],
@@ -42,7 +32,7 @@ return $.effects.effect.drop = function( o, done ) {
 	el.show();
 	$.effects.createWrapper( el );
 
-	distance = o.distance || el[ ref === "top" ? "outerHeight" : "outerWidth" ]( true ) / 2;
+	distance = o.distance || el[ ref === "top" ? "outerHeight": "outerWidth" ]( true ) / 2;
 
 	if ( show ) {
 		el
@@ -72,4 +62,4 @@ return $.effects.effect.drop = function( o, done ) {
 	});
 };
 
-}));
+})(jQuery);
