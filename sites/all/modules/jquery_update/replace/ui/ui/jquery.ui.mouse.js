@@ -1,35 +1,25 @@
 /*!
- * jQuery UI Mouse 1.11.2
+ * jQuery UI Mouse 1.10.2
  * http://jqueryui.com
  *
- * Copyright 2014 jQuery Foundation and other contributors
+ * Copyright 2013 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/mouse/
+ *
+ * Depends:
+ *	jquery.ui.widget.js
  */
-(function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
-
-		// AMD. Register as an anonymous module.
-		define([
-			"jquery",
-			"./widget"
-		], factory );
-	} else {
-
-		// Browser globals
-		factory( jQuery );
-	}
-}(function( $ ) {
+(function( $, undefined ) {
 
 var mouseHandled = false;
 $( document ).mouseup( function() {
 	mouseHandled = false;
 });
 
-return $.widget("ui.mouse", {
-	version: "1.11.2",
+$.widget("ui.mouse", {
+	version: "1.10.2",
 	options: {
 		cancel: "input,textarea,button,select,option",
 		distance: 1,
@@ -39,10 +29,10 @@ return $.widget("ui.mouse", {
 		var that = this;
 
 		this.element
-			.bind("mousedown." + this.widgetName, function(event) {
+			.bind("mousedown."+this.widgetName, function(event) {
 				return that._mouseDown(event);
 			})
-			.bind("click." + this.widgetName, function(event) {
+			.bind("click."+this.widgetName, function(event) {
 				if (true === $.data(event.target, that.widgetName + ".preventClickEvent")) {
 					$.removeData(event.target, that.widgetName + ".preventClickEvent");
 					event.stopImmediatePropagation();
@@ -56,21 +46,17 @@ return $.widget("ui.mouse", {
 	// TODO: make sure destroying one instance of mouse doesn't mess with
 	// other instances of mouse
 	_mouseDestroy: function() {
-		this.element.unbind("." + this.widgetName);
+		this.element.unbind("."+this.widgetName);
 		if ( this._mouseMoveDelegate ) {
-			this.document
-				.unbind("mousemove." + this.widgetName, this._mouseMoveDelegate)
-				.unbind("mouseup." + this.widgetName, this._mouseUpDelegate);
+			$(document)
+				.unbind("mousemove."+this.widgetName, this._mouseMoveDelegate)
+				.unbind("mouseup."+this.widgetName, this._mouseUpDelegate);
 		}
 	},
 
 	_mouseDown: function(event) {
 		// don't let more than one widget handle mouseStart
-		if ( mouseHandled ) {
-			return;
-		}
-
-		this._mouseMoved = false;
+		if( mouseHandled ) { return; }
 
 		// we may have missed mouseup (out of window)
 		(this._mouseStarted && this._mouseUp(event));
@@ -113,10 +99,9 @@ return $.widget("ui.mouse", {
 		this._mouseUpDelegate = function(event) {
 			return that._mouseUp(event);
 		};
-
-		this.document
-			.bind( "mousemove." + this.widgetName, this._mouseMoveDelegate )
-			.bind( "mouseup." + this.widgetName, this._mouseUpDelegate );
+		$(document)
+			.bind("mousemove."+this.widgetName, this._mouseMoveDelegate)
+			.bind("mouseup."+this.widgetName, this._mouseUpDelegate);
 
 		event.preventDefault();
 
@@ -125,23 +110,9 @@ return $.widget("ui.mouse", {
 	},
 
 	_mouseMove: function(event) {
-		// Only check for mouseups outside the document if you've moved inside the document
-		// at least once. This prevents the firing of mouseup in the case of IE<9, which will
-		// fire a mousemove event if content is placed under the cursor. See #7778
-		// Support: IE <9
-		if ( this._mouseMoved ) {
-			// IE mouseup check - mouseup happened when mouse was out of window
-			if ($.ui.ie && ( !document.documentMode || document.documentMode < 9 ) && !event.button) {
-				return this._mouseUp(event);
-
-			// Iframe mouseup check - mouseup occurred in another document
-			} else if ( !event.which ) {
-				return this._mouseUp( event );
-			}
-		}
-
-		if ( event.which || event.button ) {
-			this._mouseMoved = true;
+		// IE mouseup check - mouseup happened when mouse was out of window
+		if ($.ui.ie && ( !document.documentMode || document.documentMode < 9 ) && !event.button) {
+			return this._mouseUp(event);
 		}
 
 		if (this._mouseStarted) {
@@ -159,9 +130,9 @@ return $.widget("ui.mouse", {
 	},
 
 	_mouseUp: function(event) {
-		this.document
-			.unbind( "mousemove." + this.widgetName, this._mouseMoveDelegate )
-			.unbind( "mouseup." + this.widgetName, this._mouseUpDelegate );
+		$(document)
+			.unbind("mousemove."+this.widgetName, this._mouseMoveDelegate)
+			.unbind("mouseup."+this.widgetName, this._mouseUpDelegate);
 
 		if (this._mouseStarted) {
 			this._mouseStarted = false;
@@ -173,7 +144,6 @@ return $.widget("ui.mouse", {
 			this._mouseStop(event);
 		}
 
-		mouseHandled = false;
 		return false;
 	},
 
@@ -196,4 +166,4 @@ return $.widget("ui.mouse", {
 	_mouseCapture: function(/* event */) { return true; }
 });
 
-}));
+})(jQuery);
