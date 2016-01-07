@@ -506,7 +506,7 @@ function theme_iiif_image_field_formatter($variables) {
       }
 
       
-      if(jQuery.inArray( w, arr ) > -1){
+      //if(jQuery.inArray( w, arr ) > -1){
         
         $('.viewer').iiifOsdViewer({
           data: [{
@@ -514,7 +514,7 @@ function theme_iiif_image_field_formatter($variables) {
             iiifImageAPI: '". $image_api_version ."',
             images: [". $img_sequence ."]}
           ]});
-      }
+      //}
 
     }(jQuery));",
     array('type' => 'inline', 'scope' => 'footer', 'weight' => 3));
