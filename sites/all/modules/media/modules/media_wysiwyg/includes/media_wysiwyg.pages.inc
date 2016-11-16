@@ -91,9 +91,10 @@ function media_wysiwyg_format_form($form, &$form_state, $file) {
   field_attach_form('file', $file, $form['options']['fields'], $form_state);
   $instance = field_info_instances('file', $file->type);
   foreach ($instance as $field_name => $field_value) {
-    if (isset($instance[$field_name]['settings']) && isset($instance[$field_name]['settings']['wysiwyg_override']) && !$instance[$field_name]['settings']['wysiwyg_override']) {
-      unset($form['options']['fields'][$field_name]);
-    }
+    $info = field_info_field($field_name);
+    // Only single valued fields can be overridden.
+    $allow = $info['cardinality'] == 1 && !empty($instance[$field_name]['settings']['wysiwyg_override']);
+    $form['options']['fields'][$field_name]['#access'] = $allow;
   }
 
   // Similar to a form_alter, but we want this to run first so that
