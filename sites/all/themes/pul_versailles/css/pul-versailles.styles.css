@@ -335,20 +335,20 @@ a.popup:link {
   padding: 0;
   background-size: 1600px auto;
   max-height: 200px;
-  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
+  background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat;
   background-color: #d2c8bf; }
   @media (max-width: 44em) {
     /* line 1, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 160px;
-      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
+      background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat; } }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 1, ../sass/components/_spotlight.scss */
     .front .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 160px;
-      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
+      background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat; } }
   /* line 35, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
     padding: 2.5em 0;
@@ -406,7 +406,7 @@ a.popup:link {
   padding: 0;
   background-size: 1600px auto;
   max-height: 200px;
-  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
+  background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat;
   background-color: #d2c8bf;
     /*
     .l-region--highlighted .hero-copy h1 {
@@ -425,13 +425,13 @@ a.popup:link {
     .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 160px;
-      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
+      background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat; } }
   @media (min-width: 44em) and (max-width: 70em) {
     /* line 95, ../sass/components/_spotlight.scss */
     .wrapper--highlighted {
       background-size: 1100px auto;
       max-height: 160px;
-      background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat; } }
+      background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat; } }
   /* line 127, ../sass/components/_spotlight.scss */
   .wrapper--highlighted .l-region--highlighted {
     padding: 1em 0;

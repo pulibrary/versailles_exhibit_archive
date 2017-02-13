@@ -257,7 +257,7 @@ a.popup:link {
   padding: 0;
   background-size: 1600px auto;
   max-height: 200px;
-  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
+  background: url(https//libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat;
   background-color: #d2c8bf; }
   /* line 35, ../sass/components/_spotlight.scss */
   .front .wrapper--highlighted .l-region--highlighted {
@@ -286,7 +286,7 @@ a.popup:link {
   padding: 0;
   background-size: 1600px auto;
   max-height: 200px;
-  background: url(http://libimages.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/native.jpg) bottom no-repeat;
+  background: url(https://libimages1.princeton.edu/loris/pudl0083/8206793/00000014.jp2/1212,2400,4736,600/1600,/0/default.jpg) bottom no-repeat;
   background-color: #d2c8bf;
     /*
     .l-region--highlighted .hero-copy h1 {
