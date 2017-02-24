@@ -115,7 +115,7 @@
           L.Icon.Default.imagePath = Drupal.settings.pathToTheme + '/images/markers';
 
           var BASE_ITEM_URL = '/versailles/item/',
-            BASE_MAP = 'https://libimages1.princeton.edu/loris/' +
+            BASE_MAP = 'https://libimages.princeton.edu/loris/' +
               'exhibits%2FVersailles%2Fversailles_13%2FImage00120_vert.jp2/info.json',
             THUMBNAIL_SIZE = 250,
             //GEOJSON_URL =  'http://github-raw-cors-proxy.herokuapp.com/' +
