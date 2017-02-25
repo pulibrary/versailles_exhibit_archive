@@ -674,7 +674,7 @@ function media_element_info() {
     '#value_callback' => 'media_file_value',
     '#element_validate' => array('media_element_validate'),
     '#pre_render' => array('media_element_pre_render'),
-    '#theme' => 'media_element',
+    '#theme' => 'media_widget',
     '#theme_wrappers' => array('form_element'),
     '#size' => 22,
     '#extended' => FALSE,
@@ -796,6 +796,17 @@ function media_element_process($element, &$form_state, $form) {
     '#weight' => 20,
     '#access' => $element['#file'] ? file_entity_access('update', $element['#file']) : FALSE,
   );
+
+  // If we have parent entity form/source langcodes, pass them in query. They
+  // will be used in
+  /* @see media_file_edit_modal() */
+  if (!empty($element['#media_parent_entity_form_langcode'])) {
+    $element['edit']['#options']['query']['media_parent_entity_form_langcode'] = $element['#media_parent_entity_form_langcode'];
+    if (!empty($element['#media_parent_entity_source_langcode'])) {
+      $element['edit']['#options']['query']['media_parent_entity_source_langcode'] = $element['#media_parent_entity_source_langcode'];
+    }
+  }
+
   $element['remove_button'] = array(
     '#name' => implode('_', $element['#parents']) . '_remove_button',
     '#type' => 'submit',
