@@ -1,0 +1,4 @@
+name: versailles
+recipe: drupal7
+config:
+  webroot: .

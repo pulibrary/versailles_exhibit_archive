@@ -114,13 +114,13 @@
 
           L.Icon.Default.imagePath = Drupal.settings.pathToTheme + '/images/markers';
 
-          var BASE_ITEM_URL = '/versailles/item/',
+          var BASE_ITEM_URL = '/item/',
             BASE_MAP = 'https://libimages.princeton.edu/loris/' +
               'exhibits%2FVersailles%2Fversailles_13%2FImage00120_vert.jp2/info.json',
             THUMBNAIL_SIZE = 250,
             //GEOJSON_URL =  'http://github-raw-cors-proxy.herokuapp.com/' +
             //  'eliotjordan/versailles-demo/gh-pages/app/scripts/map.json';
-            GEOJSON_URL = '/versailles/map.json';
+            GEOJSON_URL = '/map.json';
           // create leaflet-iiif map
           
           var map = L.map('map', {
