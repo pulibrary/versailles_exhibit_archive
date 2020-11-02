@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Contributor Pages and Views feature.
- */
-
-include_once 'versailles_contributor_pages_and_views.features.inc';

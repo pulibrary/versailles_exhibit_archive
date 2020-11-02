@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Exhibit Views and Page Handlers feature.
- */
-
-include_once 'exhibit_views_and_page_handlers.features.inc';

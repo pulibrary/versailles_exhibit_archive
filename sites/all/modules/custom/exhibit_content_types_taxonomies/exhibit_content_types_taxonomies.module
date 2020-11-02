@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Exhibit Content Types and Taxonomies feature.
- */
-
-include_once 'exhibit_content_types_taxonomies.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Versailles Map Geojson feature.
- */
-
-include_once 'versailles_map_geojson.features.inc';

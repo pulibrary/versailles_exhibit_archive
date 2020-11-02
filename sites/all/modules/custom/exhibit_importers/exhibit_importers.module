@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Exhibit Importers feature.
- */
-
-include_once 'exhibit_importers.features.inc';
