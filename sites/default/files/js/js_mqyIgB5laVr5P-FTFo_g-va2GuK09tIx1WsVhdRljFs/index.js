@@ -2072,7 +2072,7 @@ L.tileLayer.iiif = function(url, options) {
 
           L.Icon.Default.imagePath = Drupal.settings.pathToTheme + '/images/markers';
 
-          var BASE_ITEM_URL = '/item/',
+          var BASE_ITEM_URL = '/versailles/item/',
             BASE_MAP = 'https://libimages.princeton.edu/loris/' +
               'exhibits%2FVersailles%2Fversailles_13%2FImage00120_vert.jp2/info.json',
             THUMBNAIL_SIZE = 250,
