@@ -2111,7 +2111,7 @@ L.tileLayer.iiif = function(url, options) {
               thumbnailUrl = '',
               rotation = feature.properties.rotation || 0,
               title = feature.properties.name || '',
-              itemUrl = BASE_ITEM_URL + feature.properties.nid,
+              itemUrl = BASE_ITEM_URL + feature.properties.nid + '/',
               thumbnailParams = '';
 
             // generate thumbnail params
