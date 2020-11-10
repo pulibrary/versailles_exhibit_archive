@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Versailles Metadata Importer feature.
- */
-
-include_once 'versailles_metadata_importer.features.inc';
